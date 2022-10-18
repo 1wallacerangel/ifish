@@ -344,12 +344,25 @@ input[type="search"]::-webkit-search-cancel-button {
     margin-top: 1rem;
 }
 
-.header .login-form .box{
+.header .login-form .box  {
     width: 100%;
     margin:.7rem 0;
     background:#eee;
     border-radius: .5rem;
     padding:1.5rem;
+    font-size: 1.6rem;
+    color:var(--black);
+    text-transform: none;
+    margin-bottom: 1rem;
+}
+
+.header .login-form .box2  {
+    width: 100%;
+    margin:.7rem 0;
+    background:#eee;
+    border-radius: .5rem;
+    padding:1.5rem;
+    padding-right: 4.5rem;
     font-size: 1.6rem;
     color:var(--black);
     text-transform: none;
@@ -582,6 +595,11 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .body.dark .header .login-form .box{
+    background:#373737;
+    color:var(--white);
+}
+
+.body.dark .header .login-form .box2{
     background:#373737;
     color:var(--white);
 }
