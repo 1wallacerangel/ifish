@@ -8,7 +8,7 @@
     </head>
     <body class="body">
         <!--Barra de Navegação -->
-        <header class="header">
+        <header class="header">   
             <img href="index.php" class="ifish-bar" src="img/ifishlogo-red.png" ">
             <nav class="navbar">
                 <a href="#">home</a>
@@ -24,6 +24,10 @@
                 <div class="fas fa-shopping-cart" id="cart-btn"></div>
                 <div class="fas fa-user" id="login-btn"></div>
             </div>
+            <div class="icon">
+                <div class="fa-solid fa-moon" id="moon"></div>
+                <div class="fa-solid fa-sun" id="sun"></div>
+            </div>
             <form action="" class="search-form">
                 <input type="search" id="search-box" placeholder="lorem...">
                 <label for="search-box" class="fas fa-search"></label>
@@ -31,7 +35,7 @@
             <div class="shopping-cart">
                 <div class="box">
                     <i class="fas fa-trash"></i>
-                    <img src="image/cart-img-1.png" alt="">
+                    <img src="img/" alt="">
                     <div class="content">
                         <h3>fish</h3>
                         <span class="preco">R$ 4.99 </span>
@@ -40,7 +44,7 @@
                 </div>
                 <div class="box">
                     <i class="fas fa-trash"></i>
-                    <img src="image/cart-img-2.png" alt="">
+                    <img src="img/" alt="">
                     <div class="content">
                         <h3>fish</h3>
                         <span class="preco">R$ 4.99 </span>
@@ -49,7 +53,7 @@
                 </div>
                 <div class="box">
                     <i class="fas fa-trash"></i>
-                    <img src="image/cart-img-3.png" alt="">
+                    <img src="img/" alt="">
                     <div class="content">
                         <h3>fish</h3>
                         <span class="preco">R$ 4.99 </span>
@@ -60,21 +64,18 @@
                 <a href="#" class="btn">finalizar</a>
             </div>
 
-            <form action="" class="login-form">
+            <form action="conf_login.php" method="POST" class="login-form">
                 <h3>logue agora</h3>
-                <input type="email" placeholder="your email" class="box">
-                <input type="password" placeholder="your password" class="box">
+                <input type="text" name="email" placeholder="Insira seu email" class="box" required>
+                <input type="password" name="senha" placeholder="Insira sua senha" class="box" required>
                 <p>Esqueceu sua senha? <a href="#">Clique Aqui</a></p>
-                <p>Ainda não tem uma conta? <a href="#">crie agora</a></p>
+                <p>Ainda não tem uma conta? <a href="cadastro.php">crie agora</a></p>
                 <input type="submit" value="logar" class="btn">
             </form>          
         </header>       
         <!--início-->
         <div class="inicial-main">
-            <!--<div class="icon ">
-                <img class="moon" src="img/moon.png ">
-                <img class="sun" src="img/sun.png ">
-            </div>-->
+            
             <div class="incial-left">
                 <div class="inicial-text">
                     <h4 class="text-h4">LoremIpsum</h4>
@@ -118,6 +119,7 @@
             <div class ="left-img">
                 <img src="img/ifishlogo-red.png" class="ifish">
             </div>
+            <!--  
             <form action="conf_login.php" method="POST">
                 <div class ="right-login">
                     <div class="card-login">
@@ -135,7 +137,8 @@
                     </div>
                 </div>
             </form>
-        </div>-->
+            -->
+        </div>
         <script src="script.js"></script>
     </body>
 </html>

@@ -15,11 +15,13 @@
 
 :root {
     --white:#ffffff;
+    --white-medium:#f9f9f9;
     --light-color:#666;
     --black:#000000;
     --red:#cc1825;
     --dark-red:#9a1e25;
     --box-shadow:0 0.1rem 0.5rem #ccc;
+    --box-shadow-dark:0 0.1rem 0.5rem rgb(20, 20, 20);
 }
 
 /*Barra de Rolagem Lateral*/
@@ -30,39 +32,47 @@
 }
 
 .body::-webkit-scrollbar-track {
-    background: white;
+    background: var(--white-medium);
     /* color of the tracking area */
 }
 
 .body::-webkit-scrollbar-thumb {
+    background-color: #606060; 
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 3px solid var(--white-medium);
+    /* creates padding around scroll thumb */
+}
+
+.body::-webkit-scrollbar-thumb:hover {
+    background-color: #aaaaaa;
+  }
+
+/*Barra de Rolagem Lateral DARK */
+
+.body.dark::-webkit-scrollbar {
+    width: 14px;
+    /* width of the entire scrollbar */
+}
+
+.body.dark::-webkit-scrollbar-track {
+    background: #181818;
+    /* color of the tracking area */
+}
+
+.body.dark::-webkit-scrollbar-thumb {
     background-color: #aaaaaa;
     /* color of the scroll thumb */
     border-radius: 20px;
     /* roundness of the scroll thumb */
-    border: 3px solid white;
+    border: 3px solid #181818;
     /* creates padding around scroll thumb */
 }
 
-/*Barra de Rolagem Lateral DARK */
-
-.body-dark::-webkit-scrollbar {
-    width: 12px;
-    /* width of the entire scrollbar */
-}
-
-.body-dark::-webkit-scrollbar-track {
-    background: #202020;
-    /* color of the tracking area */
-}
-
-.body-dark::-webkit-scrollbar-thumb {
-    background-color: #080808;
-    /* color of the scroll thumb */
-    border-radius: 20px;
-    /* roundness of the scroll thumb */
-    border: 3px solid #202020;
-    /* creates padding around scroll thumb */
-}
+.body.dark::-webkit-scrollbar-thumb:hover {
+    background-color: #717171;
+  }
 
 *{
     font-family: SulSansRegular;
@@ -85,8 +95,9 @@ html{
 
 body {
     margin: 0;
-    background: rgb(243, 243, 243);
+    background: var(--white-medium);
 }
+
 /*Botões*/
 
 .btn{
@@ -145,7 +156,7 @@ body {
     width: 4.5rem;
     line-height: 4.5rem;
     border-radius: .5rem;
-    background: #eee;
+    background: #e1e1e1;
     color:var(--black);
     font-size: 2rem;
     margin-left: .3rem;
@@ -177,7 +188,7 @@ body {
     align-items: center;
     transition: 0.6s all;
 }
-
+/*x da seach bar*/
 input[type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: none;
     height: 25px;
@@ -342,6 +353,7 @@ input[type="search"]::-webkit-search-cancel-button {
 
 .header .login-form p a{
     color:var(--red);
+    font-weight: 800;
 }
 
 .header .login-form .btn{
@@ -381,53 +393,205 @@ input[type="search"]::-webkit-search-cancel-button {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    position: absolute;
-    top: 13.5%;
-    right: 1%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    /*position: fixed;*/
 }
 
-.moon {
-    width: 17px;
+/*
+.icon::before{
+    content: "\f186";
+    font-family: fontAwesome;
+    color: var(--red);
+    font-size: 25px;
 }
 
-.sun {
-    width: 0px;
+.body.dark .icon::before{
+    content: "\f185";
+}*/
+
+#moon{
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--red);
 }
 
-.body-dark .moon {
-    width: 0px;
+.body.dark #moon{
+    display: none;
 }
 
-.body-dark .sun {
-    width: 18px;
+.body #sun{
+    display: none;
+}
+.body.dark #sun{
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--red);
 }
 
-.body-dark {
-    background: #202020;
+/*Modo Dark*/
+
+/*Nav Bar*/
+.body.dark .header {
+    box-shadow: var(--box-shadow-dark);
+}
+.body.dark .header .navbar a{
+    color:var(--white);
+}
+.body.dark .header .navbar a:hover{
+    color:var(--red);
+}
+/*fim nav bar*/
+
+/*botões nav bar*/
+
+/*Icons lado direito*/
+.body.dark .header .icons div{
+    background: #181818;
+    color: rgb(180, 180, 180);
+}
+/*Mouse passar pelo icons*/
+.body.dark .header .icons div:hover {
+    background: var(--red);
+    color: #fff;
 }
 
-.body-dark .icon {
-    background: #151515;
+/*Barra de Pesquisa*/
+
+.body.dark .header .search-form{
+    background: #252525;
+    box-shadow: var(--box-shadow-dark);
 }
 
-.body-dark .header ul li a:hover {
-    color: #ffffff;
+/*animação quando for ativada a barra de pesquisa*/
+
+.body.dark .header .search-form input{
+    color:var(--white);
 }
 
-.body-dark .header {
-    box-shadow: var(--box-shadow);
+.body.dark .header .search-form label{
+    color: rgb(180, 180, 180);
 }
 
-.body-dark .container {
-    box-shadow: var(--box-shadow);
+.body.dark .header .search-form label:hover{
+    color:var(--red);
 }
 
+/*Carrinho*/
 
+.body.dark .header .shopping-cart{
+    box-shadow: var(--box-shadow-dark);
+    background: #252525;
+}
+
+.body.dark .header .shopping-cart .box .fa-trash{
+    color:var(--light-color);
+}
+
+.body.dark .header .shopping-cart .box .fa-trash:hover{
+    color:var(--red);
+}
+
+.body.dark .header .shopping-cart .box .content h3{
+    color:var(--white);
+}
+
+.body.dark .header .shopping-cart .box .content span{
+    color:rgb(151, 151, 151);
+}
+
+.body.dark .header .shopping-cart .total{
+    color:var(--white);
+}
+
+.body.dark .header .shopping-cart .btn{
+    background: #373737;
+    color: var(--red);
+}
+
+.body.dark .header .shopping-cart .btn:hover{
+    color: var(--white);
+    background: var(--red);
+}
+
+/*Login Card*/
+.body.dark .header .login-form{
+    box-shadow: var(--box-shadow-dark);
+    background: #252525;
+}
+
+.body.dark .header .login-form h3{
+    color: var(--white);
+}
+
+.body.dark .header .login-form .box{
+    background:#373737;
+    color:var(--white);
+}
+
+.body.dark .header .login-form p{
+    color:var(--white);
+}
+
+.body.dark .header .login-form p a{
+    color:var(--red);
+}
+
+.body.dark .header .login-form .btn{
+    color: var(--red);
+    background: #373737;
+
+}
+
+.body.dark .header .login-form .btn:hover{
+    color: var(--white);
+    background: var(--red);
+}
+
+/*Menu canto direito*/
+
+.menu {
+    cursor: pointer;
+    display: none;
+}
+
+.menu .bar {
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 3px;
+    background: #000;
+    margin: 5px auto;
+    transition: all 0.3s;
+}
+
+/*fim botões nav bar*/
+.body.dark {
+    background: #181818;
+}
+.header.dark{
+    background: #212121;
+}
+.body.dark .icon {
+    background: #181818;
+}
+
+.body.dark .inicial-text .text-h1 {
+    color:var(--white);
+}
+
+.body.dark .inicial-text p {
+    color:var(--white);
+}
+/*Slide Fotos*/
+.body.dark .container {
+    box-shadow: var(--box-shadow-dark);
+}
 /*Inicial*/
 
 .inicial-main {

@@ -20,6 +20,16 @@ icon.addEventListener('click', () => {
     body.classlist.toggle('body-dark');
 })*/
 
+const body = document.querySelector('.body');
+const header = document.querySelector('.header');
+const icon = document.querySelector('.icon');
+
+icon.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    header.classList.toggle('dark');
+})
+
+
 let searchForm = document.querySelector('.search-form');
 
 document.querySelector('#search-btn').onclick = () =>{

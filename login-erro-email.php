@@ -5,7 +5,7 @@ session_start();
     <head>
         <meta charset="UTF-8">
         <title>IFISH</title>
-        <link rel="stylesheet" href="css/login-erro-email.css">
+        <link rel="stylesheet" href="login-erro-email.css">
     </head>
 
     <body>
