@@ -1,0 +1,70 @@
+@font-face {
+    font-family: SulSansRegular;
+    src: local(SulSans), url(font/SulSans-Regular.otf);
+}
+@font-face {
+    font-family: SulSansMedium;
+    src: local(SulSans), url(font/SulSans-Medium.otf);
+}
+@font-face {
+    font-family: SulSansBlack;
+    src: local(SulSans), url(font/SulSans-Black.otf);
+}
+
+body{
+    margin:0;
+}
+
+.main-cad{
+    width: 100vw;
+    height: 100vh;
+    background: #ea1d2c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left{
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.right{
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+a:link {
+    color: #ffffff;
+}
+
+a:visited {
+    color: #ffffff;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+a:active {
+    color: #ffffff;
+}
+
+.textfield{
+    font-size: 60pt;
+    font-family: SulSansRegular;
+    text-decoration: none;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 250px 55px;
+}

@@ -1,0 +1,147 @@
+@font-face {
+    font-family: SulSansRegular;
+    src: local(SulSans), url(font/SulSans-Regular.otf);
+}
+@font-face {
+    font-family: SulSansMedium;
+    src: local(SulSans), url(font/SulSans-Medium.otf);
+}
+@font-face {
+    font-family: SulSansBlack;
+    src: local(SulSans), url(font/SulSans-Black.otf);
+}
+
+body{
+    margin:0;
+    background: #ea1d2c;
+}
+.main-login{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-cad{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 35px;
+    background: #cc1825;
+    border-radius: 20px;
+    color:#ffffff;
+    font-family: SulSansRegular;
+    font-weight: 800;
+    margin: 0px 0px 0px 0px;
+}
+
+.textfield{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.textfield > input{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #9a1e25;
+    font-size: 12pt;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.textfield > label{
+    color:#ffffff;
+    margin-bottom:10px;
+}
+
+.textfield > input::placeholder{
+    color: #a6a29f;
+    font-family: SulSansRegular;
+}
+
+.btn-cadastro{
+    width: 30%;
+    margin: 5px;
+    outline: none;
+    font-weight: 800;
+    font-family: SulSansBlack;
+    font-size: 13pt;
+    color: #ffffff;
+    background: #cc1825;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1026px){
+    .btn-cadastro{
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    .card-login{
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    .main-login{
+        flex-direction: column;
+    }
+    .left-img{
+        width: 50%;
+        height:auto;
+        margin-bottom: 10%;
+    }
+
+    .right-login{
+        width: 100%;
+        height:auto;
+    }
+}
+
+a{
+    outline: hidden;
+    text-decoration: none;
+    text-align: center;
+}
+
+a:link {
+    color: #ffffff;
+}
+
+a:visited {
+    color: #ffffff;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+a:active {
+    color: #ffffff;
+}
+
+.btn-login{
+    width: 80%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-family: SulSansBlack;
+    font-size: 14pt;
+    letter-spacing: 2px;
+    color: #cc1825;
+}
