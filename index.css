@@ -37,7 +37,7 @@
 }
 
 .body::-webkit-scrollbar-thumb {
-    background-color: #606060; 
+    background-color: #606060;
     /* color of the scroll thumb */
     border-radius: 20px;
     /* roundness of the scroll thumb */
@@ -47,7 +47,7 @@
 
 .body::-webkit-scrollbar-thumb:hover {
     background-color: #aaaaaa;
-  }
+}
 
 /*Barra de Rolagem Lateral DARK */
 
@@ -72,7 +72,7 @@
 
 .body.dark::-webkit-scrollbar-thumb:hover {
     background-color: #717171;
-  }
+}
 
 *{
     font-family: SulSansRegular;
@@ -150,7 +150,9 @@ body {
 .header .navbar a:hover{
     color:var(--red);
 }
+
 /*Icons lado direito*/
+
 .header .icons div{
     height: 4.5rem;
     width: 4.5rem;
@@ -163,17 +165,23 @@ body {
     cursor: pointer;
     text-align: center;
 }
+
 /*Mouse passar pelo icons*/
+
 .header .icons div:hover {
     background: var(--red);
     color: #fff;
     transition: all 0.3s;
 }
+
 /*ocultar menu para responsividade*/
+
 #menu-btn {
     display: none;
 }
+
 /*Barra de Pesquisa*/
+
 .header .search-form{
     position: absolute;
     top:125%;
@@ -188,7 +196,9 @@ body {
     align-items: center;
     transition: 0.6s all;
 }
+
 /*x da seach bar*/
+
 input[type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: none;
     height: 25px;
@@ -200,6 +210,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 /*animação quando for ativada a barra de pesquisa*/
+
 .header .search-form.active{
     right:2rem;
     transition: 0.4s all;
@@ -225,7 +236,9 @@ input[type="search"]::-webkit-search-cancel-button {
 .header .search-form label:hover{
     color:var(--red);
 }
+
 /*Carrinho*/
+
 .header .shopping-cart{
     position: absolute;
     top:125%;
@@ -367,6 +380,40 @@ input[type="search"]::-webkit-search-cancel-button {
     color: var(--white);
     background: var(--red);
 }
+/*Seletor Eye Senha*/ /*Ocultar e Mostrar Senha*/
+#eye{
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-color);
+    position: absolute;
+    top: 39.75%;
+    right: 28px;
+    transition: all 0.3s;
+
+}
+
+.eye::before{
+    content: "\f06e";
+    font-family: fontAwesome;
+    transition: all 0.3s;
+}
+
+.eye.open::before{
+    content: "\f070";
+    font-family: fontAwesome;
+    transition: all 0.3s;
+}
+
+#eye:hover{
+    color: var(--red);
+    transition: all 0.3s;
+}
 
 /*Menu canto direito*/
 
@@ -384,7 +431,6 @@ input[type="search"]::-webkit-search-cancel-button {
     margin: 5px auto;
     transition: all 0.3s;
 }
-
 
 /*toggle modo dark*/
 
@@ -437,6 +483,7 @@ input[type="search"]::-webkit-search-cancel-button {
 /*Modo Dark*/
 
 /*Nav Bar*/
+
 .body.dark .header {
     box-shadow: var(--box-shadow-dark);
 }
@@ -446,16 +493,20 @@ input[type="search"]::-webkit-search-cancel-button {
 .body.dark .header .navbar a:hover{
     color:var(--red);
 }
+
 /*fim nav bar*/
 
 /*botões nav bar*/
 
 /*Icons lado direito*/
+
 .body.dark .header .icons div{
     background: #181818;
     color: rgb(180, 180, 180);
 }
+
 /*Mouse passar pelo icons*/
+
 .body.dark .header .icons div:hover {
     background: var(--red);
     color: #fff;
@@ -520,6 +571,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 /*Login Card*/
+
 .body.dark .header .login-form{
     box-shadow: var(--box-shadow-dark);
     background: #252525;
@@ -657,7 +709,6 @@ input[type="search"]::-webkit-search-cancel-button {
     background: var(--dark-red);
 }
 
-
 /*Slide fotos*/
 
 .inicial-right {
@@ -668,7 +719,6 @@ input[type="search"]::-webkit-search-cancel-button {
     align-items: center;
     flex-direction: column;
 }
-
 
 /*Contém toda sessão do lado direito*/
 
@@ -681,7 +731,6 @@ input[type="search"]::-webkit-search-cancel-button {
     box-shadow: var(--box-shadow);
 }
 
-
 /*Tamanho dos slides 400% pq são 4 fts logo 500*4=2000px*/
 
 .slides {
@@ -690,14 +739,12 @@ input[type="search"]::-webkit-search-cancel-button {
     height: 100%;
 }
 
-
 /*Reset input seletor slide*/
 
 .slides input {
     display: none;
     margin: 0;
 }
-
 
 /*Tamanho Imagem*/
 
@@ -712,7 +759,6 @@ input[type="search"]::-webkit-search-cancel-button {
     object-fit: cover;
 }
 
-
 /*Posição seletor slide*/
 
 .roll-slide {
@@ -720,7 +766,6 @@ input[type="search"]::-webkit-search-cancel-button {
     align-items: center;
     display: flex;
 }
-
 
 /*Estilo Seletor*/
 
@@ -739,7 +784,6 @@ input[type="search"]::-webkit-search-cancel-button {
     border: 2px solid #fff;
 }
 
-
 /*-25% por causa das 4 fts*/
 
 #radio-1:checked~.one {
@@ -757,7 +801,6 @@ input[type="search"]::-webkit-search-cancel-button {
 #radio-4:checked~.one {
     margin-left: -75%;
 }
-
 
 /*Login*/
 
@@ -893,7 +936,6 @@ li a:active {
     color: var(--white);
 }
 
-
 /*Responsividade*/
 /*
 @media only screen and (max-width: 1026px) {
@@ -924,11 +966,19 @@ li a:active {
 }
 */
 
-
 @media (max-width:991px){
 
     html{
         font-size: 55%;
+    }
+
+    #eye{
+        position: absolute;
+        top: 39.5%;
+        right: 22px;
+        font-size: 18px;
+        width: 30px;
+        height: 30px;
     }
 
     .header{
@@ -993,5 +1043,13 @@ li a:active {
         margin: 2rem auto;
     }
 
-}
+    #eye{
+        position: absolute;
+        top: 39.7%;
+        right: 22px;
+        font-size: 16px;
+        width: 28px;
+        height: 28px;
+    }
 
+}

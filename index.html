@@ -63,11 +63,11 @@
                 <div class="total"> total : R$ 14.97 </div>
                 <a href="#" class="btn">finalizar</a>
             </div>
-
             <form action="conf_login.php" method="POST" class="login-form">
                 <h3>logue agora</h3>
                 <input type="text" name="email" placeholder="Insira seu email" class="box" required>
-                <input type="password" name="senha" placeholder="Insira sua senha" class="box" required>
+                <input type="password" name="senha" placeholder="Insira sua senha" class="box" id="senha-id" required>
+                <div id="eye" class="eye" onclick="eyeClick()"></div>
                 <p>Esqueceu sua senha? <a href="#">Clique Aqui</a></p>
                 <p>Ainda não tem uma conta? <a href="cadastro.php">crie agora</a></p>
                 <input type="submit" value="logar" class="btn">
@@ -75,7 +75,7 @@
         </header>       
         <!--início-->
         <div class="inicial-main">
-            
+
             <div class="incial-left">
                 <div class="inicial-text">
                     <h4 class="text-h4">LoremIpsum</h4>
