@@ -326,10 +326,11 @@ input[type="search"]::-webkit-search-cancel-button {
     margin:13px auto;
     box-shadow: var(--box-shadow);
     border-radius: 30px;
+    background:var(--red);
 }
 /*Toggle Log in Register*/
 .toggle-btn{
-    font-size: 11pt;
+    font-size: 13pt;
     padding: 18px 30px;
     cursor: pointer;
     background: transparent;
@@ -338,20 +339,44 @@ input[type="search"]::-webkit-search-cancel-button {
     position: relative;
     transition: all .5s;
 }
+
+.log-text{
+    color:var(--red)
+}
+
+.reg-text{
+    color: var(--white);
+}
+
+.log-text.off{
+    color: var(--white);
+}
+
+.reg-text.off{
+    color: var(--red);
+}
+
+.log-text.on{
+    color: var(--red);
+}
+
+.reg-text.on{
+    color: var(--white);
+}
+
 /*botão log in register*/
 #btn{
-    opacity: 50%;
     position: absolute;
     margin-top: 13px;
-    margin-left: 30px;
+    margin-left: 29px;
     top: 50;
     left: 70;
-    width: 130px;
+    width: 132px;
     height: 50px;
-    background: var(--red);
     border-radius: 30px;
-    transition: all .5s;
+    transition: all 0.5s;
     box-shadow: var(--box-shadow);
+    background: #eee;
 }
 
 .header .log-register{
@@ -359,7 +384,7 @@ input[type="search"]::-webkit-search-cancel-button {
     top:125%;
     right:-110%;
     width:35rem;
-    height: 500px;
+    height: 510px;
     box-shadow: var(--box-shadow);
     padding:2rem;
     border-radius: .5rem;
@@ -394,18 +419,6 @@ input[type="search"]::-webkit-search-cancel-button {
     transition: 0.6s all;
 }
 
-.header .register-form .box-r  {
-    width: 100%;
-    margin:.7rem 0;
-    background:#eee;
-    border-radius: .5rem;
-    padding:1.5rem;
-    font-size: 1.6rem;
-    color:var(--black);
-    text-transform: none;
-    margin-bottom: 1rem;
-}
-
 .header .login-form.active{
     right:0rem;
     transition: 0.4s all;
@@ -417,6 +430,19 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .header .login-form .box  {
+    width: 100%;
+    margin:.7rem 0;
+    background:#eee;
+    border-radius: .5rem;
+    padding:1.5rem;
+    font-size: 1.6rem;
+    color:var(--black);
+    text-transform: none;
+    margin-bottom: 1rem;
+    
+}
+
+.header .register-form .box-r  {
     width: 100%;
     margin:.7rem 0;
     background:#eee;
@@ -465,6 +491,19 @@ input[type="search"]::-webkit-search-cancel-button {
     color: var(--white);
     background: var(--red);
 }
+
+.header .register-form .btn{
+    color: var(--red);
+    background: #eee;
+    text-align: center;
+    margin:1rem;
+}
+
+.header .register-form .btn:hover{
+    color: var(--white);
+    background: var(--red);
+}
+
 /*Seletor Eye Senha*/ /*Ocultar e Mostrar Senha*/
 #eye{
     font-size: 20px;
