@@ -63,13 +63,13 @@
                 <div class="total"> total : R$ 14.97 </div>
                 <a href="#" class="btn">finalizar</a>
             </div>
-            <div class="login-form">
-            <form action="conf_login.php" id="register" class="login-for" method="POST">
+            <div class="log-register">
                 <div id="btn"></div>
                 <div class="button-box">
-                <button type="button" class="toggle-btn">Log in</button>
-                <button type="button" class="toggle-btn">Register</button>
+                <button type="button" class="toggle-btn" onclick="login()">Log in</button>
+                <button type="button" class="toggle-btn" onclick="register()">Register</button>
                 </div>
+            <form action="conf_login.php" id="login" class="login-form" method="POST">
                 <input type="text" name="email" placeholder="Insira seu email" class="box" required>
                 <input type="password" name="senha" placeholder="Insira sua senha" class="box2" id="senha-id" required>
                 <div id="eye" class="eye" onclick="eyeClick()"></div>
@@ -78,12 +78,11 @@
                 <input type="submit" value="logar" class="btn">
             </form>
             <form action="#" method="POST" id="register" class="register-form">
-                <input type="text" name="nome" placeholder="Nome" class="box" required>
-                <input type="text" name="sobrenome" placeholder="Sobrenome" class="box" required><br>
-                <input type="date" name="data_nascimento" class="box" required><br>
-                <input type="text" name="email" placeholder="Insira seu email" class="box" required>
-                <input type="password" name="senha" placeholder="Insira sua senha" class="box" required>
-                <input type="radio" name="seletor" value="Vendedor">
+                <input type="text" name="nome" placeholder="Nome" class="box-r" required>
+                <input type="text" name="sobrenome" placeholder="Sobrenome" class="box-r" required><br>
+                <input type="date" name="data_nascimento" class="box-r" required><br>
+                <input type="text" name="email" placeholder="Insira seu email" class="box-r" required>
+                <input type="password" name="senha" placeholder="Insira sua senha" class="box-r" required>
                 <input type="submit" value="register" class="btn">
             </form>
             </div>                    

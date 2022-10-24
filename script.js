@@ -49,9 +49,11 @@ document.querySelector('#cart-btn').onclick = () => {
 }
 
 let loginForm = document.querySelector('.login-form');
+let logRegister = document.querySelector('.log-register');
 
 document.querySelector('#login-btn').onclick = () => {
     loginForm.classList.toggle('active');
+    logRegister.classList.toggle('active');
     searchForm.classList.remove('active');
     shoppingCart.classList.remove('active');
     navbar.classList.remove('active');
@@ -137,4 +139,20 @@ function showPassword() {
 function hidePassword() {
     senha.setAttribute("type", "password")
     eye.classList.toggle('open')
+}
+
+var logi = document.getElementById("login");
+var registe = document.getElementById("register");
+var btn = document.getElementById("btn");
+
+function register(){
+    logi.style.left="400px";
+    registe.style.left="0px";
+    btn.style.left="140px";
+}
+
+function login(){
+    logi.style.left="0px";
+    registe.style.left="-380px";
+    btn.style.left="20px";
 }
