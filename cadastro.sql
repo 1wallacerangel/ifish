@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.3.0-dev+20220715.346923e20a
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19-Jul-2022 às 21:47
+-- Tempo de geração: 26-Out-2022 às 01:31
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -31,24 +31,9 @@ CREATE TABLE `cad_comprador` (
   `nome` varchar(120) NOT NULL,
   `sobrenome` varchar(120) NOT NULL,
   `data_nascimento` date NOT NULL,
+  `cpf_cnpj` varchar(20) NOT NULL,
   `email` varchar(120) NOT NULL,
-  `senha` varchar(32) NOT NULL,
-  `id_comprador` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `cad_vendedor`
---
-
-CREATE TABLE `cad_vendedor` (
-  `nome` varchar(120) NOT NULL,
-  `sobrenome` varchar(120) NOT NULL,
-  `data_nascimento` date NOT NULL,
-  `email` varchar(120) NOT NULL,
-  `senha` varchar(32) NOT NULL,
-  `id_vendedor` int(11) NOT NULL
+  `senha` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -59,29 +44,7 @@ CREATE TABLE `cad_vendedor` (
 -- Índices para tabela `cad_comprador`
 --
 ALTER TABLE `cad_comprador`
-  ADD PRIMARY KEY (`id_comprador`);
-
---
--- Índices para tabela `cad_vendedor`
---
-ALTER TABLE `cad_vendedor`
-  ADD PRIMARY KEY (`id_vendedor`);
-
---
--- AUTO_INCREMENT de tabelas despejadas
---
-
---
--- AUTO_INCREMENT de tabela `cad_comprador`
---
-ALTER TABLE `cad_comprador`
-  MODIFY `id_comprador` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `cad_vendedor`
---
-ALTER TABLE `cad_vendedor`
-  MODIFY `id_vendedor` int(11) NOT NULL AUTO_INCREMENT;
+  ADD PRIMARY KEY (`cpf_cnpj`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

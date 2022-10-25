@@ -112,16 +112,19 @@ const logtext = document.getElementById("log-p");
 var registe = document.getElementById("register");
 const regtext = document.getElementById("reg-p");
 var btn = document.getElementById("btn");
+var logregiste = document.querySelector(".log-register");
+var logform = document.querySelector(".login-form");
 
 function register(){
     logi.style.left="400px";
     registe.style.left="0px";
     btn.style.left="140px";
+    logregiste.style.height="605px";
 }
 
 function login(){
     logi.style.left="0px";
     registe.style.left="-385px";
     btn.style.left="20px";
+    logregiste.style.height="405px";
 }
-

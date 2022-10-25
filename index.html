@@ -1,3 +1,7 @@
+<?php
+// put your code here
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
@@ -77,10 +81,11 @@
                     <p>Ainda não tem uma conta? <a href="cadastro.php">crie agora</a></p>
                     <input type="submit" value="logar" class="btn">
                 </form>
-                <form action="#" method="POST" id="register" class="register-form">
+                <form action="recebe_cad_comprador.php" method="POST" id="register" class="register-form">
                     <input type="text" name="nome" placeholder="Nome" class="box-r" required>
                     <input type="text" name="sobrenome" placeholder="Sobrenome" class="box-r" required><br>
                     <input type="date" name="data_nascimento" class="box-r" required><br>
+                    <input type="text" name="cpf_cnpj" placeholder="Insira seu CPF/CNPJ" class="box-r" required>
                     <input type="text" name="email" placeholder="Insira seu email" class="box-r" required>
                     <input type="password" name="senha" placeholder="Insira sua senha" class="box-r" required>
                     <input type="submit" value="register" class="btn">
