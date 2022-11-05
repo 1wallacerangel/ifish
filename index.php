@@ -1,12 +1,9 @@
-<?php
-// put your code here
-?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
         <title>IFISH</title>
+        <link rel="shortcut icon" href="img/ifish-icon.png">
         <link rel="stylesheet" href="index.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
     </head>
@@ -74,26 +71,24 @@
                     <button type="button" class="toggle-btn" onclick="register()" onclick="register2()"><p class="reg-text" id="reg-p">Registrar</p></button>
                 </div>
                     <form action="conf_login.php" id="login" class="login-form" method="POST">
-                    <input type="text" name="email" placeholder="Insira seu email" class="box" required>
+                    <input type="email" name="email" placeholder="Insira seu email" class="box" required>
                     <input type="password" name="senha" placeholder="Insira sua senha" class="box2" id="senha-id" required>
                     <div id="eye" class="eye" onclick="eyeClick()"></div>
                     <p>Esqueceu sua senha? <a href="#">Clique Aqui</a></p>
-                    <p>Ainda não tem uma conta? <a href="cadastro.php">crie agora</a></p>
                     <input type="submit" value="logar" class="btn">
                 </form>
                 <form action="recebe_cad_comprador.php" method="POST" id="register" class="register-form">
                     <input type="text" name="nome" placeholder="Nome" class="box-r" required>
                     <input type="text" name="sobrenome" placeholder="Sobrenome" class="box-r" required><br>
-                    <input type="date" name="data_nascimento" class="box-r" required><br>
+                    <input placeholder="Data de Nascimento" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="data_nascimento" class="box-r" required><br>
                     <input type="text" name="cpf_cnpj" placeholder="Insira seu CPF/CNPJ" class="box-r" required>
-                    <input type="text" name="email" placeholder="Insira seu email" class="box-r" required>
+                    <input type="email" name="email" placeholder="Insira seu email" class="box-r" required>
                     <input type="password" name="senha" placeholder="Insira sua senha" class="box-r" required>
                     <input type="submit" value="register" class="btn">
                 </form>
             </div>                    
         </header>       
         <!--início-->
-        <!---
         <div class="inicial-main">
 
             <div class="incial-left">
@@ -134,7 +129,6 @@
                 </section>   
             </div>
         </div>
-    -->
         <!--Login-->
         <!---
         <div class="main-login">

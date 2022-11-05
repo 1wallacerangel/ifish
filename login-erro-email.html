@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>IFISH</title>
         <link rel="shortcut icon" href="img/ifish-icon.png">
-        <link rel="stylesheet" href="login-erro-senha.css">
+        <link rel="stylesheet" href="login-erro-email.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
     </head>
     <body class="body">
@@ -71,8 +71,8 @@
                     <button type="button" class="toggle-btn" onclick="register()" onclick="register2()"><p class="reg-text" id="reg-p">Registrar</p></button>
                 </div>
                     <form action="conf_login.php" id="login" class="login-form" method="POST">
+                    <h5 id="text-error">Email Incorreto ou não cadastrado</h5>
                     <input type="email" name="email" placeholder="Insira seu email" class="box" required>
-                    <h5 id="text-error">Senha Incorreta</h5>
                     <input type="password" name="senha" placeholder="Insira sua senha" class="box2" id="senha-id" required>
                     <div id="eye" class="eye" onclick="eyeClick()"></div>
                     <p>Esqueceu sua senha? <a href="#">Clique Aqui</a></p>

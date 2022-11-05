@@ -439,7 +439,7 @@ input[type="search"]::-webkit-search-cancel-button {
     color:var(--black);
     text-transform: none;
     margin-bottom: 1rem;
-    
+    margin-top: 2.4rem;
 }
 
 .header .register-form .box-r  {
@@ -474,6 +474,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color:var(--black);
     text-transform: none;
     margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .header .login-form p{
@@ -525,7 +526,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     justify-content: center;
     color: var(--light-color);
     position: absolute;
-    top: 31.2%;
+    top: 39%;
     right: 28px;
     transition: all 0.3s;
 
@@ -1134,7 +1135,7 @@ li a:active {
 
     #eye{
         position: absolute;
-        top: 31.2%;
+        top: 39%;
         right: 22px;
         font-size: 18px;
         width: 30px;
@@ -1205,7 +1206,7 @@ li a:active {
 
     #eye{
         position: absolute;
-        top: 31.2%;
+        top: 39%;
         right: 22px;
         font-size: 16px;
         width: 28px;

@@ -30,7 +30,7 @@ if ($resultado = mysqli_query($conn, $sql)) {
             } else {
                 // ERROU A SENHA
                 header("location: login-erro-senha.php");
-                //echo "ERROU A SENHA BURRO";
+               // echo "ERROU A SENHA BURRO";
             }
         } else {
             // ERRO NO SQL
