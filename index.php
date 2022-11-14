@@ -5,6 +5,7 @@
         <title>IFISH</title>
         <link rel="shortcut icon" href="img/ifish-icon.png">
         <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="footer.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
     </head>
     <body class="body">
@@ -130,7 +131,7 @@
             </div>
         </div>
         <!--Login-->
-        <!---
+<!--
         <div class="main-login">
             <div class ="left-img">
                 <img src="img/ifishlogo-red.png" class="ifish">
@@ -153,8 +154,11 @@
                     </div>
                 </div>
             </form>
-            -->
+            
         </div>
+-->
+        <?php include 'footer.php'; ?>
+
         <script src="script.js"></script>
     </body>
 </html>

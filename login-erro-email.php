@@ -72,7 +72,7 @@
                 </div>
                     <form action="conf_login.php" id="login" class="login-form" method="POST">
                     <h5 id="text-error">Email Incorreto ou não cadastrado</h5>
-                    <input type="email" name="email" placeholder="Insira seu email" class="box" required>
+                    <input type="email" name="email" value="" placeholder="Insira seu email" class="box" required>
                     <input type="password" name="senha" placeholder="Insira sua senha" class="box2" id="senha-id" required>
                     <div id="eye" class="eye" onclick="eyeClick()"></div>
                     <p>Esqueceu sua senha? <a href="#">Clique Aqui</a></p>

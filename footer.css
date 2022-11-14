@@ -1,0 +1,58 @@
+.footer {
+  background-color: var(--white);
+}
+
+.footer .box-container {
+   padding-left: 7%;
+   padding-right: 7%;
+   padding-top: 2rem;
+   padding-bottom: 2rem;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr)); 
+}
+
+.footer .box-container .box h3 {
+   text-transform: uppercase;
+   color: var(--black);
+   margin-bottom: 2.5rem;
+   font-size: 2rem;
+}
+
+.footer .box-container .box a,
+.footer .box-container .box p {
+   display: flex;
+   padding: 1.3rem 0;
+   font-size: 1.6rem;
+   color: var(--light-color);
+}
+
+.footer .box-container .box a i,
+.footer .box-container .box p i {
+   color: var(--red);
+   padding-right: 1rem;
+}
+
+.footer .box-container .box a:hover {
+   text-decoration: none;
+   color: var(--red);
+}
+
+/*Modo Escuro*/
+
+.body.dark .footer{
+   background: #212121;
+}
+
+.body.dark .footer .box-container .box h3 {
+   color: var(--white);
+ }
+
+.body.dark .footer .box-container .box a,
+.body.dark .footer .box-container .box p {
+  color: var(--light-color);
+}
+
+.body.dark .footer .box-container .box a:hover {
+   text-decoration: none;
+   color: var(--red);
+ }

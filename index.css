@@ -82,7 +82,7 @@
     outline: none;
     border:none;
     text-decoration: none;
-    text-transform: capitalize;
+    text-transform: none;
     transition: all .2s linear;
 }
 
@@ -124,7 +124,7 @@ body {
     z-index: 1000;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem 9%;
+    padding: 2rem 7%;
     box-shadow: var(--box-shadow);
     transition: all 0.5s;
 }
@@ -345,22 +345,6 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .reg-text{
-    color: var(--white);
-}
-
-.log-text.off{
-    color: var(--white);
-}
-
-.reg-text.off{
-    color: var(--red);
-}
-
-.log-text.on{
-    color: var(--red);
-}
-
-.reg-text.on{
     color: var(--white);
 }
 

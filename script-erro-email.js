@@ -21,15 +21,35 @@ setInterval(function () {
  body.classlist.toggle('body-dark');
  })*/
 
-const body = document.querySelector('.body');
-const header = document.querySelector('.header');
-const icon = document.querySelector('.icon');
-
-icon.addEventListener('click', () => {
-    body.classList.toggle('dark');
-    header.classList.toggle('dark');
-})
-
+ const body = document.querySelector('.body');
+ const header = document.querySelector('.header');
+ const icon = document.querySelector('.icon');
+ let darkMode = localStorage.getItem('dark-mode');
+ 
+ const enableDarkMode = () =>{
+     body.classList.toggle('dark');
+     header.classList.toggle('dark');
+     localStorage.setItem('dark-mode', 'enabled');
+ }
+ 
+ const disableDarkMode = () =>{
+     body.classList.toggle('dark');
+     header.classList.toggle('dark');
+     localStorage.setItem('dark-mode', 'disabled');
+ }
+ 
+ if(darkMode === 'enabled'){
+    enableDarkMode();
+ }
+ 
+ icon.addEventListener('click', () => {
+     darkMode = localStorage.getItem('dark-mode');
+    if(darkMode === 'disabled'){
+       enableDarkMode();
+    }else{
+       disableDarkMode();
+    }
+ })
 
 let searchForm = document.querySelector('.search-form');
 
@@ -113,23 +133,27 @@ function hidePassword() {
 /* função login e register */
 
 var logi = document.getElementById("login");
-const logtext = document.getElementById("log-p");
 var registe = document.getElementById("register");
-const regtext = document.getElementById("reg-p");
 var btn = document.getElementById("btn");
 var logregiste = document.querySelector(".log-register");
 var logform = document.querySelector(".login-form");
+var logtext = document.querySelector(".log-text");
+var regtext = document.querySelector(".reg-text");
 
 function register(){
     logi.style.left="400px";
     registe.style.left="0px";
     btn.style.left="140px";
-    logregiste.style.height="590px";
+    logregiste.style.height="595px";
+    logtext.style.color="#ffffff"
+    regtext.style.color="#cc1825"
 }
 
 function login(){
     logi.style.left="0px";
     registe.style.left="-385px";
     btn.style.left="20px";
-    logregiste.style.height="405px";
+    logregiste.style.height="400px";
+    logtext.style.color="#cc1825"
+    regtext.style.color="#ffffff"
 }
