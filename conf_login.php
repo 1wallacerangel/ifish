@@ -28,7 +28,7 @@ if ($resultado = mysqli_query($conn, $sql)) {
                 header("location: menu-principal.php");
             } else {
                 // ERROU A SENHA
-                header("location: login-erro-senha.php"); 
+                header("location: login-erro-senha.php");
             }
         } else {
             // ERRO NO SQL
