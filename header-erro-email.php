@@ -1,12 +1,11 @@
 <header class="header">
     <img href="index.php" class="ifish-bar" src="img/ifishlogo-red.png" ">
-            <nav class=" navbar">
-    <a href="#">home</a>
-    <a href="#">lorem</a>
+    <nav class=" navbar">
+    <a href="#">ínicio</a>
     <a href="#">produtos</a>
     <a href="#">categorias</a>
-    <a href="#">lorem</a>
-    <a href="#">ajuda</a>
+    <a href="#">sobre</a>
+    <a href="#">contato</a>
     </nav>
     <div class="icons">
         <div class="fas fa-bars" id="menu-btn"></div>

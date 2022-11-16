@@ -4,16 +4,16 @@
 
       <div class="box">
          <h3>quick links</h3>
-         <a href="#"> <i class="fas fa-angle-right"></i> home</a>
-         <a href="#"> <i class="fas fa-angle-right"></i> shop</a>
-         <a href="#"> <i class="fas fa-angle-right"></i> about</a>
-         <a href="#"> <i class="fas fa-angle-right"></i> contact</a>
+         <a href="index.php"> <i class="fas fa-angle-right"></i> ínicio</a>
+         <a href="#"> <i class="fas fa-angle-right"></i> produtos</a>
+         <a href="#"> <i class="fas fa-angle-right"></i> sobre</a>
+         <a href="contato.php"> <i class="fas fa-angle-right"></i> contato</a>
       </div>
 
       <div class="box">
          <h3>extra links</h3>
-         <a href="#"> <i class="fas fa-angle-right"></i> cart</a>
-         <a href="#"> <i class="fas fa-angle-right"></i> wishlist</a>
+         <a href="#"> <i class="fas fa-angle-right"></i> buscar</a>
+         <a href="#"> <i class="fas fa-angle-right"></i> carinho</a>
          <a href="#"> <i class="fas fa-angle-right"></i> login</a>
          <a href="#"> <i class="fas fa-angle-right"></i> register</a>
       </div>
