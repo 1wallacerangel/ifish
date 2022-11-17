@@ -1,14 +1,9 @@
 <?php
 
-$servidor = "localhost";
-$usuario = "root";
-$senha = "";
-$dbname = "cadastro";
+$db_name = "mysql:host=localhost;dbname=ifish_db";
+$username = "root";
+$password = "";
 
-$conn = new mysqli($servidor, $usuario, $senha, $dbname);
+$conn = new PDO($db_name, $username, $password);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
-//echo "CONECTADO COM SUCESSO!";
 ?>
