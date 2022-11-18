@@ -2,31 +2,31 @@
 
 include 'conexao.php';
 
-if(isset($_POST['submit_register'])){
+if (isset($_POST['submit_register'])) {
 
-   $nome = $_POST['nome'];
-   $nome = filter_var($nome, FILTER_SANITIZE_STRING);
-   $email = $_POST['email'];
-   $email = filter_var($email, FILTER_SANITIZE_STRING);
-   $senha = md5($_POST['senha']);
-   $senha = filter_var($senha, FILTER_SANITIZE_STRING);
-   $conf_senha = md5($_POST['conf_senha']);
-   $conf_senha = filter_var($conf_senha, FILTER_SANITIZE_STRING);
+    $nome = $_POST['nome'];
+    $nome = filter_var($nome, FILTER_SANITIZE_STRING);
+    $email = $_POST['email'];
+    $email = filter_var($email, FILTER_SANITIZE_STRING);
+    $senha = md5($_POST['senha']);
+    $senha = filter_var($senha, FILTER_SANITIZE_STRING);
+    $conf_senha = md5($_POST['conf_senha']);
+    $conf_senha = filter_var($conf_senha, FILTER_SANITIZE_STRING);
 
-   $select = $conn->prepare("SELECT * FROM `usuario` WHERE email = ?");
-   $select->execute([$email]);
+    $select = $conn->prepare("SELECT * FROM `usuario` WHERE email = ?");
+    $select->execute([$email]);
 
-   if($select->rowCount() > 0){
-      $message_register[] = 'user email already exist!';
-   }else{
-      if($senha != $conf_senha){
-         $message_register[] = 'confirm password not matched!';
-      }else{
-         $insert = $conn->prepare("INSERT INTO `usuario`(nome, email, senha) VALUES(?,?,?)");
-         $insert->execute([$nome, $email, $senha ]);
-         $message_register[] = 'registrado!';
-      }
-   }
+    if ($select->rowCount() > 0) {
+        $message_register[] = 'user email already exist!';
+    } else {
+        if ($senha != $conf_senha) {
+            $message_register[] = 'confirm password not matched!';
+        } else {
+            $insert = $conn->prepare("INSERT INTO `usuario`(nome, email, senha) VALUES(?,?,?)");
+            $insert->execute([$nome, $email, $senha]);
+            $message_register[] = 'registrado!';
+        }
+    }
 }
 
 ?>
@@ -37,26 +37,26 @@ if(isset($_POST['submit_register'])){
 
 session_start();
 
-if(isset($_POST['submit_login'])){
+if (isset($_POST['submit_login'])) {
 
-   $email = $_POST['email'];
-   $email = filter_var($email, FILTER_SANITIZE_STRING);
-   $senha = md5($_POST['senha']);
-   $senha = filter_var($senha, FILTER_SANITIZE_STRING);
+    $email = $_POST['email'];
+    $email = filter_var($email, FILTER_SANITIZE_STRING);
+    $senha = md5($_POST['senha']);
+    $senha = filter_var($senha, FILTER_SANITIZE_STRING);
 
-   $sql = "SELECT * FROM `usuario` WHERE email = ? AND senha = ?";
-   $stmt = $conn->prepare($sql);
-   $stmt->execute([$email, $senha]);
-   $rowCount = $stmt->rowCount();  
+    $sql = "SELECT * FROM `usuario` WHERE email = ? AND senha = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$email, $senha]);
+    $rowCount = $stmt->rowCount();
 
-   $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-   if($rowCount > 0){
+    if ($rowCount > 0) {
 
         $_SESSION['user_id'] = $row['id'];
-        $message_login[] = 'Logado!';     
-    }else{
-        $message_login[] = 'incorrect email or password!';
+        //$message_login[] = 'Logado!';
+    } else {
+        $message_login[] = 'Email ou senha incorretos';
     }
 }
 ?>
@@ -118,21 +118,15 @@ if(isset($_POST['submit_login'])){
     <div class="log-register">
         <div class="profile">
             <?php
-
-            if($_SESSION){
-
-                $select_profile = $conn->prepare("SELECT * FROM `usuario` WHERE id = ?");
-                $select_profile->execute([$user_id]);
-                $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
-                
-                echo '<p>' .$fetch_profile['']. '</p>
-                <a href="logout.php" class="delete-btn">logout</a>';
-
-            }else{
-
-            }
+                if($_SESSION){
+                    $user_id = $_SESSION['user_id'];
+                    $select_profile = $conn->prepare("SELECT * FROM `usuario` WHERE id = ?");
+                    $select_profile->execute([$user_id]);
+                    $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
+                    echo '<p class="profile-name">' .$fetch_profile['nome']. '</p>
+                    <a href="logout.php" class="delete-btn">logout</a>';
+                }else{}
             ?>
-            <p><?= $fetch_profile['nome']; ?></p>
         </div>
         <div id="btn"></div>
         <div class="button-box">
@@ -144,18 +138,18 @@ if(isset($_POST['submit_login'])){
             </button>
         </div>
         <form action="" id="login" class="login-form" method="POST">
-        <?php
-            if(isset($message_login)){
-                foreach($message_login as $message_login){
+            <?php
+            if (isset($message_login)) {
+                foreach ($message_login as $message_login) {
                     echo '
                         <div class="message">
-                        <span>'.$message_login.'</span>
+                        <span>' . $message_login . '</span>
                         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
                         </div>
                     ';
                 }
             }
-        ?>
+            ?>
             <input type="email" name="email" placeholder="Insira seu email" class="box" required>
             <input type="password" name="senha" placeholder="Insira sua senha" class="box2" id="senha-id" required>
             <div id="eye" class="eye" onclick="eyeClick()"></div>
@@ -163,18 +157,18 @@ if(isset($_POST['submit_login'])){
             <input type="submit" name="submit_login" value="logar" class="btn">
         </form>
         <form action="" method="POST" id="register" class="register-form">
-        <?php
-            if(isset($message_register)){
-                foreach($message_register as $message_register){
+            <?php
+            if (isset($message_register)) {
+                foreach ($message_register as $message_register) {
                     echo '
                         <div class="message">
-                        <span>'.$message_register.'</span>
+                        <span>' . $message_register . '</span>
                         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
                         </div>
                     ';
                 }
             }
-        ?>
+            ?>
             <input type="text" name="nome" placeholder="Nome" class="box-r" required>
             <input type="email" name="email" placeholder="Insira seu email" class="box-r" required>
             <input type="password" name="senha" placeholder="Insira sua senha" class="box-r" required>
