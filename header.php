@@ -54,12 +54,9 @@ if(isset($_POST['submit_login'])){
    if($rowCount > 0){
 
         $_SESSION['user_id'] = $row['id'];
-        header('location:index.php');
-
+        $message_login[] = 'Logado!';     
     }else{
-
-        $message[] = 'incorrect email or password!';
-      
+        $message_login[] = 'incorrect email or password!';
     }
 }
 ?>
@@ -119,6 +116,24 @@ if(isset($_POST['submit_login'])){
         <a href="#" class="btn">finalizar</a>
     </div>
     <div class="log-register">
+        <div class="profile">
+            <?php
+
+            if($_SESSION){
+
+                $select_profile = $conn->prepare("SELECT * FROM `usuario` WHERE id = ?");
+                $select_profile->execute([$user_id]);
+                $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
+                
+                echo '<p>' .$fetch_profile['']. '</p>
+                <a href="logout.php" class="delete-btn">logout</a>';
+
+            }else{
+
+            }
+            ?>
+            <p><?= $fetch_profile['nome']; ?></p>
+        </div>
         <div id="btn"></div>
         <div class="button-box">
             <button type="button" class="toggle-btn" onclick="login()" onclick="login2()">
