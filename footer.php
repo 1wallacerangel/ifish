@@ -5,7 +5,7 @@
       <div class="box">
          <h3>quick links</h3>
          <a href="index.php"> <i class="fas fa-angle-right"></i> ínicio</a>
-         <a href="#"> <i class="fas fa-angle-right"></i> produtos</a>
+         <a href="produtos.php"> <i class="fas fa-angle-right"></i> produtos</a>
          <a href="#"> <i class="fas fa-angle-right"></i> sobre</a>
          <a href="contato.php"> <i class="fas fa-angle-right"></i> contato</a>
       </div>

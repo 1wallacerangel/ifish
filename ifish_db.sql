@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17-Nov-2022 às 02:16
+-- Tempo de geração: 19-Nov-2022 às 01:58
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -52,13 +52,6 @@ CREATE TABLE `mensagem` (
   `mensagem` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Extraindo dados da tabela `mensagem`
---
-
-INSERT INTO `mensagem` (`id`, `user_id`, `nome`, `email`, `telefone`, `mensagem`) VALUES
-(8, 4, 'Wallace Rangel', 'wallacerangelone2@gmail.com', '22998121122', '1232');
-
 -- --------------------------------------------------------
 
 --
@@ -106,14 +99,6 @@ CREATE TABLE `usuario` (
   `email` varchar(100) NOT NULL,
   `senha` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `usuario`
---
-
-INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`) VALUES
-(4, 'Wallace Rangel Gama da Silva', 'wallacerangelone2@gmail.com', '202cb962ac59075b964b07152d234b70'),
-(5, 'bira', 'bira@gmail.com', '202cb962ac59075b964b07152d234b70');
 
 --
 -- Índices para tabelas despejadas
@@ -181,7 +166,7 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
