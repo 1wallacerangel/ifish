@@ -50,10 +50,11 @@ if (isset($_POST['adicionar_carrinho'])) {
    <link rel="stylesheet" href="css/contato.css">
    <link rel="stylesheet" href="css/header.css">
    <link rel="stylesheet" href="css/footer.css">
+   <link rel="stylesheet" href="css/produtos.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 </head>
 
-<body>
+<body class="body">
 
    <?php include 'header.php'; ?>
 

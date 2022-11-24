@@ -1,0 +1,30 @@
+.placed-orders {
+    margin-top: 50px;
+}
+
+.placed-orders .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.placed-orders .box-container .box {
+    padding: 1rem 2rem;
+    flex: 1 1 40rem;
+    border: var(--border);
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+}
+
+.placed-orders .box-container .box p {
+    margin: .5rem 0;
+    line-height: 1.8;
+    font-size: 2rem;
+    color: var(--light-color);
+}
+
+.placed-orders .box-container .box p span {
+    color: var(--green);
+}
