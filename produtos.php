@@ -30,8 +30,8 @@ if (isset($_POST['adicionar_carrinho'])) {
    if ($check_cart_numbers->rowCount() > 0) {
       $message[] = 'already added to cart!';
    } else {
-      $insert_cart = $conn->prepare("INSERT INTO `carrinho`(user_id, pid, nome, preco, quantidade) VALUES(?,?,?,?,?)");
-      $insert_cart->execute([$user_id, $pid, $nome, $preco, $quantidade]);
+      $insert_cart = $conn->prepare("INSERT INTO `carrinho`(user_id, pid, nome, preco, quantidade,image) VALUES(?,?,?,?,?,?)");
+      $insert_cart->execute([$user_id, $pid, $nome, $preco, $quantidade, $image]);
       $message[] = 'added to cart!';
    }
 }
@@ -80,7 +80,6 @@ if (isset($_POST['adicionar_carrinho'])) {
          ?>
                <form action="" class="box" method="POST">
                   <div class="price">$<span><?= $fetch_products['preco']; ?></span>/-</div>
-                  <a href="view_page.php?pid=<?= $fetch_products['id']; ?>" class="fas fa-eye"></a>
                   <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
                   <div class="name"><?= $fetch_products['nome']; ?></div>
                   <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">

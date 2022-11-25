@@ -96,7 +96,7 @@ if (isset($_GET['delete_all'])) {
 
 if (isset($_POST['update_qty'])) {
     $cart_id = $_POST['cart_id'];
-    $p_qty = $_POST['quantidade'];
+    $p_qty = $_POST['p_qty'];
     $p_qty = filter_var($p_qty, FILTER_SANITIZE_STRING);
     $update_qty = $conn->prepare("UPDATE `carrinho` SET quantidade = ? WHERE id = ?");
     $update_qty->execute([$p_qty, $cart_id]);
@@ -161,7 +161,6 @@ if (isset($_POST['update_qty'])) {
         <a href="#" class="btn">finalizar</a> -->
         <section class="shopping-car">
 
-            <h1 class="title">products added</h1>
 
             <div class="box-container">
 
@@ -174,8 +173,7 @@ if (isset($_POST['update_qty'])) {
                 ?>
                         <form action="" method="POST" class="box">
                             <a href="index.php?delete=<?= $fetch_cart['id']; ?>" class="fas fa-times" onclick="return confirm('delete this from cart?');"></a>
-                            <a href="view_page.php?pid=<?= $fetch_cart['pid']; ?>" class="fas fa-eye"></a>
-                            <img src="uploaded_img/<?= $fetch_cart['image']; ?>" alt="">
+                            <img id="cart-img"src="uploaded_img/<?= $fetch_cart['image']; ?>" alt="">
                             <div class="name"><?= $fetch_cart['nome']; ?></div>
                             <div class="price">$<?= $fetch_cart['preco']; ?>/-</div>
                             <input type="hidden" name="cart_id" value="<?= $fetch_cart['id']; ?>">

@@ -12,7 +12,7 @@ if (!isset($admin_id)) {
 
 if (isset($_POST['add_product'])) {
 
-    $nome = $_POST['nome'];
+    $nome = $_POST['name'];
     $nome = filter_var($nome, FILTER_SANITIZE_STRING);
     $preco = $_POST['preco'];
     $preco = filter_var($preco, FILTER_SANITIZE_STRING);
@@ -21,11 +21,11 @@ if (isset($_POST['add_product'])) {
     $detalhes = $_POST['detalhes'];
     $detalhes = filter_var($detalhes, FILTER_SANITIZE_STRING);
 
-    $imagem = $_FILES['imagem']['nome'];
-    $imagem = filter_var($imagem, FILTER_SANITIZE_STRING);
-    $image_size = $_FILES['imagem']['size'];
-    $image_tmp_name = $_FILES['imagem']['tmp_name'];
-    $image_folder = 'uploaded_img/' . $imagem;
+    $image = $_FILES['image']['name'];
+    $image = filter_var($image, FILTER_SANITIZE_STRING);
+    $image_size = $_FILES['image']['size'];
+    $image_tmp_name = $_FILES['image']['tmp_name'];
+    $image_folder = 'uploaded_img/' . $image;
 
     $select_products = $conn->prepare("SELECT * FROM `produtos` WHERE nome = ?");
     $select_products->execute([$nome]);
@@ -34,8 +34,8 @@ if (isset($_POST['add_product'])) {
         $message[] = 'product name already exist!';
     } else {
 
-        $insert_products = $conn->prepare("INSERT INTO `produtos`(nome, categoria, detalhes, preco, imagem) VALUES(?,?,?,?,?)");
-        $insert_products->execute([$nome, $categoria, $detalhes, $preco, $imagem]);
+        $insert_products = $conn->prepare("INSERT INTO `produtos`(nome, categoria, detalhes, preco, image) VALUES(?,?,?,?,?)");
+        $insert_products->execute([$nome, $categoria, $detalhes, $preco, $image]);
 
         if ($insert_products) {
             if ($image_size > 2000000) {
@@ -51,10 +51,10 @@ if (isset($_POST['add_product'])) {
 if (isset($_GET['delete'])) {
 
     $delete_id = $_GET['delete'];
-    $select_delete_image = $conn->prepare("SELECT imagem FROM `produtos` WHERE id = ?");
+    $select_delete_image = $conn->prepare("SELECT image FROM `produtos` WHERE id = ?");
     $select_delete_image->execute([$delete_id]);
     $fetch_delete_image = $select_delete_image->fetch(PDO::FETCH_ASSOC);
-    unlink('uploaded_img/' . $fetch_delete_image['imagem']);
+    unlink('uploaded_img/' . $fetch_delete_image['image']);
     $delete_products = $conn->prepare("DELETE FROM `produtos` WHERE id = ?");
     $delete_products->execute([$delete_id]);
     $delete_cart = $conn->prepare("DELETE FROM `carrinho` WHERE pid = ?");
@@ -75,7 +75,7 @@ if (isset($_GET['delete'])) {
     <link rel="shortcut icon" href="img/ifish-icon.png">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/admin_index.css">
-    ]
+    <link rel="stylesheet" href="css/admin_style.css">
     <link rel="stylesheet" href="css/admin_produtos.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -94,7 +94,7 @@ if (isset($_GET['delete'])) {
         <form action="" method="POST" enctype="multipart/form-data">
             <div class="flex">
                 <div class="inputBox">
-                    <input type="text" name="nome" class="box" required placeholder="enter product name">
+                    <input type="text" name="name" class="box" required placeholder="enter product name">
                     <select name="categoria" class="box" required>
                         <option value="" selected disabled>select category</option>
                         <option value="vegitables">vegitables</option>
@@ -105,7 +105,7 @@ if (isset($_GET['delete'])) {
                 </div>
                 <div class="inputBox">
                     <input type="number" min="0" name="preco" class="box" required placeholder="enter product price">
-                    <input type="file" name="imagem" required class="box" accept="image/jpg, image/jpeg, image/png">
+                    <input type="file" name="image" required class="box" accept="image/jpg, image/jpeg, image/png">
                 </div>
             </div>
             <textarea name="detalhes" class="box" required placeholder="enter product details" cols="30" rows="10"></textarea>
@@ -128,7 +128,7 @@ if (isset($_GET['delete'])) {
             ?>
                     <div class="box">
                         <div class="price">$<?= $fetch_products['preco']; ?>/-</div>
-                        <img src="uploaded_img/<?= $fetch_products['imagem']; ?>" alt="">
+                        <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
                         <div class="name"><?= $fetch_products['nome']; ?></div>
                         <div class="cat"><?= $fetch_products['categoria']; ?></div>
                         <div class="details"><?= $fetch_products['detalhes']; ?></div>
