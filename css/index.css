@@ -24,6 +24,36 @@
     --box-shadow-dark:0 0.1rem 0.5rem rgb(20, 20, 20);
 }
 
+
+.message{
+    position: sticky;
+    top:0;
+    max-width: 1200px;
+    margin:0 auto;
+    background-color: var(--light-bg);
+    padding:2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:1.5rem;
+    z-index: 10000;
+ }
+ 
+ .message span{
+    font-size: 2rem;
+    color:var(--black);
+ }
+ 
+ .message i{
+    font-size: 2.5rem;
+    cursor: pointer;
+    color:var(--red);
+ }
+ 
+ .message i:hover{
+    color:var(--black);
+ }
+
 /*Barra de Rolagem Lateral*/
 
 .body::-webkit-scrollbar {
@@ -404,6 +434,8 @@ li a:hover {
 li a:active {
     color: var(--white);
 }
+
+ 
 
 /*Responsividade*/
 /*

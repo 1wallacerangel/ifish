@@ -10,31 +10,31 @@ if (!isset($user_id)) {
    header('location:index.php');
 };
 
-
-if (isset($_POST['adicionar_carrinho'])) {
+if (isset($_POST['add_to_cart'])) {
 
    $pid = $_POST['pid'];
    $pid = filter_var($pid, FILTER_SANITIZE_STRING);
-   $nome = $_POST['nome'];
-   $nome = filter_var($nome, FILTER_SANITIZE_STRING);
-   $preco = $_POST['preco'];
-   $preco = filter_var($preco, FILTER_SANITIZE_STRING);
-   $image = $_POST['image'];
-   $image = filter_var($image, FILTER_SANITIZE_STRING);
-   $quantidade = $_POST['quantidade'];
-   $quantidade = filter_var($quantidade, FILTER_SANITIZE_STRING);
+   $p_name = $_POST['p_name'];
+   $p_name = filter_var($p_name, FILTER_SANITIZE_STRING);
+   $p_price = $_POST['p_price'];
+   $p_price = filter_var($p_price, FILTER_SANITIZE_STRING);
+   $p_image = $_POST['p_image'];
+   $p_image = filter_var($p_image, FILTER_SANITIZE_STRING);
+   $p_qty = $_POST['p_qty'];
+   $p_qty = filter_var($p_qty, FILTER_SANITIZE_STRING);
 
    $check_cart_numbers = $conn->prepare("SELECT * FROM `carrinho` WHERE nome = ? AND user_id = ?");
-   $check_cart_numbers->execute([$nome, $user_id]);
+   $check_cart_numbers->execute([$p_name, $user_id]);
 
    if ($check_cart_numbers->rowCount() > 0) {
       $message[] = 'already added to cart!';
    } else {
-      $insert_cart = $conn->prepare("INSERT INTO `carrinho`(user_id, pid, nome, preco, quantidade,image) VALUES(?,?,?,?,?,?)");
-      $insert_cart->execute([$user_id, $pid, $nome, $preco, $quantidade, $image]);
+      $insert_cart = $conn->prepare("INSERT INTO `carrinho`(user_id, pid, nome, preco, quantidade, image) VALUES(?,?,?,?,?,?)");
+      $insert_cart->execute([$user_id, $pid, $p_name, $p_price, $p_qty, $p_image]);
       $message[] = 'added to cart!';
    }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -52,29 +52,23 @@ if (isset($_POST['adicionar_carrinho'])) {
    <link rel="stylesheet" href="css/footer.css">
    <link rel="stylesheet" href="css/produtos.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
 </head>
 
 <body class="body">
 
    <?php include 'header.php'; ?>
 
-   <section class="p-category">
-
-      <a href="categoria.php?categoria=fruits">fruits</a>
-      <a href="categoria.php?categoria=vegitables">vegitables</a>
-      <a href="categoria.php?categoria=fish">fish</a>
-      <a href="categoria.php?categoria=meat">meat</a>
-
-   </section>
-
    <section class="products">
 
-      <h1 class="title">latest products</h1>
+      <h1 class="title">products categories</h1>
 
       <div class="box-container">
+
          <?php
-         $select_products = $conn->prepare("SELECT * FROM `produtos`");
-         $select_products->execute();
+         $category_name = $_GET['categoria'];
+         $select_products = $conn->prepare("SELECT * FROM `produtos` WHERE categoria = ?");
+         $select_products->execute([$category_name]);
          if ($select_products->rowCount() > 0) {
             while ($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)) {
          ?>
@@ -83,16 +77,16 @@ if (isset($_POST['adicionar_carrinho'])) {
                   <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
                   <div class="name"><?= $fetch_products['nome']; ?></div>
                   <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
-                  <input type="hidden" name="nome" value="<?= $fetch_products['nome']; ?>">
-                  <input type="hidden" name="preco" value="<?= $fetch_products['preco']; ?>">
-                  <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
-                  <input type="number" min="1" value="1" name="quantidade" class="qty">
-                  <input type="submit" value="add to cart" class="btn" name="adicionar_carrinho">
+                  <input type="hidden" name="p_name" value="<?= $fetch_products['nome']; ?>">
+                  <input type="hidden" name="p_price" value="<?= $fetch_products['preco']; ?>">
+                  <input type="hidden" name="p_image" value="<?= $fetch_products['image']; ?>">
+                  <input type="number" min="1" value="1" name="p_qty" class="qty">
+                  <input type="submit" value="add to cart" class="btn" name="add_to_cart">
                </form>
          <?php
             }
          } else {
-            echo '<p class="empty">no products added yet!</p>';
+            echo '<p class="empty">no products available!</p>';
          }
          ?>
 
@@ -100,9 +94,11 @@ if (isset($_POST['adicionar_carrinho'])) {
 
    </section>
 
+
    <?php include 'footer.php'; ?>
 
    <script src="js/script.js"></script>
+
 </body>
 
 </html>

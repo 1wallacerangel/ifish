@@ -125,5 +125,4 @@
 
     <script src="js/script_admin.js"></script>
 </body>
-
 </html>

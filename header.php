@@ -125,10 +125,12 @@ if (isset($_POST['update_qty'])) {
         <div class="fa-solid fa-moon" id="moon"></div>
         <div class="fa-solid fa-sun" id="sun"></div>
     </div>
-    <form action="" class="search-form">
-        <input type="search" id="search-box" placeholder="lorem...">
-        <label for="search-box" class="fas fa-search"></label>
-    </form>
+        <form action="search_page.php" method="POST" class="search-form">
+            <input name="search_box" type="search" id="search-box" placeholder="lorem...">
+            <a href="search_page.php"> <label for="search-box" name="search_btn" class="fas fa-search"></label></a>
+           
+        </form>
+        
     <div class="shopping-cart">
         <!--  <div class="box">
             <i class="fas fa-trash"></i>

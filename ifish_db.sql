@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24-Nov-2022 às 02:29
+-- Tempo de geração: 25-Nov-2022 às 02:42
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -84,8 +84,15 @@ CREATE TABLE `produtos` (
   `categoria` varchar(20) NOT NULL,
   `detalhes` varchar(500) NOT NULL,
   `preco` int(100) NOT NULL,
-  `imagem` varchar(100) NOT NULL
+  `image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `produtos`
+--
+
+INSERT INTO `produtos` (`id`, `nome`, `categoria`, `detalhes`, `preco`, `image`) VALUES
+(18, 'Banana', 'fruits', 'Banana', 150, 'banana.png');
 
 -- --------------------------------------------------------
 
@@ -151,7 +158,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `carrinho`
 --
 ALTER TABLE `carrinho`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `mensagem`
@@ -169,7 +176,7 @@ ALTER TABLE `ordens`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
