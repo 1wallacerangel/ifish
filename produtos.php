@@ -47,7 +47,6 @@ if (isset($_POST['adicionar_carrinho'])) {
    <title>IFISH</title>
    <link rel="shortcut icon" href="img/ifish-icon.png">
    <link rel="stylesheet" href="css/index.css">
-   <link rel="stylesheet" href="css/contato.css">
    <link rel="stylesheet" href="css/header.css">
    <link rel="stylesheet" href="css/footer.css">
    <link rel="stylesheet" href="css/produtos.css">
@@ -71,7 +70,7 @@ if (isset($_POST['adicionar_carrinho'])) {
       if (isset($message)) {
          foreach ($message as $message) {
             echo '
-            <div class="message">
+            <div class="mensagem">
             <span>' . $message . '</span>
             <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
             </div>
@@ -91,17 +90,19 @@ if (isset($_POST['adicionar_carrinho'])) {
          if ($select_products->rowCount() > 0) {
             while ($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)) {
          ?>
+            <div class="card-produtos">
                <form action="" class="box" method="POST">
-                  <div class="price">R$<span><?= $fetch_products['preco']; ?></span></div>
+                  <div class="preco">R$<span><?= $fetch_products['preco']; ?></span></div>
                   <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
-                  <div class="name"><?= $fetch_products['nome']; ?></div>
+                  <div class="nome"><?= $fetch_products['nome']; ?></div>
                   <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
                   <input type="hidden" name="nome" value="<?= $fetch_products['nome']; ?>">
                   <input type="hidden" name="preco" value="<?= $fetch_products['preco']; ?>">
                   <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
-                  <input type="number" min="1" value="1" name="quantidade" class="qty">
+                  <input type="number" min="1" value="1" name="quantidade" class="quantidade">
                   <input type="submit" value="Adicionar ao Carrinho" class="btn" name="adicionar_carrinho">
                </form>
+            </div>
          <?php
             }
          } else {

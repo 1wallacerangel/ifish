@@ -98,7 +98,7 @@ if (isset($_POST['add_carrinho'])) {
          <?php
             }
          } else {
-            echo '<p class="empty">nenhum produto disponível!</p>';
+            echo '<p class="empty-produtos">nenhum produto disponível!</p>';
          }
          ?>
 

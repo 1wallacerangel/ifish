@@ -139,7 +139,7 @@
    width: 100%;
 }
 
-.empty {
+.empty-produtos {
    padding: 1.5rem;
    background: var(--white);
    color: var(--red);
@@ -272,4 +272,10 @@
 
 .body.dark .produtos .mensagem i:hover{
    color:var(--white);
+}
+
+.body.dark .empty-produtos {
+   background: #373737;
+   color: var(--red);
+   box-shadow: var(--box-shadow-dark);
 }

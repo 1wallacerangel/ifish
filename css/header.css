@@ -288,6 +288,57 @@ input[type="search"]::-webkit-search-cancel-button {
     overflow: hidden;
 }
 
+.log-register .profile .profile-nome{
+    text-align: center;
+    display: inline-block;
+    padding: 2rem 2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    border-radius: .5rem;
+    color:var(--red);
+    background: #eee;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.update-btn{
+    width:100%;
+    text-align: center;
+    display: inline-block;
+    padding: 2rem 1.5rem;
+    font-size: 2rem;
+    border-radius: .5rem;
+    color:var(--red);
+    cursor: pointer;
+    background: #eee;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.update-btn:hover{
+    color:var(--white);
+    background: var(--red);
+}
+
+.logout-btn{
+    text-align: center;
+    display: inline-block;
+    padding: 2rem 1.5rem;
+    font-size: 3rem;
+    border-radius: .5rem;
+    color:var(--red);
+    cursor: pointer;
+    background: #eee;
+    width: 50%;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.logout-btn:hover{
+    color:var(--white);
+    background: var(--red);
+}
+
 .header .login-form{
     position: absolute;
     right:-110%;

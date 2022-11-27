@@ -1,12 +1,50 @@
-.contact {
-   margin-top: 95px;
-   margin-bottom: 35px;
+.titulo {
+   font-weight: bold;
+   text-align:center;
+   padding-top: 2.5rem;
+   margin-bottom: 2.3rem;
+   text-transform: uppercase;
+   color: var(--black);
+   font-size: 3.5rem;
+}
+
+.contato .mensagem{
+   position:static;
+   max-width: 1200px;
+   margin:0 auto;
+   padding-top:2rem;
+   padding-bottom:2rem;
+   display: flex;
+   align-items: center;
+   justify-content:center;
+   gap:1.5rem;
+   z-index: 10000;
+}
+
+.contato .mensagem span{
+   font-size: 2rem;
+   color:var(--black);
+}
+
+.contato .mensagem i{
+   font-size: 2.5rem;
+   cursor: pointer;
+   color:var(--red);
+}
+
+.contato .mensagem i:hover{
+   color:var(--black);
+}
+
+.contato {
+   margin-top: 50px;
    align-items: center;
    justify-content: center;
    justify-items: center;
+   padding-bottom: 5rem;
 }
 
-.contact form {
+.contato form {
    margin: 0 auto;
    max-width: 50rem;
    padding: 2rem;
@@ -16,7 +54,7 @@
    border-radius: .5rem;
 }
 
-.contact form .box {
+.contato form .box {
    width: 100%;
    padding: 1.5rem;
    border: var(--border);
@@ -27,12 +65,13 @@
    border-radius: .5rem;
 }
 
-.contact form textarea {
+.contato form textarea {
    height: 15rem;
    resize: none;
 }
 
-.contact-form .btn {
+.contato-form .btn {
+   width: 100%;
    margin-top: 1rem;
    display: inline-block;
    padding: 1.8rem 3rem;
@@ -44,33 +83,37 @@
    margin-bottom: 10px;
 }
 
-.contact-form .btn:hover {
+.contato-form .btn:hover {
    color: var(--white);
    background-color: var(--red);
 }
 
 /*darkmode*/
 
-.body.dark .title {
+.body.dark .titulo {
    color: var(--white);
 }
 
-.body.dark .contact form {
+.body.dark .contato form {
    background-color: #252525;
    box-shadow: var(--box-shadow-dark);
 }
 
-.body.dark .contact form .box {
+.body.dark .contato form .box {
    background-color: #373737;
    color: var(--white);
 }
 
-.body.dark .contact-form .btn {
+.body.dark .contato-form .btn {
    color: var(--red);
    background-color: #373737;
 }
 
-.body.dark .contact-form .btn:hover {
+.body.dark .contato-form .btn:hover {
    color: var(--white);
    background-color: var(--red);
+}
+
+.body.dark .contato .mensagem span{
+   color:var(--white);
 }
