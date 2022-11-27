@@ -67,9 +67,22 @@ if (isset($_POST['adicionar_carrinho'])) {
 
    </section>
 
-   <section class="products">
+   <?php
+      if (isset($message)) {
+         foreach ($message as $message) {
+            echo '
+            <div class="message">
+            <span>' . $message . '</span>
+            <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+            </div>
+            ';
+         }
+      }
+   ?>
+   
+   <section class="produtos">
 
-      <h1 class="title">latest products</h1>
+      <h1 class="titulo">PRODUTOS</h1>
 
       <div class="box-container">
          <?php
@@ -79,7 +92,7 @@ if (isset($_POST['adicionar_carrinho'])) {
             while ($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)) {
          ?>
                <form action="" class="box" method="POST">
-                  <div class="price">$<span><?= $fetch_products['preco']; ?></span>/-</div>
+                  <div class="price">R$<span><?= $fetch_products['preco']; ?></span></div>
                   <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
                   <div class="name"><?= $fetch_products['nome']; ?></div>
                   <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
@@ -87,7 +100,7 @@ if (isset($_POST['adicionar_carrinho'])) {
                   <input type="hidden" name="preco" value="<?= $fetch_products['preco']; ?>">
                   <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
                   <input type="number" min="1" value="1" name="quantidade" class="qty">
-                  <input type="submit" value="add to cart" class="btn" name="adicionar_carrinho">
+                  <input type="submit" value="Adicionar ao Carrinho" class="btn" name="adicionar_carrinho">
                </form>
          <?php
             }

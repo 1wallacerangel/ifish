@@ -128,7 +128,6 @@ if (isset($_POST['update_qty'])) {
         <form action="search_page.php" method="POST" class="search-form">
             <input name="search_box" type="search" id="search-box" placeholder="lorem...">
             <a href="search_page.php"> <label for="search-box" name="search_btn" class="fas fa-search"></label></a>
-           
         </form>
         
     <div class="shopping-cart">

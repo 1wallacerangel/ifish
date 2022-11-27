@@ -10,7 +10,7 @@ if (!isset($user_id)) {
    header('location:index.php');
 };
 
-if (isset($_POST['add_to_cart'])) {
+if (isset($_POST['add_carrinho'])) {
 
    $pid = $_POST['pid'];
    $pid = filter_var($pid, FILTER_SANITIZE_STRING);
@@ -27,11 +27,11 @@ if (isset($_POST['add_to_cart'])) {
    $check_cart_numbers->execute([$p_name, $user_id]);
 
    if ($check_cart_numbers->rowCount() > 0) {
-      $message[] = 'already added to cart!';
+      $message[] = 'Já foi adicionado ao carrinho!';
    } else {
       $insert_cart = $conn->prepare("INSERT INTO `carrinho`(user_id, pid, nome, preco, quantidade, image) VALUES(?,?,?,?,?,?)");
       $insert_cart->execute([$user_id, $pid, $p_name, $p_price, $p_qty, $p_image]);
-      $message[] = 'added to cart!';
+      $message[] = 'Adicionado ao carrinho!';
    }
 }
 
@@ -47,10 +47,9 @@ if (isset($_POST['add_to_cart'])) {
    <title>IFISH</title>
    <link rel="shortcut icon" href="img/ifish-icon.png">
    <link rel="stylesheet" href="css/index.css">
-   <link rel="stylesheet" href="css/contato.css">
    <link rel="stylesheet" href="css/header.css">
    <link rel="stylesheet" href="css/footer.css">
-   <link rel="stylesheet" href="css/produtos.css">
+   <link rel="stylesheet" href="css/categoria.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
 </head>
@@ -59,9 +58,20 @@ if (isset($_POST['add_to_cart'])) {
 
    <?php include 'header.php'; ?>
 
-   <section class="products">
-
-      <h1 class="title">products categories</h1>
+   <section class="produtos">
+      <?php
+      if (isset($message)) {
+         foreach ($message as $message) {
+            echo '
+            <div class="mensagem">
+            <span>' . $message . '</span>
+            <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+            </div>
+            ';
+         }
+      }
+      ?>
+      <h1 class="titulo"><?= $category_name = $_GET['categoria']; ?></h1>
 
       <div class="box-container">
 
@@ -72,21 +82,23 @@ if (isset($_POST['add_to_cart'])) {
          if ($select_products->rowCount() > 0) {
             while ($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)) {
          ?>
-               <form action="" class="box" method="POST">
-                  <div class="price">$<span><?= $fetch_products['preco']; ?></span>/-</div>
-                  <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
-                  <div class="name"><?= $fetch_products['nome']; ?></div>
-                  <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
-                  <input type="hidden" name="p_name" value="<?= $fetch_products['nome']; ?>">
-                  <input type="hidden" name="p_price" value="<?= $fetch_products['preco']; ?>">
-                  <input type="hidden" name="p_image" value="<?= $fetch_products['image']; ?>">
-                  <input type="number" min="1" value="1" name="p_qty" class="qty">
-                  <input type="submit" value="add to cart" class="btn" name="add_to_cart">
-               </form>
+               <div class="card-produtos">
+                  <form action="" class="box" method="POST">
+                     <div class="preco">R$<span><?= $fetch_products['preco']; ?></span></div>
+                     <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
+                     <div class="nome"><?= $fetch_products['nome']; ?></div>
+                     <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
+                     <input type="hidden" name="p_name" value="<?= $fetch_products['nome']; ?>">
+                     <input type="hidden" name="p_price" value="<?= $fetch_products['preco']; ?>">
+                     <input type="hidden" name="p_image" value="<?= $fetch_products['image']; ?>">
+                     <input type="number" min="1" value="1" name="p_qty" class="qty">
+                     <input type="submit" value="Adicionar ao Carrinho" class="btn" name="add_carrinho">
+                  </form>
+               </div>
          <?php
             }
          } else {
-            echo '<p class="empty">no products available!</p>';
+            echo '<p class="empty">nenhum produto disponível!</p>';
          }
          ?>
 
