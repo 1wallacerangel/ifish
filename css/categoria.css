@@ -9,45 +9,56 @@
    --box-shadow-dark: 0 0.1rem 0.5rem rgb(20, 20, 20);
 }
 
-.produtos .mensagem{
-   position:static;
+.produtos .mensagem {
+   position: static;
    max-width: 1200px;
-   margin:0 auto;
-   padding-top:2rem;
-   padding-bottom:2rem;
+   margin: 0 auto;
+   padding-top: 2rem;
+   padding-bottom: 2rem;
    display: flex;
    align-items: center;
-   justify-content:center;
-   gap:1.5rem;
+   justify-content: center;
+   gap: 1.5rem;
    z-index: 10000;
 }
 
-.produtos .mensagem span{
+.produtos .mensagem span {
    font-size: 2rem;
-   color:var(--black);
+   color: var(--black);
 }
 
-.produtos .mensagem i{
+.produtos .mensagem i {
    font-size: 2.5rem;
    cursor: pointer;
-   color:var(--red);
+   color: var(--red);
 }
 
-.produtos .mensagem i:hover{
-   color:var(--black);
+.produtos .mensagem i:hover {
+   color: var(--black);
 }
 
 .titulo {
-   text-align:center;
+   text-align: center;
    padding-top: 2.5rem;
    margin-bottom: 2.3rem;
-   text-transform: uppercase;
+   text-transform: capitalize;
    color: var(--black);
    font-size: 3.5rem;
 }
 
+.btn {
+   margin-top: 1rem;
+   display: inline-block;
+   padding: 1.8rem 3rem;
+   font-size: 2rem;
+   border-radius: 10px;
+   color: var(--black);
+   cursor: pointer;
+   background: #fff;
+}
+
 .card-produtos .btn {
-   
+
    color: var(--red);
    background: #eee;
    text-align: center;
@@ -59,6 +70,12 @@
    background: var(--red);
 }
 
+.card-produtos {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
 
 .produtos {
    padding: 5rem 2rem;
@@ -68,8 +85,8 @@
 
 .produtos .box-container {
    display: grid;
-   grid-template-columns: repeat(auto-fit, 35rem);
-   gap: 1.5rem;
+   grid-template-columns: repeat(auto-fit, 28rem);
+   gap: 6.5rem;
    justify-content: center;
    align-items: flex-start;
 }
@@ -79,7 +96,7 @@
    text-align: center;
    background-color: var(--white);
    box-shadow: var(--box-shadow);
-   border-radius: .5rem;
+   border-radius: 10px;
    position: relative;
 }
 
@@ -88,7 +105,7 @@
    top: 1rem;
    left: 1rem;
    padding: 1rem;
-   border-radius: .5rem;
+   border-radius: 10px;
    background-color: var(--red);
    font-size: 1.8rem;
    color: var(--white);
@@ -111,14 +128,10 @@
    padding: 1rem 0;
 }
 
-.produtos .box-container .box .quantidade {
-   background: #eee;
-   margin: .5rem 0;
-   border-radius: .5rem;
-   padding: 1.8rem 1.3rem;
+.produtos .box-container .box .detalhes {
    font-size: 1.8rem;
    color: var(--black);
-   width: 100%;
+   opacity: 70%;
 }
 
 .empty-produtos {
@@ -126,7 +139,7 @@
    background: var(--white);
    color: var(--red);
    border-radius: .5rem;
-   font-size: 2rem;
+   font-size: 1.85rem;
    text-align: center;
    box-shadow: var(--box-shadow);
    text-transform: capitalize;
@@ -172,17 +185,7 @@
    padding-top: 1rem;
 }
 
-.card-produtos .box-container .box .quantidade {
-
-   margin-top: 1rem;
-   border-radius: .5rem;
-   padding: 1.2rem 1.4rem;
-   font-size: 1.8rem;
-   color: var(--black);
-   width: 100%;
-}
-
-.body.dark .titulo{
+.body.dark .titulo {
    color: var(--white);
 }
 
@@ -195,8 +198,7 @@
    color: var(--white);
 }
 
-.body.dark .produtos .box-container .box .quantidade {
-   background: #373737;
+.body.dark .produtos .box-container .box .detalhes {
    color: var(--white);
 }
 
@@ -204,21 +206,22 @@
    color: var(--red);
    background: #373737;
 }
+
 .body.dark .card-produtos .btn:hover {
    color: var(--white);
    background: var(--red);
 }
 
-.body.dark .produtos .mensagem span{
-   color:var(--white);
+.body.dark .produtos .mensagem span {
+   color: var(--white);
 }
 
-.body.dark.produtos .mensagem i{
-   color:var(--red);
+.body.dark.produtos .mensagem i {
+   color: var(--red);
 }
 
-.body.dark .produtos .mensagem i:hover{
-   color:var(--white);
+.body.dark .produtos .mensagem i:hover {
+   color: var(--white);
 }
 
 .body.dark .empty-produtos {

@@ -27,11 +27,11 @@ if (isset($_POST['add_carrinho'])) {
    $check_cart_numbers->execute([$p_name, $user_id]);
 
    if ($check_cart_numbers->rowCount() > 0) {
-      $message[] = 'Já foi Adicionado ao Carrinho!';
+      $message[] = 'Já foi adicionado ao carrinho!';
    } else {
       $insert_cart = $conn->prepare("INSERT INTO `carrinho`(user_id, pid, nome, preco, quantidade, image) VALUES(?,?,?,?,?,?)");
       $insert_cart->execute([$user_id, $pid, $p_name, $p_price, $p_qty, $p_image]);
-      $message[] = 'Adicionado ao Carrinho!';
+      $message[] = 'Adicionado ao carrinho!';
    }
 }
 
@@ -92,7 +92,7 @@ if (isset($_POST['add_carrinho'])) {
                      <input type="hidden" name="p_name" value="<?= $fetch_products['nome']; ?>">
                      <input type="hidden" name="p_price" value="<?= $fetch_products['preco']; ?>">
                      <input type="hidden" name="p_image" value="<?= $fetch_products['image']; ?>">
-                     <input type="submit" value="Adicionar ao Carrinho" class="btn" name="add_carrinho">
+                     <input type="submit" value="Adicionar" class="btn" name="add_carrinho">
                   </form>
                </div>
          <?php

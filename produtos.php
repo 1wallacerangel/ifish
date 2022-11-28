@@ -28,11 +28,11 @@ if (isset($_POST['adicionar_carrinho'])) {
    $check_cart_numbers->execute([$nome, $user_id]);
 
    if ($check_cart_numbers->rowCount() > 0) {
-      $message[] = 'already added to cart!';
+      $message[] = 'Já foi adicionado ao carrinho!';
    } else {
       $insert_cart = $conn->prepare("INSERT INTO `carrinho`(user_id, pid, nome, preco, quantidade,image) VALUES(?,?,?,?,?,?)");
       $insert_cart->execute([$user_id, $pid, $nome, $preco, $quantidade, $image]);
-      $message[] = 'added to cart!';
+      $message[] = 'Adicionado ao carrinho!';
    }
 }
 ?>
@@ -67,21 +67,21 @@ if (isset($_POST['adicionar_carrinho'])) {
    </section>
 
    <?php
-      if (isset($message)) {
-         foreach ($message as $message) {
-            echo '
+   if (isset($message)) {
+      foreach ($message as $message) {
+         echo '
             <div class="mensagem">
             <span>' . $message . '</span>
             <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
             </div>
             ';
-         }
       }
+   }
    ?>
-   
+
    <section class="produtos">
 
-      <h1 class="titulo">PRODUTOS</h1>
+      <h1 class="titulo">produtos</h1>
 
       <div class="box-container">
          <?php
@@ -90,19 +90,19 @@ if (isset($_POST['adicionar_carrinho'])) {
          if ($select_products->rowCount() > 0) {
             while ($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)) {
          ?>
-            <div class="card-produtos">
-               <form action="" class="box" method="POST">
-                  <div class="preco">R$<span><?= $fetch_products['preco']; ?></span></div>
-                  <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
-                  <div class="nome"><?= $fetch_products['nome']; ?></div>
-                  <div class="detalhes"><?= $fetch_products['detalhes']; ?></div>
-                  <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
-                  <input type="hidden" name="nome" value="<?= $fetch_products['nome']; ?>">
-                  <input type="hidden" name="preco" value="<?= $fetch_products['preco']; ?>">
-                  <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
-                  <input type="submit" value="Adicionar" class="btn" name="adicionar_carrinho">
-               </form>
-            </div>
+               <div class="card-produtos">
+                  <form action="" class="box" method="POST">
+                     <div class="preco">R$<span><?= $fetch_products['preco']; ?></span></div>
+                     <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
+                     <div class="nome"><?= $fetch_products['nome']; ?></div>
+                     <div class="detalhes"><?= $fetch_products['detalhes']; ?></div>
+                     <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
+                     <input type="hidden" name="nome" value="<?= $fetch_products['nome']; ?>">
+                     <input type="hidden" name="preco" value="<?= $fetch_products['preco']; ?>">
+                     <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
+                     <input type="submit" value="Adicionar" class="btn" name="adicionar_carrinho">
+                  </form>
+               </div>
          <?php
             }
          } else {
@@ -117,6 +117,7 @@ if (isset($_POST['adicionar_carrinho'])) {
    <?php include 'footer.php'; ?>
 
    <script src="js/script.js"></script>
+   
 </body>
 
 </html>
