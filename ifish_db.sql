@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25-Nov-2022 às 02:42
+-- Tempo de geração: 29-Nov-2022 às 00:24
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -92,7 +92,12 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id`, `nome`, `categoria`, `detalhes`, `preco`, `image`) VALUES
-(18, 'Banana', 'fruits', 'Banana', 150, 'banana.png');
+(18, 'Banana', 'fruits', 'Banana', 10, 'banana.png'),
+(19, 'Maça', 'fruits', 'Maça', 25, 'apple.png'),
+(20, 'Peixe', 'fish', 'Peixe', 150, 'oily fishes.png'),
+(21, 'Laranja', 'fruits', 'Laranja', 666, 'orange.png'),
+(22, 'Uva', 'fruits', 'Uva', 50, 'green grapes.png'),
+(23, 'Tomate', 'fruits', 'Tomate', 13, 'tomato.png');
 
 -- --------------------------------------------------------
 
@@ -158,13 +163,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `carrinho`
 --
 ALTER TABLE `carrinho`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT de tabela `mensagem`
 --
 ALTER TABLE `mensagem`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de tabela `ordens`
@@ -176,13 +181,13 @@ ALTER TABLE `ordens`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
