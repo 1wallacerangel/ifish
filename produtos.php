@@ -95,12 +95,12 @@ if (isset($_POST['adicionar_carrinho'])) {
                   <div class="preco">R$<span><?= $fetch_products['preco']; ?></span></div>
                   <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
                   <div class="nome"><?= $fetch_products['nome']; ?></div>
+                  <div class="detalhes"><?= $fetch_products['detalhes']; ?></div>
                   <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
                   <input type="hidden" name="nome" value="<?= $fetch_products['nome']; ?>">
                   <input type="hidden" name="preco" value="<?= $fetch_products['preco']; ?>">
                   <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
-                  <input type="number" min="1" value="1" name="quantidade" class="quantidade">
-                  <input type="submit" value="Adicionar ao Carrinho" class="btn" name="adicionar_carrinho">
+                  <input type="submit" value="Adicionar" class="btn" name="adicionar_carrinho">
                </form>
             </div>
          <?php

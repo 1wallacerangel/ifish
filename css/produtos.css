@@ -39,6 +39,7 @@
 
 .titulo {
    font-weight: bold;
+   font-weight: bold;
    text-align:center;
    padding-top: 2.5rem;
    margin-bottom: 2.3rem;
@@ -79,6 +80,7 @@
 }
 
 .produtos .box-container .box {
+   width: 70%;
    padding: 2rem;
    text-align: center;
    background-color: var(--white);
@@ -102,24 +104,6 @@
    font-size: 2.5rem;
    color: var(--white);
    margin: 0 .2rem;
-}
-
-.produtos .box-container .box .fa-eye {
-   position: absolute;
-   top: 1rem;
-   right: 1rem;
-   border-radius: .5rem;
-   height: 4.5rem;
-   line-height: 4.3rem;
-   width: 5rem;
-   color: var(--black);
-   font-size: 2rem;
-   background-color: var(--white);
-}
-
-.produtos .box-container .box .fa-eye:hover {
-   color: var(--white);
-   background-color: var(--black);
 }
 
 .produtos .box-container .box img {
@@ -216,41 +200,6 @@
    font-size: 2.5rem;
    color: var(--white);
    margin: 0 .2rem;
-}
-
-.card-produtos .box-container .box .fa-eye {
-   position: absolute;
-   top: 1rem;
-   right: 1rem;
-   border-radius: .5rem;
-   height: 4.5rem;
-   line-height: 4.3rem;
-   width: 5rem;
-   color: var(--black);
-   font-size: 2rem;
-   background-color: var(--white);
-}
-
-.card-produtos .box-container .box .fa-eye:hover {
-   color: var(--white);
-   background-color: var(--black);
-}
-
-.card-produtos .box-container .box .fa-times {
-   position: absolute;
-   top: 1rem;
-   left: 1rem;
-   border-radius: .5rem;
-   height: 4.5rem;
-   line-height: 4.3rem;
-   width: 5rem;
-   color: var(--white);
-   font-size: 2rem;
-   background-color: var(--red);
-}
-
-.card-produtos .box-container .box .fa-times:hover {
-   background-color: var(--black);
 }
 
 .card-produtos .box-container .box img {
