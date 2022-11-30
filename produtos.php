@@ -59,10 +59,9 @@ if (isset($_POST['adicionar_carrinho'])) {
 
    <section class="p-category">
 
-      <a href="categoria.php?categoria=fruits">fruits</a>
-      <a href="categoria.php?categoria=vegitables">vegitables</a>
-      <a href="categoria.php?categoria=fish">fish</a>
-      <a href="categoria.php?categoria=meat">meat</a>
+      <a href="categoria.php?categoria=peixe">peixe</a>
+      <a href="categoria.php?categoria=crustáceos">crustáceos</a>
+      <a href="categoria.php?categoria=moluscos">moluscos</a>
 
    </section>
 
