@@ -98,9 +98,9 @@ if(isset($_GET['delete'])){
     <nav class=" navbar">
     <a href="admin_index.php">ínicio</a>
     <a href="admin_produtos.php">produtos</a>
-    <a href="admin_ordens.php">ordens</a>
+    <a href="admin_pedidos.php">pedidos</a>
     <a href="admin_usuarios.php">usuários</a>
-    <a href="admin_mensagens.php">mensagens</a>
+    <a href="admin_contato.php">mensagens</a>
     </nav>
     <div class="icons">
         <div class="fas fa-bars" id="menu-btn"></div>

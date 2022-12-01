@@ -27,14 +27,14 @@ if (isset($_POST['add_product'])) {
     $image_tmp_name = $_FILES['image']['tmp_name'];
     $image_folder = 'uploaded_img/' . $image;
 
-    $select_products = $conn->prepare("SELECT * FROM `produtos` WHERE nome = ?");
+    $select_products = $conn->prepare("SELECT * FROM `produto` WHERE nome = ?");
     $select_products->execute([$nome]);
 
     if ($select_products->rowCount() > 0) {
         $message[] = 'product name already exist!';
     } else {
 
-        $insert_products = $conn->prepare("INSERT INTO `produtos`(nome, categoria, detalhes, preco, image) VALUES(?,?,?,?,?)");
+        $insert_products = $conn->prepare("INSERT INTO `produto`(nome, categoria, detalhe, preco, image) VALUES(?,?,?,?,?)");
         $insert_products->execute([$nome, $categoria, $detalhes, $preco, $image]);
 
         if ($insert_products) {
@@ -51,11 +51,11 @@ if (isset($_POST['add_product'])) {
 if (isset($_GET['delete'])) {
 
     $delete_id = $_GET['delete'];
-    $select_delete_image = $conn->prepare("SELECT image FROM `produtos` WHERE id = ?");
+    $select_delete_image = $conn->prepare("SELECT image FROM `produto` WHERE id = ?");
     $select_delete_image->execute([$delete_id]);
     $fetch_delete_image = $select_delete_image->fetch(PDO::FETCH_ASSOC);
     unlink('uploaded_img/' . $fetch_delete_image['image']);
-    $delete_products = $conn->prepare("DELETE FROM `produtos` WHERE id = ?");
+    $delete_products = $conn->prepare("DELETE FROM `produto` WHERE id = ?");
     $delete_products->execute([$delete_id]);
     $delete_cart = $conn->prepare("DELETE FROM `carrinho` WHERE pid = ?");
     $delete_cart->execute([$delete_id]);
@@ -97,7 +97,7 @@ if (isset($_GET['delete'])) {
                     <input type="text" name="name" class="box" required placeholder="enter product name">
                     <select name="categoria" class="box" required>
                         <option value="" selected disabled>select category</option>
-                        <option value="peixe">Peixe</option>
+                        <option value="peixes">Peixes</option>
                         <option value="crustáceos">Crustáceos</option>
                         <option value="moluscos">Moluscos</option>
                     </select>
@@ -120,7 +120,7 @@ if (isset($_GET['delete'])) {
         <div class="box-container">
 
             <?php
-            $show_products = $conn->prepare("SELECT * FROM `produtos`");
+            $show_products = $conn->prepare("SELECT * FROM `produto`");
             $show_products->execute();
             if ($show_products->rowCount() > 0) {
                 while ($fetch_products = $show_products->fetch(PDO::FETCH_ASSOC)) {
@@ -130,7 +130,7 @@ if (isset($_GET['delete'])) {
                         <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
                         <div class="name"><?= $fetch_products['nome']; ?></div>
                         <div class="cat"><?= $fetch_products['categoria']; ?></div>
-                        <div class="details"><?= $fetch_products['detalhes']; ?></div>
+                        <div class="details"><?= $fetch_products['detalhe']; ?></div>
                         <div class="flex-btn">
                             <a href="admin_update_product.php?update=<?= $fetch_products['id']; ?>" class="option-btn">update</a>
                             <a href="admin_produtos.php?delete=<?= $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('delete this product?');">delete</a>
@@ -139,7 +139,7 @@ if (isset($_GET['delete'])) {
             <?php
                 }
             } else {
-                echo '<p class="empty">now products added yet!</p>';
+                echo '<p class="empty">nenhum produto foi adicionado!</p>';
             }
             ?>
 

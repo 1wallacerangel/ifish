@@ -77,7 +77,7 @@ if (isset($_POST['add_carrinho'])) {
 
          <?php
          $category_name = $_GET['categoria'];
-         $select_products = $conn->prepare("SELECT * FROM `produtos` WHERE categoria = ?");
+         $select_products = $conn->prepare("SELECT * FROM `produto` WHERE categoria = ?");
          $select_products->execute([$category_name]);
          if ($select_products->rowCount() > 0) {
             while ($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)) {
@@ -87,7 +87,7 @@ if (isset($_POST['add_carrinho'])) {
                      <div class="preco">R$<span><?= $fetch_products['preco']; ?></span></div>
                      <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
                      <div class="nome"><?= $fetch_products['nome']; ?></div>
-                     <div class="detalhes"><?= $fetch_products['detalhes']; ?></div>
+                     <div class="detalhes"><?= $fetch_products['detalhe']; ?></div>
                      <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
                      <input type="hidden" name="p_name" value="<?= $fetch_products['nome']; ?>">
                      <input type="hidden" name="p_price" value="<?= $fetch_products['preco']; ?>">

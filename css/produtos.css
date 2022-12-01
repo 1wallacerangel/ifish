@@ -148,10 +148,8 @@
    gap: 1.5rem;
    justify-content: center;
    align-items: flex-start;
-}
-
-.p-category {
    padding-bottom: 0;
+   width: 70.8%;
 }
 
 .p-category a {
@@ -173,12 +171,12 @@
    transition: all 0.3s;
 }
 
-.empty {
+.empty-produtos {
    padding: 1.5rem;
    background: var(--white);
    color: var(--red);
-   border-radius: .5rem;
-   font-size: 2rem;
+   border-radius: 10px;
+   font-size: 1.85rem;
    text-align: center;
    box-shadow: var(--box-shadow);
    text-transform: capitalize;

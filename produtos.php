@@ -44,7 +44,7 @@ if (isset($_POST['adicionar_carrinho'])) {
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>IFISH</title>
+   <title>IFISH - Produtos</title>
    <link rel="shortcut icon" href="img/ifish-icon.png">
    <link rel="stylesheet" href="css/index.css">
    <link rel="stylesheet" href="css/header.css">
@@ -59,7 +59,7 @@ if (isset($_POST['adicionar_carrinho'])) {
 
    <section class="p-category">
 
-      <a href="categoria.php?categoria=peixe">peixe</a>
+      <a href="categoria.php?categoria=peixes">peixes</a>
       <a href="categoria.php?categoria=crustáceos">crustáceos</a>
       <a href="categoria.php?categoria=moluscos">moluscos</a>
 
@@ -84,7 +84,7 @@ if (isset($_POST['adicionar_carrinho'])) {
 
       <div class="box-container">
          <?php
-         $select_products = $conn->prepare("SELECT * FROM `produtos`");
+         $select_products = $conn->prepare("SELECT * FROM `produto`");
          $select_products->execute();
          if ($select_products->rowCount() > 0) {
             while ($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)) {
@@ -94,18 +94,19 @@ if (isset($_POST['adicionar_carrinho'])) {
                      <div class="preco">R$<span><?= $fetch_products['preco']; ?></span></div>
                      <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
                      <div class="nome"><?= $fetch_products['nome']; ?></div>
-                     <div class="detalhes"><?= $fetch_products['detalhes']; ?></div>
+                     <div class="detalhes"><?= $fetch_products['detalhe']; ?></div>
                      <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
                      <input type="hidden" name="nome" value="<?= $fetch_products['nome']; ?>">
                      <input type="hidden" name="preco" value="<?= $fetch_products['preco']; ?>">
                      <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
+                     <input type="hidden" value="1" name="quantidade">
                      <input type="submit" value="Adicionar" class="btn" name="adicionar_carrinho">
                   </form>
                </div>
          <?php
             }
          } else {
-            echo '<p class="empty">no products added yet!</p>';
+            echo '<p class="empty-produtos">nenhum produto disponível!</p>';
          }
          ?>
 
@@ -116,7 +117,7 @@ if (isset($_POST['adicionar_carrinho'])) {
    <?php include 'footer.php'; ?>
 
    <script src="js/script.js"></script>
-   
+
 </body>
 
 </html>

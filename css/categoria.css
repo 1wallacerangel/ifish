@@ -138,7 +138,7 @@
    padding: 1.5rem;
    background: var(--white);
    color: var(--red);
-   border-radius: .5rem;
+   border-radius: 10px;
    font-size: 1.85rem;
    text-align: center;
    box-shadow: var(--box-shadow);

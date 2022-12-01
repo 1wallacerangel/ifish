@@ -1,3 +1,14 @@
+:root {
+    --white: #ffffff;
+    --white-medium: #f9f9f9;
+    --light-color: #666;
+    --black: #000000;
+    --red: #cc1825;
+    --dark-red: #9a1e25;
+    --box-shadow: 0 0.1rem 0.5rem #ccc;
+    --box-shadow-dark: 0 0.1rem 0.5rem rgb(20, 20, 20);
+ }
+
 .placed-orders {
     margin-top: 50px;
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29-Nov-2022 às 00:46
+-- Tempo de geração: 01-Dez-2022 às 01:38
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -37,6 +37,13 @@ CREATE TABLE `carrinho` (
   `image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `carrinho`
+--
+
+INSERT INTO `carrinho` (`id`, `user_id`, `pid`, `nome`, `preco`, `quantidade`, `image`) VALUES
+(93, 31, 19, 'Maça', 25, 0, 'apple.png');
+
 -- --------------------------------------------------------
 
 --
@@ -52,13 +59,20 @@ CREATE TABLE `mensagem` (
   `mensagem` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `mensagem`
+--
+
+INSERT INTO `mensagem` (`id`, `user_id`, `nome`, `email`, `telefone`, `mensagem`) VALUES
+(17, 7, 'Wallace Rangel', 'wallacerangelone2@gmail.com', '22998121122', 'wfweffwe');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ordens`
+-- Estrutura da tabela `pedido`
 --
 
-CREATE TABLE `ordens` (
+CREATE TABLE `pedido` (
   `id` int(100) NOT NULL,
   `user_id` int(100) NOT NULL,
   `nome` varchar(100) NOT NULL,
@@ -66,35 +80,42 @@ CREATE TABLE `ordens` (
   `email` varchar(100) NOT NULL,
   `metodo` varchar(50) NOT NULL,
   `endereco` varchar(500) NOT NULL,
-  `total_produtos` varchar(1000) NOT NULL,
+  `total_produto` varchar(1000) NOT NULL,
   `total_preco` int(100) NOT NULL,
   `data_ordem` varchar(50) NOT NULL,
   `status_pagamento` varchar(20) NOT NULL DEFAULT 'pendente'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `pedido`
+--
+
+INSERT INTO `pedido` (`id`, `user_id`, `nome`, `telefone`, `email`, `metodo`, `endereco`, `total_produto`, `total_preco`, `data_ordem`, `status_pagamento`) VALUES
+(4, 7, 'Wallace Rangel', 2147483647, 'wallacerangelone2@gmail.com', 'credit card', 'flat no. Rua Recanto da saudade 303 Araruama Rio de Janeiro Brasil - 28970000', ', Maça ( 1 )', 25, '', '01-Dec-2022');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `produtos`
+-- Estrutura da tabela `produto`
 --
 
-CREATE TABLE `produtos` (
+CREATE TABLE `produto` (
   `id` int(100) NOT NULL,
   `nome` varchar(100) NOT NULL,
   `categoria` varchar(20) NOT NULL,
-  `detalhes` varchar(500) NOT NULL,
+  `detalhe` varchar(500) NOT NULL,
   `preco` int(100) NOT NULL,
   `image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `produtos`
+-- Extraindo dados da tabela `produto`
 --
 
-INSERT INTO `produtos` (`id`, `nome`, `categoria`, `detalhes`, `preco`, `image`) VALUES
-(18, 'Banana', 'fruits', 'Banana', 10, 'banana.png'),
+INSERT INTO `produto` (`id`, `nome`, `categoria`, `detalhe`, `preco`, `image`) VALUES
+(18, 'Banana', 'crustáceos', 'Banana', 10, 'banana.png'),
 (19, 'Maça', 'fruits', 'Maça', 25, 'apple.png'),
-(20, 'Peixe', 'fish', 'Peixe', 150, 'oily fishes.png'),
+(20, 'Peixe', 'peixes', 'Peixe', 150, 'oily fishes.png'),
 (21, 'Laranja', 'fruits', 'Laranja', 666, 'orange.png'),
 (22, 'Uva', 'fruits', 'Uva', 50, 'green grapes.png'),
 (23, 'Tomate', 'fruits', 'Tomate', 13, 'tomato.png');
@@ -138,15 +159,15 @@ ALTER TABLE `mensagem`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `ordens`
+-- Índices para tabela `pedido`
 --
-ALTER TABLE `ordens`
+ALTER TABLE `pedido`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `produtos`
+-- Índices para tabela `produto`
 --
-ALTER TABLE `produtos`
+ALTER TABLE `produto`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -163,24 +184,24 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `carrinho`
 --
 ALTER TABLE `carrinho`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 
 --
 -- AUTO_INCREMENT de tabela `mensagem`
 --
 ALTER TABLE `mensagem`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT de tabela `ordens`
+-- AUTO_INCREMENT de tabela `pedido`
 --
-ALTER TABLE `ordens`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `pedido`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de tabela `produtos`
+-- AUTO_INCREMENT de tabela `produto`
 --
-ALTER TABLE `produtos`
+ALTER TABLE `produto`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --

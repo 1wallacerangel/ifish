@@ -15,7 +15,7 @@ if (isset($_POST['update_order'])) {
    $order_id = $_POST['order_id'];
    $update_payment = $_POST['update_payment'];
    $update_payment = filter_var($update_payment, FILTER_SANITIZE_STRING);
-   $update_orders = $conn->prepare("UPDATE `ordens` SET status_pagamento = ? WHERE id = ?");
+   $update_orders = $conn->prepare("UPDATE `pedido` SET status_pagamento = ? WHERE id = ?");
    $update_orders->execute([$update_payment, $order_id]);
    $message[] = 'payment has been updated!';
 };
@@ -23,9 +23,9 @@ if (isset($_POST['update_order'])) {
 if (isset($_GET['delete'])) {
 
    $delete_id = $_GET['delete'];
-   $delete_orders = $conn->prepare("DELETE FROM `ordens` WHERE id = ?");
+   $delete_orders = $conn->prepare("DELETE FROM `pedido` WHERE id = ?");
    $delete_orders->execute([$delete_id]);
-   header('location:admin_ordens.php');
+   header('location:admin_pedidos.php');
 }
 
 ?>
@@ -61,31 +61,31 @@ if (isset($_GET['delete'])) {
       <div class="box-container">
 
          <?php
-         $select_orders = $conn->prepare("SELECT * FROM `ordens`");
+         $select_orders = $conn->prepare("SELECT * FROM `pedido`");
          $select_orders->execute();
          if ($select_orders->rowCount() > 0) {
             while ($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)) {
          ?>
                <div class="box">
                   <p> user id : <span><?= $fetch_orders['user_id']; ?></span> </p>
-                  <p> placed on : <span><?= $fetch_orders['placed_on']; ?></span> </p>
+                  <p> placed on : <span><?= $fetch_orders['status_pagamento']; ?></span> </p>
                   <p> name : <span><?= $fetch_orders['nome']; ?></span> </p>
                   <p> email : <span><?= $fetch_orders['email']; ?></span> </p>
                   <p> number : <span><?= $fetch_orders['telefone']; ?></span> </p>
                   <p> address : <span><?= $fetch_orders['endereco']; ?></span> </p>
-                  <p> total products : <span><?= $fetch_orders['total_produtos']; ?></span> </p>
-                  <p> total price : <span>$<?= $fetch_orders['total_preco']; ?>/-</span> </p>
-                  <p> payment method : <span><?= $fetch_orders['metedo']; ?></span> </p>
+                  <p> total products : <span><?= $fetch_orders['total_produto']; ?></span> </p>
+                  <p> total price : <span>R$<?= $fetch_orders['total_preco']; ?></span> </p>
+                  <p> payment method : <span><?= $fetch_orders['metodo']; ?></span> </p>
                   <form action="" method="POST">
                      <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
                      <select name="update_payment" class="drop-down">
                         <option value="" selected disabled><?= $fetch_orders['status_pagamento']; ?></option>
-                        <option value="pending">pending</option>
+                        <option value="pendente">pedente</option>
                         <option value="completed">completed</option>
                      </select>
                      <div class="flex-btn">
                         <input type="submit" name="update_order" class="option-btn" value="udate">
-                        <a href="admin_ordens.php?delete=<?= $fetch_orders['id']; ?>" class="delete-btn" onclick="return confirm('delete this order?');">delete</a>
+                        <a href="admin_pedidos.php?delete=<?= $fetch_orders['id']; ?>" class="delete-btn" onclick="return confirm('delete this order?');">delete</a>
                      </div>
                   </form>
                </div>

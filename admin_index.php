@@ -28,10 +28,10 @@
             <div class="box">
                 <?php
                 $total_pendings = 0;
-                $select_pendings = $conn->prepare("SELECT * FROM `ordens` WHERE status_pagamento = ?");
-                $select_pendings->execute(['pending']);
+                $select_pendings = $conn->prepare("SELECT * FROM `pedido` WHERE status_pagamento = ?");
+                $select_pendings->execute(['pendente']);
                 while ($fetch_pendings = $select_pendings->fetch(PDO::FETCH_ASSOC)) {
-                    $total_pendings += $fetch_pendings['total_price'];
+                    $total_pendings += $fetch_pendings['total_preco'];
                 };
                 ?>
                 <h3>$<?= $total_pendings; ?>/-</h3>
@@ -42,10 +42,10 @@
             <div class="box">
                 <?php
                 $total_completed = 0;
-                $select_completed = $conn->prepare("SELECT * FROM `ordens` WHERE status_pagamento = ?");
+                $select_completed = $conn->prepare("SELECT * FROM `pedido` WHERE status_pagamento = ?");
                 $select_completed->execute(['completed']);
                 while ($fetch_completed = $select_completed->fetch(PDO::FETCH_ASSOC)) {
-                    $total_completed += $fetch_completed['total_price'];
+                    $total_completed += $fetch_completed['total_preco'];
                 };
                 ?>
                 <h3>$<?= $total_completed; ?>/-</h3>
@@ -55,7 +55,7 @@
 
             <div class="box">
                 <?php
-                $select_orders = $conn->prepare("SELECT * FROM `ordens`");
+                $select_orders = $conn->prepare("SELECT * FROM `pedido`");
                 $select_orders->execute();
                 $number_of_orders = $select_orders->rowCount();
                 ?>
@@ -66,7 +66,7 @@
 
             <div class="box">
                 <?php
-                $select_products = $conn->prepare("SELECT * FROM `produtos`");
+                $select_products = $conn->prepare("SELECT * FROM `produto`");
                 $select_products->execute();
                 $number_of_products = $select_products->rowCount();
                 ?>
