@@ -1,0 +1,231 @@
+@font-face {
+    font-family: SulSansRegular;
+    src: local(SulSans), url(font/SulSans-Regular.otf);
+}
+
+:root {
+    --white: #ffffff;
+    --white-medium: #f9f9f9;
+    --light-color: #666;
+    --black: #000000;
+    --red: #cc1825;
+    --dark-red: #9a1e25;
+    --box-shadow: 0 0.1rem 0.5rem #ccc;
+    --box-shadow-dark: 0 0.1rem 0.5rem rgb(20, 20, 20);
+}
+
+.mensagem {
+    position: static;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    z-index: 10000;
+}
+
+.mensagem span {
+    font-size: 2rem;
+    color: var(--black);
+    text-transform: capitalize;
+}
+
+.mensagem i {
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: var(--red);
+}
+
+.mensagem i:hover {
+    color: var(--black);
+}
+
+.empty {
+    padding: 1.5rem;
+    background: var(--white);
+    color: var(--red);
+    border-radius: 10px;
+    font-size: 1.85rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    text-transform: capitalize;
+}
+
+.btn {
+    background: #eee;
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: 10px;
+    color: var(--red);
+    font-size: 2rem;
+    padding: 1.8rem 3rem;
+    text-transform: capitalize;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background: var(--red);
+    color: var(--white);
+}
+
+.display-orders {
+    text-align: center;
+    padding-bottom: 0;
+    padding-top: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 3rem 2rem;
+}
+
+.display-orders p {
+    display: inline-block;
+    padding: 1rem 2rem;
+    margin: 1rem .5rem;
+    font-size: 2rem;
+    text-align: center;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+}
+
+.display-orders p span {
+    color: var(--red);
+}
+
+.display-orders .grand-total {
+    margin-top: 2rem;
+    font-size: 2.5rem;
+    color: var(--light-color);
+    text-transform: capitalize;
+}
+
+.display-orders .grand-total span {
+    color: var(--red);
+}
+
+.checkout-orders  {
+    padding: 3rem 2rem;
+    padding-top: 0;
+}
+
+
+.checkout-orders form {
+    padding: 2rem;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+}
+
+.checkout-orders form h3 {
+    color: var(--black);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    font-size: 3.5rem;
+}
+
+.checkout-orders form .flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: space-between;
+}
+
+.checkout-orders form .flex .inputBox {
+
+    width: 49%;
+}
+
+.checkout-orders form .flex .inputBox .box {
+    width: 100%;
+    border-radius: 10px;
+    font-size: 1.8rem;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    color: var(--light-color);
+    background-color: #eee;
+}
+
+.checkout-orders form .flex .inputBox span {
+    font-size: 1.8rem;
+    color: var(--black);
+    text-transform: capitalize;
+}
+
+/*Darkmode*/
+
+.body.dark .display-orders p {
+    color: var(--white);
+    background-color: #373737;
+    box-shadow: var(--box-shadow-dark);
+}
+
+.body.dark .display-orders p span {
+    color: var(--red);
+}
+
+.body.dark .checkout-orders form {
+    background-color: #252525;
+    box-shadow: var(--box-shadow-dark);
+}
+
+.body.dark .checkout-orders form h3 {
+    color: var(--white);
+}
+
+.body.dark .checkout-orders form .flex .inputBox .box {
+    background-color: #373737;
+}
+
+.body.dark .checkout-orders form .flex .inputBox span {
+    color: var(--white);
+}
+
+.body.dark .btn {
+    background: #373737;
+    color: var(--red);
+}
+
+.body.dark .btn:hover {
+    background: var(--red);
+    color: var(--white);
+}
+
+.body.dark .display-orders .empty {
+    color: var(--red);
+    background-color: #373737;
+    box-shadow: var(--box-shadow-dark);
+}
+
+.body.dark .mensagem span {
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.body.dark .mensagem i {
+    color: var(--red);
+}
+
+.body.dark .mensagem i:hover {
+    color: var(--white);
+}
+
+@media (max-width:768px) {
+
+    .checkout-orders form .flex .inputBox {
+        width: 100%;
+    }
+
+}

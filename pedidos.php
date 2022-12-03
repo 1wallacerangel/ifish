@@ -45,19 +45,19 @@ if(!isset($user_id)){
    ?>
    <div class="box">
       <p> data do pedido : <span><?= $fetch_orders['data_pedido']; ?></span> </p>
-      <p> nome : <span><?= $fetch_orders['nome']; ?></span> </p>
+      <p> CPF : <span><?= $fetch_orders['cpf']; ?></span> </p>
       <p> telefone : <span><?= $fetch_orders['telefone']; ?></span> </p>
       <p> email : <span><?= $fetch_orders['email']; ?></span> </p>
       <p> endereço : <span><?= $fetch_orders['endereco']; ?></span> </p>
       <p> método de pagamento : <span><?= $fetch_orders['metodo']; ?></span> </p>
       <p> seu pedido : <span><?= $fetch_orders['total_produto']; ?></span> </p>
       <p> preço total : <span>R$ <?= $fetch_orders['total_preco']; ?></span> </p>
-      <p> status de pagamento : <span style="color:<?php if($fetch_orders['status_pagamento'] == 'pendente'){ echo '#cc1825'; }else{ echo '#27ae60'; }; ?>"><?= $fetch_orders['status_pagamento']; ?></span> </p>
+      <p> status de pagamento : <span style="color:<?php if($fetch_orders['status_pagamento'] == 'Pendente'){ echo '#cc1825'; }else{ echo '#27ae60'; }; ?>"><?= $fetch_orders['status_pagamento']; ?></span> </p>
    </div>
    <?php
       }
    }else{
-      echo '<p class="empty">nenhum pedido disponível!</p>';
+      echo '<p class="empty-pedido">nenhum pedido foi realizado!</p>';
    }
    ?>
 
