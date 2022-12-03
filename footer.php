@@ -3,15 +3,15 @@
    <section class="box-container">
 
       <div class="box">
-         <h3>quick links</h3>
+         <h3>menu</h3>
          <a href="index.php"> <i class="fas fa-angle-right"></i> ínicio</a>
          <a href="produtos.php"> <i class="fas fa-angle-right"></i> produtos</a>
-         <a href="#"> <i class="fas fa-angle-right"></i> pedidos</a>
+         <a href="pedidos.php"> <i class="fas fa-angle-right"></i> pedidos</a>
          <a href="contato.php"> <i class="fas fa-angle-right"></i> contato</a>
       </div>
 
       <div class="box">
-         <h3>extra links</h3>
+         <h3>atalhos</h3>
          <a href="#"> <i class="fas fa-angle-right"></i> buscar</a>
          <a href="#"> <i class="fas fa-angle-right"></i> carinho</a>
          <a href="#"> <i class="fas fa-angle-right"></i> login</a>
@@ -22,7 +22,7 @@
          <h3>contato</h3>
          <p> <i class="fas fa-phone"></i> +55 22 988888888</p>
          <p> <i class="fas fa-phone"></i> +55 22 999999999 </p>
-         <p> <i class="fas fa-envelope"></i> ifishcontact@gmail.com </p>
+         <p> <i class="fas fa-envelope"></i> ifishcontato@gmail.com </p>
          <p> <i class="fas fa-map-marker-alt"></i> Arraial do Cabo, Rio de Janeiro </p>
       </div>
 

@@ -47,7 +47,7 @@ if (isset($_POST['order'])) {
    } elseif ($order_query->rowCount() > 0) {
       $message[] = 'order placed already!';
    } else {
-      $insert_order = $conn->prepare("INSERT INTO `pedido`(user_id, nome, telefone, email, metodo, endereco, total_produto, total_preco, status_pagamento) VALUES(?,?,?,?,?,?,?,?,?)");
+      $insert_order = $conn->prepare("INSERT INTO `pedido`(user_id, nome, telefone, email, metodo, endereco, total_produto, total_preco, data_pedido) VALUES(?,?,?,?,?,?,?,?,?)");
       $insert_order->execute([$user_id, $name, $number, $email, $method, $address, $total_products, $cart_total, $placed_on]);
       $delete_cart = $conn->prepare("DELETE FROM `carrinho` WHERE user_id = ?");
       $delete_cart->execute([$user_id]);

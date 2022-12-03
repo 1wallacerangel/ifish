@@ -22,7 +22,7 @@
                     <h4 class="text-h4">LoremIpsum</h4>
                     <h1 class="text-h1">LoremIpsum<br>LoremIpsumm</h1>
                     <p class="p">LoremIpsumLoremIpsumLoremIpsumLoremIpsum</p>
-                    <a href="#" class="inicial-btn">Lorem Ipsum</a>
+                    <a href="#" class="inicial-btn">Sobre Nós</a>
                 </div>
             </div>
             <div class="inicial-right">    

@@ -24,6 +24,11 @@
     --box-shadow-dark:0 0.1rem 0.5rem rgb(20, 20, 20);
 }
 
+*::selection{
+    background-color: var(--red);
+    color:var(--white);
+ }
+
 .message{
     position: sticky;
     top:0;
@@ -391,10 +396,6 @@ body {
     color: var(--red);
 }
 
-.ifish {
-    width: 50%;
-}
-
 p {
     font-size: 13pt;
 }
@@ -437,7 +438,7 @@ li a:active {
  
 
 /*Responsividade*/
-/*
+
 @media only screen and (max-width: 1026px) {
     .btn-cadastro {
         width: 60%;
@@ -464,7 +465,7 @@ li a:active {
         height: auto;
     }
 }
-*/
+
 
 @media (max-width:991px){
 
@@ -533,10 +534,6 @@ li a:active {
 
     .heading{
         font-size: 2.5rem;
-    }
-
-    .footer{
-        text-align: center;
     }
 
     .footer .box-container .box .payment-img{
