@@ -70,7 +70,7 @@ if (isset($_POST['order'])) {
    <link rel="stylesheet" href="css/index.css">
    <link rel="stylesheet" href="css/header.css">
    <link rel="stylesheet" href="css/footer.css">
-   <link rel="stylesheet" href="css/checkout.css">
+   <link rel="stylesheet" href="css/finalizar.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
 </head>
@@ -158,7 +158,7 @@ if (isset($_POST['order'])) {
             </div>
          </div>
 
-         <input type="submit" name="order" class="btn <?= ($cart_grand_total > 1) ? '' : 'disabled'; ?>" value="finalizar">
+         <input type="submit" name="order" class="btn-finalizar <?= ($cart_grand_total > 1) ? '' : 'disabled'; ?>" value="finalizar">
 
       </form>
 

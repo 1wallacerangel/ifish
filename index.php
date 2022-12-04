@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
     </head>
     <body class="body">
+        <div id="butter">
         <!--Barra de Navegação -->
         <?php include 'header.php'; ?>
         <!--início-->
@@ -55,8 +56,11 @@
                 </section>   
             </div>
         </div>
-    </div>
-    <?php include 'footer.php'; ?>
+        <?php include 'footer.php'; ?>
+</div>
+    
     <script src="js/script.js"></script>
+    <script src="js/butter.js"></script>
+    <!--<script>butter.init({cancelOnTouch: true});</script>-->
     </body>
 </html>

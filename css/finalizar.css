@@ -53,7 +53,7 @@
     text-transform: capitalize;
 }
 
-.btn {
+.btn-finalizar {
     background: #eee;
     display: block;
     width: 100%;
@@ -67,7 +67,7 @@
     text-align: center;
 }
 
-.btn:hover {
+.btn-finalizar:hover {
     background: var(--red);
     color: var(--white);
 }
@@ -193,12 +193,12 @@
     color: var(--white);
 }
 
-.body.dark .btn {
+.body.dark .btn-finalizar {
     background: #373737;
     color: var(--red);
 }
 
-.body.dark .btn:hover {
+.body.dark .btn-finalizar:hover {
     background: var(--red);
     color: var(--white);
 }

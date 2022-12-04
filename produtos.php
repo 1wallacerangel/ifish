@@ -57,6 +57,7 @@ if (isset($_POST['adicionar_carrinho'])) {
 
    <?php include 'header.php'; ?>
 
+   <div id="butter">
    <section class="p-category">
 
       <a href="categoria.php?categoria=peixes">peixes</a>
@@ -115,8 +116,11 @@ if (isset($_POST['adicionar_carrinho'])) {
    </section>
 
    <?php include 'footer.php'; ?>
+</div> 
 
    <script src="js/script.js"></script>
+   <script src="js/butter.js"></script>
+   <!--<script>butter.init({cancelOnTouch: true});</script>-->
 
 </body>
 

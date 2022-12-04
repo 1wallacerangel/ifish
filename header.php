@@ -170,31 +170,52 @@ if (isset($_POST['update_qty'])) {
                     while ($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)) {
                 ?>
                         <form action="" method="POST" class="box">
-                            <a href="index.php?delete=<?= $fetch_cart['id']; ?>" class="fas fa-times" onclick="return confirm('delete this from cart?');"></a>
-                            <img id="cart-img" src="uploaded_img/<?= $fetch_cart['image']; ?>" alt="">
-                            <div class="name"><?= $fetch_cart['nome']; ?></div>
-                            <div class="price">$<?= $fetch_cart['preco']; ?>/-</div>
                             <input type="hidden" name="cart_id" value="<?= $fetch_cart['id']; ?>">
+                            <img id="cart-img" src="uploaded_img/<?= $fetch_cart['image']; ?>" alt="">
+                            <div class="nome">
+                                <?= $fetch_cart['nome']; ?>
+                                <div class="sub-total"><span>R$ <?= $sub_total = ($fetch_cart['preco'] * $fetch_cart['quantidade']); ?></span> </div>
+
+                            </div>
+
                             <div class="flex-btn">
                                 <input type="number" min="1" value="<?= $fetch_cart['quantidade']; ?>" class="qty" name="p_qty">
-                                <input type="submit" value="update" name="update_qty" class="option-btn">
+                                <input type="submit" value="atualizar" name="update_qty" class="option-btn">
                             </div>
-                            <div class="sub-total"> sub total : <span>$<?= $sub_total = ($fetch_cart['preco'] * $fetch_cart['quantidade']); ?>/-</span> </div>
+                            <a href="index.php?delete=<?= $fetch_cart['id']; ?>" class="fas fa-trash" onclick="return confirm('deletar esse produto do carrinho?');"></a>
+
                         </form>
+
                 <?php
                         $grand_total += $sub_total;
                     }
                 } else {
-                    echo '<p class="empty">your cart is empty</p>';
                 }
                 ?>
-            </div>
 
-            <div class="cart-total">
-                <p>grand total : <span>$<?= $grand_total; ?>/-</span></p>
-                <a href="produtos.php" class="option-btn">continue shopping</a>
-                <a href="index.php?delete_all" class="delete-btn <?= ($grand_total > 1) ? '' : 'disabled'; ?>">delete all</a>
-                <a href="checkout.php" class="btn <?= ($grand_total > 1) ? '' : 'disabled'; ?>">proceed to checkout</a>
+                <?php
+                if ($select_cart->rowCount() > 0) {
+
+                ?>
+                    <div class="cart-total">
+                        <p class="total">total : <span>R$ <?= $grand_total; ?></span></p>
+                        <div class="total-btn">
+                            <a href="produtos.php" class="continue-btn">continue comprando</a>
+                            <a href="index.php?delete_all" class="delete-btn <?= ($grand_total > 1) ? '' : 'disabled'; ?>">deletar todos</a>
+                        </div>
+                        <a href="finalizar.php" class="btn <?= ($grand_total > 1) ? '' : 'disabled'; ?>">finalizar pedido</a>
+                    </div>
+                <?php
+                } else {
+                    echo '<p class="empty-carrinho">seu carrinho está vazio!</p>
+                    <div class="cart-total">
+                        <div class="total-btn">
+                            <a href="produtos.php" class="continue-btn-vazio">continue comprando</a>                        
+                        </div>                      
+                    </div>';
+                }
+                ?>
+
             </div>
 
         </section>
