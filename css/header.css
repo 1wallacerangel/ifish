@@ -886,3 +886,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .body.dark .icon {
     background: #181818;
 }
+
+
+@media (max-width:768px){
+
+    .header .search-form{
+        width:90%;
+    }
+}

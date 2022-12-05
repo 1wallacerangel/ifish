@@ -82,7 +82,7 @@ if (isset($_GET['delete'])) {
     $delete_id = $_GET['delete'];
     $delete_cart_item = $conn->prepare("DELETE FROM `carrinho` WHERE id = ?");
     $delete_cart_item->execute([$delete_id]);
-    header('location:index.php');
+    header('location:produtos.php');
 }
 
 if (isset($_GET['delete_all'])) {
