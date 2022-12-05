@@ -67,8 +67,8 @@ document.querySelector('#cart-btn').onclick = () => {
     shoppingCart.classList.toggle('active');
     searchForm.classList.remove('active');
     loginForm.classList.remove('active');
-    navbar.classList.remove('active');
     logRegister.classList.remove('active');
+    navbar.classList.remove('active');
 }
 
 let loginForm = document.querySelector('.login-form');
@@ -80,7 +80,6 @@ document.querySelector('#login-btn').onclick = () => {
     shoppingCart.classList.remove('active');
     navbar.classList.remove('active');
     login()
-    
 }
 
 let navbar = document.querySelector('.navbar');
@@ -126,7 +125,7 @@ function hidePassword() {
     eye.classList.toggle('open')
 }
 
-/* função login e regi  ster */
+/* função login e register */
 
 var logi = document.getElementById("login");
 var registe = document.getElementById("register");

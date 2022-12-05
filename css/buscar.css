@@ -1,0 +1,249 @@
+:root {
+   --white: #ffffff;
+   --white-medium: #f9f9f9;
+   --light-color: #666;
+   --black: #000000;
+   --red: #cc1825;
+   --dark-red: #9a1e25;
+   --box-shadow: 0 0.1rem 0.5rem #ccc;
+   --box-shadow-dark: 0 0.1rem 0.5rem rgb(20, 20, 20);
+}
+
+.resultado {
+   text-align: center;
+   padding-top: 2.5rem;
+   margin-bottom: 2.3rem;
+   text-transform: capitalize;
+   color: var(--black);
+   font-size: 3.5rem;
+   font-weight: bold;
+   margin-top: 50px;
+}
+
+.body .mensagem {
+   
+   position: static;
+   max-width: 1200px;
+   margin: 0 auto;
+   margin-top: 80px;
+   padding-top: 4.5rem;
+   padding-bottom: 2rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 1.5rem;
+   z-index: 10000;
+}
+
+.body .mensagem span {
+   font-weight: bold;
+   font-size: 2.5rem;
+   color: var(--black);
+}
+
+.body .mensagem i{
+   font-size: 2.5rem;
+   cursor: pointer;
+   color: var(--red);
+}
+
+.body .mensagem i:hover {
+   color: var(--black);
+}
+
+.titulo {
+   font-weight: bold;
+   text-align: center;
+   padding-top: 2.5rem;
+   margin-bottom: 2.3rem;
+   text-transform: capitalize;
+   color: var(--black);
+   font-size: 3.5rem;
+}
+
+.btn {
+   margin-top: 1rem;
+   display: inline-block;
+   padding: 1.8rem 3rem;
+   font-size: 2rem;
+   border-radius: 10px;
+   color: var(--black);
+   cursor: pointer;
+   background: #fff;
+}
+
+.card-produtos .btn {
+
+   color: var(--red);
+   background: #eee;
+   text-align: center;
+   width: 100%;
+}
+
+.card-produtos .btn:hover {
+   color: var(--white);
+   background: var(--red);
+}
+
+.card-produtos {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.produtos {
+   padding-top: 0;
+   padding-bottom: 5rem;
+   padding-right: 2rem;
+   padding-left: 2rem;
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+.produtos .box-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 28rem);
+   gap: 6.5rem;
+   justify-content: center;
+   align-items: flex-start;
+}
+
+.produtos .box-container .box {
+   padding: 2rem;
+   text-align: center;
+   background-color: var(--white);
+   box-shadow: var(--box-shadow);
+   border-radius: 10px;
+   position: relative;
+}
+
+.produtos .box-container .box .preco {
+   position: absolute;
+   top: 1rem;
+   left: 1rem;
+   padding: 1rem;
+   border-radius: 10px;
+   background-color: var(--red);
+   font-size: 1.8rem;
+   color: var(--white);
+}
+
+.produtos .box-container .box .preco span {
+   font-size: 2.5rem;
+   color: var(--white);
+   margin: 0 .2rem;
+}
+
+.produtos .box-container .box img {
+   width: 100%;
+   margin-bottom: 1rem;
+}
+
+.produtos .box-container .box .nome {
+   font-size: 2rem;
+   color: var(--black);
+   padding: 1rem 0;
+}
+
+.produtos .box-container .box .detalhes {
+   font-size: 1.8rem;
+   color: var(--black);
+   opacity: 70%;
+}
+
+.empty-pesquisa {
+   padding: 1.5rem;
+   background: var(--white);
+   color: var(--red);
+   border-radius: 10px;
+   font-size: 2rem;
+   text-align: center;
+   box-shadow: var(--box-shadow);
+   text-transform: capitalize;
+}
+
+.card-produtos .box-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 35rem);
+   gap: 1.5rem;
+   justify-content: center;
+   align-items: flex-start;
+}
+
+.card-produtos .box-container .box {
+   padding: 2rem;
+   text-align: center;
+   background-color: var(--white);
+   box-shadow: var(--box-shadow);
+   border-radius: .5rem;
+   position: relative;
+}
+
+.card-produtos .box-container .box .preco {
+   padding: 1rem 0;
+   color: var(--red);
+   font-size: 2.5rem;
+}
+
+.card-produtos .box-container .box .preco span {
+   font-size: 2.5rem;
+   color: var(--white);
+   margin: 0 .2rem;
+}
+
+.card-produtos .box-container .box img {
+   width: 100%;
+   margin-bottom: 1rem;
+}
+
+.card-produtos .box-container .box .nome {
+   font-size: 2rem;
+   color: var(--black);
+   padding-top: 1rem;
+}
+
+.body.dark .resultado {
+   color: var(--white);
+}
+
+.body.dark .produtos .box-container .box {
+   background-color: #252525;
+   box-shadow: var(--box-shadow-dark);
+}
+
+.body.dark .produtos .box-container .box .nome {
+   color: var(--white);
+}
+
+.body.dark .produtos .box-container .box .detalhes {
+   color: var(--white);
+}
+
+.body.dark .card-produtos .btn {
+   color: var(--red);
+   background: #373737;
+}
+
+.body.dark .card-produtos .btn:hover {
+   color: var(--white);
+   background: var(--red);
+}
+
+.body.dark .mensagem span {
+   color: var(--white);
+}
+
+.body.dark .mensagem i {
+   color: var(--red);
+}
+
+.body.dark .mensagem i:hover {
+   color: var(--white);
+}
+
+.body.dark .empty-pesquisa {
+   background: #373737;
+   color: var(--red);
+   box-shadow: var(--box-shadow-dark);
+}

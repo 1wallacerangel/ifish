@@ -88,7 +88,7 @@ if (isset($_GET['delete'])) {
 if (isset($_GET['delete_all'])) {
     $delete_cart_item = $conn->prepare("DELETE FROM `carrinho` WHERE user_id = ?");
     $delete_cart_item->execute([$user_id]);
-    header('location:index.php');
+    header('location:produtos.php');
 }
 
 if (isset($_POST['update_qty'])) {
@@ -122,44 +122,13 @@ if (isset($_POST['update_qty'])) {
         <div class="fa-solid fa-moon" id="moon"></div>
         <div class="fa-solid fa-sun" id="sun"></div>
     </div>
-    <form action="search_page.php" method="POST" class="search-form">
-        <input name="search_box" type="search" id="search-box" placeholder="lorem...">
-        <a href="search_page.php"> <label for="search-box" name="search_btn" class="fas fa-search"></label></a>
-    </form>
+        <form action="buscar.php" method="POST" class="search-form">
+            <input type="search" name="search_box" id="search-box" placeholder="Busque por um produto">
+            <button type="submit" name="search_btn" class="fas fa-search"></button>
+        </form>
 
     <div class="shopping-cart">
-        <!--  <div class="box">
-            <i class="fas fa-trash"></i>
-            <img src="img/" alt="">
-            <div class="content">
-                <h3>fish</h3>
-                <span class="preco">R$ 4.99 </span>
-                <span class="quantidade">qtd : 1</span>
-            </div>
-        </div>
-        <div class="box">
-            <i class="fas fa-trash"></i>
-            <img src="img/" alt="">
-            <div class="content">
-                <h3>fish</h3>
-                <span class="preco">R$ 4.99 </span>
-                <span class="quantidade">qtd : 1</span>
-            </div>
-        </div>
-        <div class="box">
-            <i class="fas fa-trash"></i>
-            <img src="img/" alt="">
-            <div class="content">
-                <h3>fish</h3>
-                <span class="preco">R$ 4.99 </span>
-                <span class="quantidade">qtd : 1</span>
-            </div>
-        </div>
-        <div class="total"> total : R$ 14.97 </div>
-        <a href="#" class="btn">finalizar</a> -->
         <section class="shopping-car">
-
-
             <div class="box-container">
 
                 <?php
@@ -182,7 +151,7 @@ if (isset($_POST['update_qty'])) {
                                 <input type="number" min="1" value="<?= $fetch_cart['quantidade']; ?>" class="qty" name="p_qty">
                                 <input type="submit" value="atualizar" name="update_qty" class="option-btn">
                             </div>
-                            <a href="index.php?delete=<?= $fetch_cart['id']; ?>" class="fas fa-trash" onclick="return confirm('deletar esse produto do carrinho?');"></a>
+                            <a href="index.php?delete=<?= $fetch_cart['id']; ?>" class="fas fa-trash" onclick="return confirm('Esse Produto Será Removido do Carrinho!');"></a>
 
                         </form>
 
@@ -201,7 +170,7 @@ if (isset($_POST['update_qty'])) {
                         <p class="total">total : <span>R$ <?= $grand_total; ?></span></p>
                         <div class="total-btn">
                             <a href="produtos.php" class="continue-btn">continue comprando</a>
-                            <a href="index.php?delete_all" class="delete-btn <?= ($grand_total > 1) ? '' : 'disabled'; ?>">deletar todos</a>
+                            <a href="produtos.php?delete_all" class="delete-btn <?= ($grand_total > 1) ? '' : 'disabled'; ?>">remover todos</a>
                         </div>
                         <a href="finalizar.php" class="btn <?= ($grand_total > 1) ? '' : 'disabled'; ?>">finalizar pedido</a>
                     </div>
@@ -217,9 +186,7 @@ if (isset($_POST['update_qty'])) {
                 ?>
 
             </div>
-
         </section>
-
     </div>
     <div class="log-register">
         <div class="profile">
@@ -284,6 +251,5 @@ if (isset($_POST['update_qty'])) {
             }
             ?>
         </div>
-
     </div>
 </header>

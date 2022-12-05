@@ -133,16 +133,18 @@ input[type="search"]::-webkit-search-cancel-button {
     font-size: 1.6rem;
     color:var(--black);
     padding:0 1.5rem;
+    
 }
 
-.header .search-form label{
+.header .search-form button{
     font-size: 2.2rem;
     padding-right: 1.5rem;
     color:var(--black);
     cursor: pointer;
+    background: none;
 }
 
-.header .search-form label:hover{
+.header .search-form button:hover{
     color:var(--red);
 }
 
@@ -294,6 +296,11 @@ input[type="search"]::-webkit-search-cancel-button {
     cursor: pointer;
 }
 
+.shopping-car .box-container .option-btn:hover{
+    color: var(--white);
+    background: var(--dark-red);
+}
+
 .cart-total .total{
     text-align: center;
     text-transform: capitalize;
@@ -317,6 +324,11 @@ input[type="search"]::-webkit-search-cancel-button {
     margin-left: 1rem;
 }
 
+.cart-total .continue-btn:hover{
+    color: var(--white);
+    background: var(--dark-red);
+}
+
 .cart-total .continue-btn-vazio{
     display: block;
     align-items: center;
@@ -331,6 +343,11 @@ input[type="search"]::-webkit-search-cancel-button {
     font-size:15pt;
 }
 
+.cart-total .continue-btn-vazio:hover{
+    color: var(--white);
+    background: var(--dark-red);
+}
+
 .cart-total .delete-btn{
     display:inline-block;
     width: 46.5%;
@@ -342,8 +359,12 @@ input[type="search"]::-webkit-search-cancel-button {
     background: var(--red);
     border-radius: 10px;
     font-size: 9.5pt;
-    
     margin-right: 1rem;
+}
+
+.cart-total .delete-btn:hover{
+    color: var(--white);
+    background: var(--dark-red);
 }
 
 .empty-carrinho{
@@ -412,7 +433,7 @@ input[type="search"]::-webkit-search-cancel-button {
     height: 380px;
     /*height: 575px;*/
     box-shadow: var(--box-shadow);
-    padding:2rem;
+    padding:1.5rem;
     border-radius: .5rem;
     background: #fff;
     text-align: center;
@@ -735,11 +756,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color:var(--white);
 }
 
-.body.dark .header .search-form label{
+.body.dark .header .search-form button{
     color: rgb(180, 180, 180);
 }
 
-.body.dark .header .search-form label:hover{
+.body.dark .header .search-form button:hover{
     color:var(--red);
 }
 

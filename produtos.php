@@ -10,7 +10,6 @@ if (!isset($user_id)) {
    header('location:index.php');
 };
 
-
 if (isset($_POST['adicionar_carrinho'])) {
 
    $pid = $_POST['pid'];

@@ -487,7 +487,25 @@ li a:active {
     }
 
     section{
-        padding:2rem;
+        padding:1rem;
+    }
+
+    .header .shopping-cart{
+        position: absolute;
+        top:125%;
+        right:-110%;
+        padding:1rem;
+
+    }
+
+    .header .cart-total .delete-btn{
+        font-size: 7.5pt;
+        width: 45%;    
+    }
+
+    .header .cart-total .continue-btn{
+        font-size: 7.5pt;
+        width: 46.6%;
     }
 
 }
@@ -547,5 +565,27 @@ li a:active {
         font-size: 16px;
         width: 28px;
         height: 28px;
+    }
+
+    .header{
+        padding:1.5rem;
+    }
+
+    .header .cart-total .delete-btn{
+        font-size: 7.5pt;
+        width: 41%;    
+    }
+
+    .header .cart-total .continue-btn{
+        font-size: 7.5pt;
+        width: 50.6%;
+    }
+
+    .header .shopping-car .box .nome{
+        font-size: 11pt;
+    }
+
+    .header .shopping-car .box .flex-btn .option-btn{
+        font-size: 8pt;
     }
 }
