@@ -863,6 +863,17 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background: #373737;
 }
 
+.body.dark .header .navbar.active{
+    box-shadow: var(--box-shadow-dark);
+    background: #252525;
+}
+
+/*Alterar quando mouse passar pelo texto dos itens*/
+
+.header .navbar a:hover{
+    color:var(--red);
+}
+
 /*Menu canto direito*/
 
 .menu {
@@ -887,10 +898,162 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background: #181818;
 }
 
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    #eye{
+        position: absolute;
+        top: 39%;
+        right: 22px;
+        font-size: 18px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .header{
+        padding:2rem;
+    }
+
+    section{
+        padding:1rem;
+    }
+
+    .header .shopping-cart{
+        position: absolute;
+        top:125%;
+        right:-110%;
+        padding:1rem;
+
+    }
+
+    .header .cart-total .delete-btn{
+        font-size: 7.5pt;
+        width: 45%;    
+    }
+
+    .header .cart-total .continue-btn{
+        font-size: 7.5pt;
+        width: 46.6%;
+    }
+
+}
 
 @media (max-width:768px){
 
+    #menu-btn{
+        display: inline-block;
+    }
+
     .header .search-form{
         width:90%;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top:125%;
+        right:-110%;
+        width:30rem;
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        background: #fff;
+        transition: 0.6s all;
+    }
+
+    .header .navbar.active{
+        right:2rem;
+        transition: 0.4s all;
+    }
+
+    .header .navbar a{
+        font-size: 2rem;
+        margin:2rem 2.5rem;
+        display: block;
+    }
+
+}
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+    .heading{
+        font-size: 2.5rem;
+    }
+
+    .footer .box-container .box .payment-img{
+        margin: 2rem auto;
+    }
+
+    #eye{
+        position: absolute;
+        top: 39%;
+        right: 22px;
+        font-size: 16px;
+        width: 28px;
+        height: 28px;
+    }
+
+    .header{
+        padding:1.5rem;
+    }
+
+    .header .cart-total .delete-btn{
+        font-size: 7.5pt;
+        width: 41%;    
+    }
+
+    .header .cart-total .continue-btn{
+        font-size: 7.5pt;
+        width: 50.6%;
+    }
+
+    .header .shopping-car .box .nome{
+        font-size: 11pt;
+    }
+
+    .header .shopping-car .box .flex-btn .option-btn{
+        font-size: 8pt;
+    }
+    .header .cart-total .continue-btn-vazio{
+        font-size: 13pt;
+    }
+  
+}
+
+@media (max-width:350px){
+
+    html{
+        font-size: 45%;
+    }
+    .header{
+        padding:1.5rem;
+    }
+    .navbar.active{
+        width: 90%;
+    }
+    .log-register.active{
+        width: 90%;
+    }
+    .shopping-cart.active{
+        width: 90%;
+    }
+    .header .ifish-bar{
+        width: 25%;
+    }
+    .header .cart-total .continue-btn{
+        font-size: 7.5pt;
+        width: 52%;
+    }   
+    .header .cart-total .delete-btn{
+        font-size: 7.5pt;
+        width: 40%;    
+    }
+    .header .cart-total .continue-btn-vazio{
+        font-size: 13pt;
     }
 }

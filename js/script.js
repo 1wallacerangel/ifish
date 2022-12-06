@@ -71,6 +71,7 @@ document.querySelector('#cart-btn').onclick = () => {
     navbar.classList.remove('active');
 }
 
+
 let loginForm = document.querySelector('.login-form');
 let logRegister = document.querySelector('.log-register');
 

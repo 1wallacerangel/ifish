@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01-Dez-2022 às 01:38
+-- Tempo de geração: 05-Dez-2022 às 02:22
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -42,7 +42,8 @@ CREATE TABLE `carrinho` (
 --
 
 INSERT INTO `carrinho` (`id`, `user_id`, `pid`, `nome`, `preco`, `quantidade`, `image`) VALUES
-(93, 31, 19, 'Maça', 25, 0, 'apple.png');
+(236, 31, 23, 'Tomate', 13, 1, 'tomato.png'),
+(237, 31, 19, 'Maça', 25, 1, 'apple.png');
 
 -- --------------------------------------------------------
 
@@ -75,23 +76,23 @@ INSERT INTO `mensagem` (`id`, `user_id`, `nome`, `email`, `telefone`, `mensagem`
 CREATE TABLE `pedido` (
   `id` int(100) NOT NULL,
   `user_id` int(100) NOT NULL,
-  `nome` varchar(100) NOT NULL,
+  `cpf` varchar(11) NOT NULL,
   `telefone` int(11) NOT NULL,
   `email` varchar(100) NOT NULL,
   `metodo` varchar(50) NOT NULL,
   `endereco` varchar(500) NOT NULL,
   `total_produto` varchar(1000) NOT NULL,
   `total_preco` int(100) NOT NULL,
-  `data_ordem` varchar(50) NOT NULL,
-  `status_pagamento` varchar(20) NOT NULL DEFAULT 'pendente'
+  `data_pedido` varchar(50) NOT NULL,
+  `status_pagamento` varchar(20) NOT NULL DEFAULT 'Pendente'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `pedido`
 --
 
-INSERT INTO `pedido` (`id`, `user_id`, `nome`, `telefone`, `email`, `metodo`, `endereco`, `total_produto`, `total_preco`, `data_ordem`, `status_pagamento`) VALUES
-(4, 7, 'Wallace Rangel', 2147483647, 'wallacerangelone2@gmail.com', 'credit card', 'flat no. Rua Recanto da saudade 303 Araruama Rio de Janeiro Brasil - 28970000', ', Maça ( 1 )', 25, '', '01-Dec-2022');
+INSERT INTO `pedido` (`id`, `user_id`, `cpf`, `telefone`, `email`, `metodo`, `endereco`, `total_produto`, `total_preco`, `data_pedido`, `status_pagamento`) VALUES
+(38, 7, '19798303717', 2147483647, 'wallacerangelone2@gmail.com', 'Dinheiro', 'Rua Recanto da saudade | 303 | Araruama | 28970000', ' Maça ( 1 )', 25, '03-12-2022 01:57', 'Realizado');
 
 -- --------------------------------------------------------
 
@@ -184,7 +185,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `carrinho`
 --
 ALTER TABLE `carrinho`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=256;
 
 --
 -- AUTO_INCREMENT de tabela `mensagem`
@@ -196,7 +197,7 @@ ALTER TABLE `mensagem`
 -- AUTO_INCREMENT de tabela `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de tabela `produto`

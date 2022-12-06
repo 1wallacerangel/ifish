@@ -62,10 +62,10 @@ if (isset($_POST['submit_login'])) {
             $_SESSION['user_id'] = $row['id'];
             header('location:index.php');
         } else {
-            $message[] = 'no user found!';
+            $message_login[] = 'no user found!';
         }
     } else {
-        $message[] = 'incorrect email or password!';
+        $message_login[] = 'incorrect email or password!';
     }
 }
 ?>
@@ -252,4 +252,5 @@ if (isset($_POST['update_qty'])) {
             ?>
         </div>
     </div>
+    <script src="js/script.js"></script>
 </header>
