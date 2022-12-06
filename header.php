@@ -109,7 +109,7 @@ if (isset($_POST['update_qty'])) {
     <a href="index.php">ínicio</a>
     <a href="produtos.php">produtos</a>
     <a href="pedidos.php">pedidos</a>
-    <a href="#">sobre</a>
+    <a href="sobre.php">sobre</a>
     <a href="contato.php">contato</a>
     </nav>
     <div class="icons">

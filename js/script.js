@@ -83,6 +83,12 @@ document.querySelector('#login-btn').onclick = () => {
     login()
 }
 
+function login_home(onclick){
+    document.querySelector('#faca-login');
+    logRegister.classList.toggle('active');
+    login()
+}
+
 let navbar = document.querySelector('.navbar');
 
 document.querySelector('#menu-btn').onclick = () => {

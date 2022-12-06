@@ -10,6 +10,12 @@ if (!isset($user_id)) {
     
 };
 
+if (isset($_POST['categoria'])) {
+    if (!isset($user_id)) {
+        $message[] = 'Faça login !';
+    }
+}
+
 if (isset($_POST['adicionar_carrinho'])) {
     if (!isset($user_id)) {
         $message[] = 'Faça login !';
@@ -78,10 +84,11 @@ if (isset($_POST['adicionar_carrinho'])) {
     <div class="inicial-main">
         <div class="inicial-left">
             <div class="inicial-text">
-                <h4 class="text-h4">LoremIpsum</h4>
+                <h4 class="text-h4">Feito para você!</h4>
                 <h1 class="text-h1">LoremIpsum<br>LoremIpsumm</h1>
-                <p class="p">LoremIpsumLoremIpsumLoremIpsumLoremIpsum</p>
-                <a href="#" class="inicial-btn">Sobre Nós</a>
+                <p class="p" id="" onclick="login_home()">LoremIpsumLoremIpsumLoremIpsumLoremIpsum</p>
+                <button id="faca-login" value="login"></button>
+                <a href="sobre.php" class="inicial-btn">Sobre Nós</a>
             </div>
         </div>
         <div class="inicial-right">
