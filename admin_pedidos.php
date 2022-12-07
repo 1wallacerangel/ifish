@@ -56,7 +56,7 @@ if (isset($_GET['delete'])) {
 
    <section class="placed-orders">
 
-      <h1 class="title">placed orders</h1>
+      <h1 class="title">pedidos</h1>
 
       <div class="box-container">
 
@@ -67,15 +67,15 @@ if (isset($_GET['delete'])) {
             while ($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)) {
          ?>
                <div class="box">
-                  <p> user id : <span><?= $fetch_orders['user_id']; ?></span> </p>
-                  <p> placed on : <span><?= $fetch_orders['status_pagamento']; ?></span> </p>
-                  <p> name : <span><?= $fetch_orders['nome']; ?></span> </p>
-                  <p> email : <span><?= $fetch_orders['email']; ?></span> </p>
-                  <p> number : <span><?= $fetch_orders['telefone']; ?></span> </p>
-                  <p> address : <span><?= $fetch_orders['endereco']; ?></span> </p>
-                  <p> total products : <span><?= $fetch_orders['total_produto']; ?></span> </p>
-                  <p> total price : <span>R$<?= $fetch_orders['total_preco']; ?></span> </p>
-                  <p> payment method : <span><?= $fetch_orders['metodo']; ?></span> </p>
+                  <p> User ID : <span><?= $fetch_orders['user_id']; ?></span> </p>
+                  <p> Data do Pedido : <span><?= $fetch_orders['data_pedido']; ?></span> </p>
+                  <p> CPF : <span><?= $fetch_orders['cpf']; ?></span> </p>
+                  <p> Email : <span><?= $fetch_orders['email']; ?></span> </p>
+                  <p> Telefone : <span><?= $fetch_orders['telefone']; ?></span> </p>
+                  <p> Endereço : <span><?= $fetch_orders['endereco']; ?></span> </p>
+                  <p> Pedido : <span><?= $fetch_orders['total_produto']; ?></span> </p>
+                  <p> Preço Total : <span>R$<?= $fetch_orders['total_preco']; ?></span> </p>
+                  <p> Método de Pagamento : <span><?= $fetch_orders['metodo']; ?></span> </p>
                   <form action="" method="POST">
                      <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
                      <select name="update_payment" class="drop-down">
@@ -84,15 +84,15 @@ if (isset($_GET['delete'])) {
                         <option value="Realizado">Realizado</option>
                      </select>
                      <div class="flex-btn">
-                        <input type="submit" name="update_order" class="option-btn" value="udate">
-                        <a href="admin_pedidos.php?delete=<?= $fetch_orders['id']; ?>" class="delete-btn" onclick="return confirm('delete this order?');">delete</a>
+                        <input type="submit" name="update_order" class="option-btn" value="Atualizar">
+                        <a href="admin_pedidos.php?delete=<?= $fetch_orders['id']; ?>" class="delete-btn" onclick="return confirm('delete this order?');">Deletar</a>
                      </div>
                   </form>
                </div>
          <?php
             }
          } else {
-            echo '<p class="empty">no orders placed yet!</p>';
+            echo '<p class="empty">nenhum pedido foi realizado!</p>';
          }
          ?>
 

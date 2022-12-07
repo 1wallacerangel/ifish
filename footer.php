@@ -12,10 +12,10 @@
 
       <div class="box">
          <h3>atalhos</h3>
-         <a href="#"> <i class="fas fa-angle-right"></i> buscar</a>
-         <a href="#"> <i class="fas fa-angle-right"></i> carinho</a>
-         <a href="#"> <i class="fas fa-angle-right"></i> login</a>
-         <a href="#"> <i class="fas fa-angle-right"></i> register</a>
+         <a onclick="buscar_popup()"> <i class="fas fa-angle-right"></i> buscar</a>
+         <a onclick="carrinho_popup()"> <i class="fas fa-angle-right"></i> carinho</a>
+         <a onclick="login_popup()"> <i class="fas fa-angle-right"></i> login</a>
+         <a onclick="register_popup()"> <i class="fas fa-angle-right"></i> register</a>
       </div>
 
       <div class="box">

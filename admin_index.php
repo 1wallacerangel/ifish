@@ -21,7 +21,7 @@
 
     <section class="dashboard">
 
-        <h1 class="title">dashboard</h1>
+        <h1 class="title">painel de controle</h1>
 
         <div class="box-container">
 
@@ -34,9 +34,9 @@
                     $total_pendings += $fetch_pendings['total_preco'];
                 };
                 ?>
-                <h3>$<?= $total_pendings; ?>/-</h3>
-                <p>total pendings</p>
-                <a href="admin_orders.php" class="btn">see orders</a>
+                <h3>R$ <?= $total_pendings; ?></h3>
+                <p>Total Pedidos Pendentes</p>
+                <a href="admin_pedidos.php" class="btn">veja os pedidos</a>
             </div>
 
             <div class="box">
@@ -48,9 +48,9 @@
                     $total_completed += $fetch_completed['total_preco'];
                 };
                 ?>
-                <h3>$<?= $total_completed; ?>/-</h3>
-                <p>completed orders</p>
-                <a href="admin_orders.php" class="btn">see orders</a>
+                <h3>R$ <?= $total_completed; ?></h3>
+                <p>Total Pedidos Finalizados</p>
+                <a href="admin_pedidos.php" class="btn">veja os pedidos</a>
             </div>
 
             <div class="box">
@@ -60,8 +60,8 @@
                 $number_of_orders = $select_orders->rowCount();
                 ?>
                 <h3><?= $number_of_orders; ?></h3>
-                <p>orders placed</p>
-                <a href="admin_orders.php" class="btn">see orders</a>
+                <p>Pedidos Realizados</p>
+                <a href="admin_pedidos.php" class="btn">veja os pedidos</a>
             </div>
 
             <div class="box">
@@ -71,8 +71,8 @@
                 $number_of_products = $select_products->rowCount();
                 ?>
                 <h3><?= $number_of_products; ?></h3>
-                <p>products added</p>
-                <a href="admin_products.php" class="btn">see products</a>
+                <p>Produtos Adicionados</p>
+                <a href="admin_produtos.php" class="btn">veja os produtos</a>
             </div>
 
             <div class="box">
@@ -82,8 +82,8 @@
                 $number_of_users = $select_users->rowCount();
                 ?>
                 <h3><?= $number_of_users; ?></h3>
-                <p>total users</p>
-                <a href="admin_users.php" class="btn">see accounts</a>
+                <p>Total Usuários</p>
+                <a href="admin_usuarios.php" class="btn">veja as contas</a>
             </div>
 
             <div class="box">
@@ -93,8 +93,8 @@
                 $number_of_admins = $select_admins->rowCount();
                 ?>
                 <h3><?= $number_of_admins; ?></h3>
-                <p>total admins</p>
-                <a href="admin_users.php" class="btn">see accounts</a>
+                <p>Total Admins</p>
+                <a href="admin_usuarios.php" class="btn">veja as contas</a>
             </div>
 
             <div class="box">
@@ -104,8 +104,8 @@
                 $number_of_accounts = $select_accounts->rowCount();
                 ?>
                 <h3><?= $number_of_accounts; ?></h3>
-                <p>total accounts</p>
-                <a href="admin_users.php" class="btn">see accounts</a>
+                <p>Total de Contas</p>
+                <a href="admin_usuarios.php" class="btn">veja as contas</a>
             </div>
 
             <div class="box">
@@ -115,8 +115,8 @@
                 $number_of_messages = $select_messages->rowCount();
                 ?>
                 <h3><?= $number_of_messages; ?></h3>
-                <p>total messages</p>
-                <a href="admin_contacts.php" class="btn">see messages</a>
+                <p>Total de Mensagens</p>
+                <a href="admin_contato.php" class="btn">veja as mensagens</a>
             </div>
 
         </div>

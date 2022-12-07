@@ -54,6 +54,7 @@ icon.addEventListener('click', () => {
 let searchForm = document.querySelector('.search-form');
 
 document.querySelector('#search-btn').onclick = () => {
+    let navbar = document.querySelector('.navbar');
     searchForm.classList.toggle('active');
     shoppingCart.classList.remove('active');
     loginForm.classList.remove('active');
@@ -64,11 +65,13 @@ document.querySelector('#search-btn').onclick = () => {
 let shoppingCart = document.querySelector('.shopping-cart');
 
 document.querySelector('#cart-btn').onclick = () => {
+    
+    let navbar = document.querySelector('.navbar'); 
     shoppingCart.classList.toggle('active');
     searchForm.classList.remove('active');
     loginForm.classList.remove('active');
     logRegister.classList.remove('active');
-    navbar.classList.remove('active');
+    navbar.classList.toggle('active');
 }
 
 
@@ -78,14 +81,9 @@ let logRegister = document.querySelector('.log-register');
 document.querySelector('#login-btn').onclick = () => {
     logRegister.classList.toggle('active');
     searchForm.classList.remove('active');
-    shoppingCart.classList.remove('active');
     navbar.classList.remove('active');
-    login()
-}
-
-function login_home(onclick){
-    document.querySelector('#faca-login');
-    logRegister.classList.toggle('active');
+    shoppingCart.classList.remove('active');
+    
     login()
 }
 
@@ -158,4 +156,58 @@ function login(){
     logregiste.style.height="400px";
     logtext.style.color="#cc1825"
     regtext.style.color="#ffffff"
+}
+
+/*Function login,register,buscar,carrinho */
+
+function login_popup(onclick){
+    let logRegister = document.querySelector('.log-register');
+    let navbar = document.querySelector('.navbar');
+    let shoppingCart = document.querySelector('.shopping-cart');
+    let searchForm = document.querySelector('.search-form');
+    logRegister.classList.remove('active');
+    logRegister.classList.toggle('active');
+    searchForm.classList.remove('active');
+    shoppingCart.classList.remove('active');
+    navbar.classList.remove('active');
+    login()
+}
+
+function register_popup(onclick){
+    let logRegister = document.querySelector('.log-register');
+    let navbar = document.querySelector('.navbar');
+    let shoppingCart = document.querySelector('.shopping-cart');
+    let searchForm = document.querySelector('.search-form');
+    logRegister.classList.remove('active');
+    logRegister.classList.toggle('active');
+    searchForm.classList.remove('active');
+    shoppingCart.classList.remove('active');
+    navbar.classList.remove('active');
+    register()
+}
+
+function buscar_popup(onclick){
+    let logRegister = document.querySelector('.log-register');
+    let navbar = document.querySelector('.navbar');
+    let shoppingCart = document.querySelector('.shopping-cart');
+    let searchForm = document.querySelector('.search-form');
+    searchForm.classList.toggle('active');
+    shoppingCart.classList.remove('active');
+    navbar.classList.remove('active');
+    logRegister.classList.remove('active');
+}
+
+function carrinho_popup(onclick){
+    let logRegister = document.querySelector('.log-register');
+    let navbar = document.querySelector('.navbar');
+    let shoppingCart = document.querySelector('.shopping-cart');
+    let searchForm = document.querySelector('.search-form');
+    shoppingCart.classList.toggle('active');
+    searchForm.classList.remove('active');
+    navbar.classList.remove('active');
+    logRegister.classList.remove('active');
+    
+}
+function scrolltop(onclick){
+    window.scrollTo({top: 0,behavior: 'smooth',})
 }

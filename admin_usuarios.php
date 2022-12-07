@@ -43,7 +43,7 @@ if (isset($_GET['delete'])) {
 
    <section class="user-accounts">
 
-      <h1 class="title">user accounts</h1>
+      <h1 class="title">Contas de Usuários</h1>
 
       <div class="box-container">
 
@@ -55,13 +55,13 @@ if (isset($_GET['delete'])) {
             <div class="box" style="<?php if ($fetch_users['id'] == $admin_id) {
                                        echo 'display:none';
                                     }; ?>">
-               <p> user id : <span><?= $fetch_users['id']; ?></span></p>
-               <p> username : <span><?= $fetch_users['nome']; ?></span></p>
-               <p> email : <span><?= $fetch_users['email']; ?></span></p>
-               <p> user type : <span style=" color:<?php if ($fetch_users['user_type'] == 'admin') {
+               <p> User ID : <span><?= $fetch_users['id']; ?></span></p>
+               <p> Nome : <span><?= $fetch_users['nome']; ?></span></p>
+               <p> Email : <span><?= $fetch_users['email']; ?></span></p>
+               <p> Tipo de Usuário : <span style=" color:<?php if ($fetch_users['user_type'] == 'admin') {
                                                       echo 'orange';
                                                    }; ?>"><?= $fetch_users['user_type']; ?></span></p>
-               <a href="admin_usuarios.php?delete=<?= $fetch_users['id']; ?>" onclick="return confirm('delete this user?');" class="delete-btn">delete</a>
+               <a href="admin_usuarios.php?delete=<?= $fetch_users['id']; ?>" onclick="return confirm('delete this user?');" class="delete-btn">deletar</a>
             </div>
          <?php
          }

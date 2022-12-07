@@ -65,7 +65,7 @@ if (isset($_GET['delete'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -89,33 +89,33 @@ if (isset($_GET['delete'])) {
 
     <section class="add-products">
 
-        <h1 class="title">add new product</h1>
+        <h1 class="title">adicionar novos produtos</h1>
 
         <form action="" method="POST" enctype="multipart/form-data">
             <div class="flex">
                 <div class="inputBox">
-                    <input type="text" name="name" class="box" required placeholder="enter product name">
+                    <input type="text" name="name" class="box" required placeholder="Insira o nome do produto">
                     <select name="categoria" class="box" required>
-                        <option value="" selected disabled>select category</option>
+                        <option value="" selected disabled>Selecione a Categoria</option>
                         <option value="peixes">Peixes</option>
                         <option value="crustáceos">Crustáceos</option>
                         <option value="moluscos">Moluscos</option>
                     </select>
                 </div>
                 <div class="inputBox">
-                    <input type="number" min="0" name="preco" class="box" required placeholder="enter product price">
+                    <input type="number" min="0" name="preco" class="box" required placeholder="Insira o preço do produto">
                     <input type="file" name="image" required class="box" accept="image/jpg, image/jpeg, image/png">
                 </div>
             </div>
-            <textarea name="detalhes" class="box" required placeholder="enter product details" cols="30" rows="10"></textarea>
-            <input type="submit" class="btn" value="add product" name="add_product">
+            <textarea name="detalhes" class="box" required placeholder="Insira os detalhes do produto" cols="30" rows="10"></textarea>
+            <input type="submit" class="btn" value="Adicionar Produto" name="add_product">
         </form>
 
     </section>
 
     <section class="show-products">
 
-        <h1 class="title">products added</h1>
+        <h1 class="title">produtos adicionados</h1>
 
         <div class="box-container">
 
@@ -126,14 +126,14 @@ if (isset($_GET['delete'])) {
                 while ($fetch_products = $show_products->fetch(PDO::FETCH_ASSOC)) {
             ?>
                     <div class="box">
-                        <div class="price">$<?= $fetch_products['preco']; ?>/-</div>
+                        <div class="price">R$<?= $fetch_products['preco']; ?></div>
                         <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
                         <div class="name"><?= $fetch_products['nome']; ?></div>
                         <div class="cat"><?= $fetch_products['categoria']; ?></div>
                         <div class="details"><?= $fetch_products['detalhe']; ?></div>
                         <div class="flex-btn">
-                            <a href="admin_update_product.php?update=<?= $fetch_products['id']; ?>" class="option-btn">update</a>
-                            <a href="admin_produtos.php?delete=<?= $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('delete this product?');">delete</a>
+                            <a href="admin_update_produtos.php?update=<?= $fetch_products['id']; ?>" class="option-btn">atualizar</a>
+                            <a href="admin_produtos.php?delete=<?= $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('Deletar esse produto  ?');">deletar</a>
                         </div>
                     </div>
             <?php

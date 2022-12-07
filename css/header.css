@@ -415,7 +415,7 @@ input[type="search"]::-webkit-search-cancel-button {
     position: absolute;
     margin-top: 13px;
     margin-left: 29px;
-    top: 50;
+    top: 15;
     left: 70;
     width: 132px;
     height: 50px;

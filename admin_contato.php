@@ -43,7 +43,7 @@
 
       <section class="messages">
 
-         <h1 class="title">messages</h1>
+         <h1 class="title">mensagens</h1>
 
          <div class="box-container">
 
@@ -54,17 +54,17 @@
                while ($fetch_message = $select_message->fetch(PDO::FETCH_ASSOC)) {
             ?>
                   <div class="box">
-                     <p> user id : <span><?= $fetch_message['user_id']; ?></span> </p>
-                     <p> name : <span><?= $fetch_message['nome']; ?></span> </p>
-                     <p> number : <span><?= $fetch_message['telefone']; ?></span> </p>
-                     <p> email : <span><?= $fetch_message['email']; ?></span> </p>
-                     <p> message : <span><?= $fetch_message['mensagem']; ?></span> </p>
-                     <a href="admin_mensagens.php?delete=<?= $fetch_message['id']; ?>" onclick="return confirm('delete this message?');" class="delete-btn">delete</a>
+                     <p> User ID : <span><?= $fetch_message['user_id']; ?></span> </p>
+                     <p> Nome : <span><?= $fetch_message['nome']; ?></span> </p>
+                     <p> Telefone : <span><?= $fetch_message['telefone']; ?></span> </p>
+                     <p> Email : <span><?= $fetch_message['email']; ?></span> </p>
+                     <p> Mensagem : <span><?= $fetch_message['mensagem']; ?></span> </p>
+                     <a href="admin_mensagens.php?delete=<?= $fetch_message['id']; ?>" onclick="return confirm('delete this message?');" class="delete-btn">Deletar</a>
                   </div>
             <?php
                }
             } else {
-               echo '<p class="empty">you have no messages!</p>';
+               echo '<p class="empty">Nenhuma mensagem foi enviada!</p>';
             }
             ?>
 
