@@ -863,6 +863,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background: #373737;
 }
 
+.body.dark .header .navbar{
+    box-shadow: var(--box-shadow-dark);
+    background: #252525;
+}
+
 .body.dark .header .navbar.active{
     box-shadow: var(--box-shadow-dark);
     background: #252525;

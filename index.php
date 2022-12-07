@@ -85,8 +85,8 @@ if (isset($_POST['adicionar_carrinho'])) {
         <div class="inicial-left">
             <div class="inicial-text">
                 <h4 class="text-h4">Feito para você!</h4>
-                <h1 class="text-h1">LoremIpsum<br>LoremIpsumm</h1>
-                <p class="p" onclick="login_popup()">LoremIpsumLoremIpsumLoremIpsumLoremIpsum</p>
+                <h1 class="text-h1">Tudo para Facilitar<br>Seu dia a dia</h1>
+                <p class="p" onclick="login_popup()">Peça e receba onde estiver</p>
                 <button id="faca-login" value="login"></button>
                 <a href="sobre.php" class="inicial-btn">Sobre Nós</a>
             </div>

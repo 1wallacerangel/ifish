@@ -187,14 +187,15 @@ body {
 
 .inicial-text .text-h1 {
     color: #000;
-    font-size: 7rem;
+    font-size: 6rem;
     margin-bottom: 2rem;
-    line-height: 6rem;
+    line-height: 7rem;
 }
 
 .inicial-text p {
+    font-size: 12pt;
     color: #000;
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
 }
 
 .inicial-text a {
@@ -334,7 +335,7 @@ li a:active {
 }
 
 .home-category{
-    margin-top: 25px;
+    margin-top: 50px;
 }
 
 .home-category .box-container{

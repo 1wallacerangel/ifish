@@ -32,15 +32,19 @@ session_start();
 
          <div class="box">
             <img src="img/ifish" alt="">
-            <h3>porque nos escolher?</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam, a quod, quis alias eius dignissimos pariatur laborum dolorem ad ullam iure, consequatur autem animi illo odit! Atque quia minima voluptatibus.</p>
+            <h3>quem somos?</h3>
+            <p>Somos um grupo de estudantes do IFRJ Campus de Arraial do Cabo, nossa plataforma de delivery visa
+            a praticidade nas vendas.
+            Temos a proposta de atualizar o mercado de frutos do mar na cidade, começamos no 6° periodo como um trabalho de desenvolvimento web e decidimos trazer a proposta
+            para o nosso TCC.</p>
             <a href="contato.php" class="btn">contacte-nos </a>
          </div>
 
          <div class="box">
             <img src="img/#" alt="">
             <h3>oque oferecemos?</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam, a quod, quis alias eius dignissimos pariatur laborum dolorem ad ullam iure, consequatur autem animi illo odit! Atque quia minima voluptatibus.</p>
+            <p>Oferecemos um serviço de delivery frutos do mar voltado parar a região dos lagos, com um sistema de compra e venda. O vendedor divulga seus pedidos em nossa plataforma 
+            e os usuarios realizam a compra pelo site. Visamos o conforto e a rapidez de um mercado que é muito presente em arraial do cabo e adjacências.</p>
             <a href="produtos.php" class="btn">nossos produtos</a>
          </div>
 
