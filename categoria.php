@@ -76,7 +76,7 @@ if (isset($_POST['add_carrinho'])) {
          }
       }
       ?>
-      <h1 class="titulo"><?= $category_name = $_GET['categoria']; ?></h1>
+      <h1 class="titulo-cat"><?= $category_name = $_GET['categoria']; ?></h1>
 
       <div class="box-container">
 

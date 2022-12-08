@@ -28,10 +28,6 @@
     cursor: pointer;
  }
 
-.sobre  {
-    margin-top: 90px;
-}
-
 .sobre .row {
     padding-left: 9.5%;
     padding-right: 9.5%;
@@ -95,7 +91,7 @@
 .desenvolvedores .box-container {
     padding-left: 9.5%;
     padding-right: 9.5%;
-    margin-bottom: 5rem;
+    padding-bottom: 5rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 1.5rem;

@@ -33,13 +33,13 @@ if (isset($_POST['update_profile'])) {
 
    if (!empty($update_pass) and !empty($new_pass) and !empty($confirm_pass)) {
       if ($update_pass != $old_pass) {
-         $message[] = 'old password not matched!';
+         $message[] = 'A senha antiga não corresponde!';
       } elseif ($new_pass != $confirm_pass) {
-         $message[] = 'confirm password not matched!';
+         $message[] = 'As senhas não correspondem!';
       } else {
          $update_pass_query = $conn->prepare("UPDATE `usuario` SET senha = ? WHERE id = ?");
          $update_pass_query->execute([$confirm_pass, $user_id]);
-         $message[] = 'password updated successfully!';
+         $message[] = 'Senha atualizada com sucesso!';
       }
    }
 }
@@ -53,12 +53,13 @@ if (isset($_POST['update_profile'])) {
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>IFISH</title>
+   <title>IFISH - Atulizar Perfil</title>
    <link rel="shortcut icon" href="img/ifish-icon.png">
    <link rel="stylesheet" href="css/index.css">
    <link rel="stylesheet" href="css/header.css">
    <link rel="stylesheet" href="css/footer.css">
-   <link rel="stylesheet" href="css/components.css">
+   <link rel="stylesheet" href="css/usuario_atualizar_perfil.css">
+
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 </head>
 
@@ -68,27 +69,40 @@ if (isset($_POST['update_profile'])) {
 
    <section class="update-profile">
 
-      <h1 class="title">update profile</h1>
+      <h1 class="titulo-profile">Atualizar Perfil</h1>
+
+      <?php
+         if (isset($message)) {
+            foreach ($message as $message) {
+               echo '
+                  <div class="mensagem">
+                  <span>' . $message . '</span>
+                  <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+                  </div>
+                  ';
+            }
+         }
+      ?>
 
       <form action="" method="POST" enctype="multipart/form-data">
          <div class="flex">
             <div class="inputBox">
-               <span>email :</span>
-               <input type="email" name="email" value="<?= $fetch_profile['email']; ?>" placeholder="update email" required class="box">
+               <span>Email :</span>
+               <input type="email" name="email" value="<?= $fetch_profile['email']; ?>" placeholder="atualizar email" required class="box">
                <input type="hidden" name="old_pass" value="<?= $fetch_profile['senha']; ?>">
-               <span>old password :</span>
-               <input type="password" name="update_pass" placeholder="enter previous password" class="box">
+               <span>Senha Antiga :</span>
+               <input type="password" name="update_pass" placeholder="insira a antiga senha" class="box">
             </div>
             <div class="inputBox">
-               <span>new password :</span>
-               <input type="password" name="new_pass" placeholder="enter new password" class="box">
-               <span>confirm password :</span>
-               <input type="password" name="confirm_pass" placeholder="confirm new password" class="box">
+               <span>Nova Senha :</span>
+               <input type="password" name="new_pass" placeholder="insira a nova senha" class="box">
+               <span>Confirmar Senha :</span>
+               <input type="password" name="confirm_pass" placeholder="confirme a nova senha" class="box">
             </div>
          </div>
          <div class="flex-btn">
-            <input type="submit" class="btn" value="update profile" name="update_profile">
-            <a href="index.php" class="option-btn">go back</a>
+            <input type="submit" class="btn-at" value="Atualizar Perfil" name="update_profile">
+            <a href="index.php" class="option-btn">Voltar</a>
          </div>
       </form>
 

@@ -13,7 +13,7 @@
 
 .header {
     margin: 0 auto;
-    position: fixed;
+    position: sticky;
     background: var(--white);
     top: 0;
     left: 0;

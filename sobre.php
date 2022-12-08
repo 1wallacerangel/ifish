@@ -3,14 +3,6 @@ ini_set('display_errors', 0 );
 error_reporting(0);
 ?>
 
-<?php
-
-@include 'conexao.php';
-
-session_start();
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -36,7 +28,7 @@ session_start();
       <div class="row">
 
          <div class="box">
-            <img src="img/ifish" alt="">
+            <img src="img/#" alt="">
             <h3>quem somos?</h3>
             <p>Somos um grupo de estudantes do IFRJ Campus de Arraial do Cabo, nossa plataforma de delivery visa
             a praticidade nas vendas.

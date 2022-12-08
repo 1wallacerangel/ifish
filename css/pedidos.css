@@ -37,17 +37,16 @@
 }
 
 .pedidos {
-   padding: 3rem 2rem;
+   padding: 5rem 2rem;
    max-width: 1200px;
    margin: 0 auto;
-   margin-bottom: 2rem;
+   padding-bottom: 5rem;
 }
 
 .titulo {
+   padding: 0;
    font-weight: bold;
    text-align: center;
-   padding-top: 2.5rem;
-   margin-top: 65px;
    margin-bottom: 2.3rem;
    text-transform: capitalize;
    color: var(--black);
