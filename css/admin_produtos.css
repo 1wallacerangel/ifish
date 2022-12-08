@@ -7,7 +7,6 @@
    padding:2rem;
    margin:0 auto;
    text-align: center;
-   border:var(--border);
    box-shadow: var(--box-shadow);
    background-color: var(--white);
    border-radius: .5rem;
@@ -31,7 +30,6 @@
    color:var(--black);
    border-radius: .5rem;
    background-color: var(--light-bg);
-   border:var(--border);
 }
 
 .add-products form textarea{
@@ -53,7 +51,6 @@
 
 .show-products .box-container .box{
    text-align: center;
-   border:var(--border);
    box-shadow: var(--box-shadow);
    background-color: var(--white);
    border-radius: .5rem;
@@ -99,7 +96,6 @@
    padding:2rem;
    margin:0 auto;
    text-align: center;
-   border:var(--border);
    box-shadow: var(--box-shadow);
    background-color: var(--white);
    border-radius: .5rem;
@@ -113,7 +109,6 @@
 
 .update-product form .box{
    width: 100%;
-   border:var(--border);
    background-color: var(--white);
    border-radius: .5rem;
    background-color: var(--light-bg);

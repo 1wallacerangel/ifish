@@ -71,7 +71,6 @@ document.querySelector('#cart-btn').onclick = () => {
     searchForm.classList.remove('active');
     loginForm.classList.remove('active');
     logRegister.classList.remove('active');
-    navbar.classList.toggle('active');
 }
 
 
@@ -144,7 +143,7 @@ function register(){
     logi.style.left="400px";
     registe.style.left="0px";
     btn.style.left="140px";
-    logregiste.style.height="595px";
+    logregiste.style.height="460px";
     logtext.style.color="#ffffff"
     regtext.style.color="#cc1825"
 }
@@ -153,7 +152,7 @@ function login(){
     logi.style.left="0px";
     registe.style.left="-385px";
     btn.style.left="20px";
-    logregiste.style.height="400px";
+    logregiste.style.height="375px";
     logtext.style.color="#cc1825"
     regtext.style.color="#ffffff"
 }

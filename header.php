@@ -21,14 +21,14 @@ if (isset($_POST['submit_register'])) {
     $select->execute([$email]);
 
     if ($select->rowCount() > 0) {
-        $message_register[] = 'user email already exist!';
+        $message_register[] = 'Email já cadastrado!';
     } else {
         if ($senha != $conf_senha) {
-            $message_register[] = 'confirm password not matched!';
+            $message_register[] = 'As senhas não batem!';
         } else {
             $insert = $conn->prepare("INSERT INTO `usuario`(nome, email, senha) VALUES(?,?,?)");
             $insert->execute([$nome, $email, $senha]);
-            $message_register[] = 'registrado!';
+            $message_register[] = 'Conta criada com sucessor!';
         }
     }
 }
@@ -66,10 +66,10 @@ if (isset($_POST['submit_login'])) {
             $_SESSION['user_id'] = $row['id'];
             header('location:index.php');
         } else {
-            $message_login[] = 'no user found!';
+            $message_login[] = 'Usuário não encontrado!';
         }
     } else {
-        $message_login[] = 'incorrect email or password!';
+        $message_login[] = 'Email ou senha incorretos!';
     }
 }
 ?>
@@ -208,10 +208,10 @@ if (isset($_POST['update_qty'])) {
                 <div id="btn"></div>
                 <div class="button-box">
                     <button type="button" class="toggle-btn" onclick="login()" onclick="login2()">
-                        <p class="log-text" id="log-p">Logar</p>
+                        <p class="log-text" id="log-p">Entrar</p>
                     </button>
                     <button type="button" class="toggle-btn" onclick="register()" onclick="register2()">
-                        <p class="reg-text" id="reg-p">Registrar</p>
+                        <p class="reg-text" id="reg-p">Cadastrar</p>
                     </button>
                 </div>
                 <form action="" id="login" class="login-form" method="POST">';
@@ -219,9 +219,8 @@ if (isset($_POST['update_qty'])) {
                 if (isset($message_login)) {
                     foreach ($message_login as $message_login) {
                         echo '
-                                <div class="message">
+                                <div class="mensagem-login">
                                 <span>' . $message_login . '</span>
-                                <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
                                 </div>
                             ';
                     }
@@ -231,26 +230,25 @@ if (isset($_POST['update_qty'])) {
                     <input type="password" name="senha" placeholder="Insira sua senha" class="box2" id="senha-id" required>
                     <div id="eye" class="eye" onclick="eyeClick()"></div>
                     <p>Esqueceu sua senha? <a href="#">Clique Aqui</a></p>
-                    <input type="submit" name="submit_login" value="logar" class="btn">
+                    <input type="submit" name="submit_login" value="Entrar" class="btn">
                 </form>
                 <form action="" method="POST" id="register" class="register-form">';
 
                 if (isset($message_register)) {
                     foreach ($message_register as $message_register) {
                         echo '
-                                <div class="message">
+                                <div class="mensagem-register">
                                 <span>' . $message_register . '</span>
-                                <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
                                 </div>
                             ';
                     }
                 }
                 echo '
-                    <input type="text" name="nome" placeholder="Nome" class="box-r" required>
+                    <input type="text" name="nome" placeholder="Insira seu nome" class="box-r" required>
                     <input type="email" name="email" placeholder="Insira seu email" class="box-r" required>
                     <input type="password" name="senha" placeholder="Insira sua senha" class="box-r" required>
                     <input type="password" name="conf_senha" placeholder="Confirme sua senha" class="box-r" required>
-                    <input type="submit" name="submit_register" value="register" class="btn">
+                    <input type="submit" name="submit_register" value="Criar Conta" class="btn">
                     </form>';
             }
             ?>

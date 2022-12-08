@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
+@font-face {
+   font-family: SulSansRegular;
+   src: local(SulSans), url(font/SulSans-Regular.otf);
+}
 
 :root{
    --green:#27ae60;
@@ -8,12 +11,11 @@
    --light-color:#666;
    --white:#fff;
    --light-bg:#f6f6f6;
-   --border:.2rem solid var(--black);
    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
 }
 
 *{
-   font-family: 'Rubik', sans-serif;
+   font-family: SulSansRegular;
    margin:0; padding:0;
    box-sizing: border-box;
    outline: none; border:none;
@@ -148,7 +150,6 @@ section{
    background: var(--white);
    color:var(--red);
    border-radius: .5rem;
-   border:var(--border);
    font-size: 2rem;
    text-align: center;
    box-shadow: var(--box-shadow);
@@ -173,7 +174,6 @@ section{
    background-color: var(--white);
    border-radius: .5rem;
    box-shadow: var(--box-shadow);
-   border:var(--border);
    text-align: center;
    padding:2rem;
 }
@@ -189,7 +189,6 @@ section{
    width: 100%;
    margin:1rem 0;
    border-radius: .5rem;
-   border:var(--border);
    padding:1.2rem 1.4rem;
    font-size: 1.8rem;
    color:var(--black);
@@ -281,7 +280,6 @@ section{
    position: absolute;
    top:120%; right:2rem;
    box-shadow: var(--box-shadow);
-   border:var(--border);
    border-radius: .5rem;
    padding:2rem;
    text-align: center;
@@ -314,7 +312,6 @@ section{
    margin: 0 auto;
    background-color: var(--white);
    box-shadow: var(--box-shadow);
-   border:var(--border);
    border-radius: .5rem;
    padding:2rem;
    text-align: center;
@@ -351,7 +348,6 @@ section{
    padding:1.2rem 1.4rem;
    font-size: 1.8rem;
    color:var(--black);
-   border:var(--border);
    border-radius: .5rem;
    margin:1rem 0;
    background-color: var(--light-bg);
@@ -440,8 +436,6 @@ section{
    }
 
    .header .flex .navbar{
-      border-top: var(--border);
-      border-bottom: var(--border);
       background-color: var(--white);
       position: absolute;
       top:99%; left:0; right:0;

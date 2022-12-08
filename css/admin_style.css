@@ -10,7 +10,6 @@
 .dashboard .box-container .box{
    padding:1.5rem;
    text-align: center;
-   border:var(--border);
    box-shadow: var(--box-shadow);
    background-color: var(--white);
    border-radius: .5rem;
@@ -27,7 +26,6 @@
    color:var(--light-color);
    padding:1.5rem;
    margin:1rem 0;
-   border:var(--border);
    border-radius: .5rem;
    color:var(--black);
 }
@@ -37,7 +35,6 @@
    padding:2rem;
    margin:0 auto;
    text-align: center;
-   border:var(--border);
    box-shadow: var(--box-shadow);
    background-color: var(--white);
    border-radius: .5rem;
@@ -61,7 +58,6 @@
    color:var(--black);
    border-radius: .5rem;
    background-color: var(--light-bg);
-   border:var(--border);
 }
 
 .add-products form textarea{
@@ -83,7 +79,6 @@
 
 .show-products .box-container .box{
    text-align: center;
-   border:var(--border);
    box-shadow: var(--box-shadow);
    background-color: var(--white);
    border-radius: .5rem;
@@ -129,7 +124,6 @@
    padding:2rem;
    margin:0 auto;
    text-align: center;
-   border:var(--border);
    box-shadow: var(--box-shadow);
    background-color: var(--white);
    border-radius: .5rem;
@@ -143,7 +137,6 @@
 
 .update-product form .box{
    width: 100%;
-   border:var(--border);
    background-color: var(--white);
    border-radius: .5rem;
    background-color: var(--light-bg);
@@ -162,7 +155,6 @@
 }
 
 .placed-orders .box-container .box{
-   border:var(--border);
    box-shadow: var(--box-shadow);
    background-color: var(--white);
    border-radius: .5rem;
@@ -184,7 +176,6 @@
    width: 100%;
    padding:1.2rem 1.4rem;
    font-size: 1.8rem;
-   border:var(--border);
    border-radius: .5rem;
    background-color: var(--light-bg);
    margin-bottom: .5rem;
@@ -199,7 +190,6 @@
 }
 
 .user-accounts .box-container .box{
-   border:var(--border);
    box-shadow: var(--box-shadow);
    background-color: var(--white);
    border-radius: .5rem;
@@ -235,7 +225,6 @@
 }
 
 .messages .box-container .box{
-   border:var(--border);
    box-shadow: var(--box-shadow);
    background-color: var(--white);
    border-radius: .5rem;

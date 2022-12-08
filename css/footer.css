@@ -19,6 +19,10 @@
    font-size: 2rem;
 }
 
+.footer .box-container .box a{
+   cursor: pointer;
+}
+
 .footer .box-container .box a,
 .footer .box-container .box p {
    display: flex;

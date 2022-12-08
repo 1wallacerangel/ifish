@@ -16,7 +16,6 @@
  .dashboard .box-container .box{
     padding:1.5rem;
     text-align: center;
-    border:var(--border);
     box-shadow: var(--box-shadow);
     background-color: var(--white);
     border-radius: .5rem;
@@ -39,7 +38,6 @@
     color:var(--light-color);
     padding:1.5rem;
     margin:1rem 0;
-    border:var(--border);
     border-radius: .5rem;
     color:var(--black);
  }
