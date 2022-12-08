@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05-Dez-2022 às 02:22
--- Versão do servidor: 10.4.25-MariaDB
--- versão do PHP: 8.1.10
+-- Tempo de geração: 08-Dez-2022 às 02:59
+-- Versão do servidor: 10.4.27-MariaDB
+-- versão do PHP: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,15 +35,7 @@ CREATE TABLE `carrinho` (
   `preco` int(100) NOT NULL,
   `quantidade` int(100) NOT NULL,
   `image` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `carrinho`
---
-
-INSERT INTO `carrinho` (`id`, `user_id`, `pid`, `nome`, `preco`, `quantidade`, `image`) VALUES
-(236, 31, 23, 'Tomate', 13, 1, 'tomato.png'),
-(237, 31, 19, 'Maça', 25, 1, 'apple.png');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -58,14 +50,7 @@ CREATE TABLE `mensagem` (
   `email` varchar(100) NOT NULL,
   `telefone` varchar(11) NOT NULL,
   `mensagem` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `mensagem`
---
-
-INSERT INTO `mensagem` (`id`, `user_id`, `nome`, `email`, `telefone`, `mensagem`) VALUES
-(17, 7, 'Wallace Rangel', 'wallacerangelone2@gmail.com', '22998121122', 'wfweffwe');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -85,14 +70,7 @@ CREATE TABLE `pedido` (
   `total_preco` int(100) NOT NULL,
   `data_pedido` varchar(50) NOT NULL,
   `status_pagamento` varchar(20) NOT NULL DEFAULT 'Pendente'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `pedido`
---
-
-INSERT INTO `pedido` (`id`, `user_id`, `cpf`, `telefone`, `email`, `metodo`, `endereco`, `total_produto`, `total_preco`, `data_pedido`, `status_pagamento`) VALUES
-(38, 7, '19798303717', 2147483647, 'wallacerangelone2@gmail.com', 'Dinheiro', 'Rua Recanto da saudade | 303 | Araruama | 28970000', ' Maça ( 1 )', 25, '03-12-2022 01:57', 'Realizado');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -107,7 +85,7 @@ CREATE TABLE `produto` (
   `detalhe` varchar(500) NOT NULL,
   `preco` int(100) NOT NULL,
   `image` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `produto`
@@ -133,15 +111,14 @@ CREATE TABLE `usuario` (
   `email` varchar(100) NOT NULL,
   `senha` varchar(100) NOT NULL,
   `user_type` varchar(20) NOT NULL DEFAULT 'user'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `user_type`) VALUES
-(7, 'Wallace Rangel Gama da Silva', 'wallacerangelone2@gmail.com', '202cb962ac59075b964b07152d234b70', 'user'),
-(8, 'Wallace Rangel Gama da Silva', 'wallacerangel@gmail.com', '202cb962ac59075b964b07152d234b70', 'admin');
+(11, 'Admin', 'admin@admin.com', '25d55ad283aa400af464c76d713c07ad', 'admin');
 
 --
 -- Índices para tabelas despejadas
@@ -185,7 +162,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `carrinho`
 --
 ALTER TABLE `carrinho`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=256;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=259;
 
 --
 -- AUTO_INCREMENT de tabela `mensagem`
@@ -209,7 +186,7 @@ ALTER TABLE `produto`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

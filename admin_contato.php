@@ -61,7 +61,7 @@
                      <p> Telefone : <span><?= $fetch_message['telefone']; ?></span> </p>
                      <p> Email : <span><?= $fetch_message['email']; ?></span> </p>
                      <p> Mensagem : <span><?= $fetch_message['mensagem']; ?></span> </p>
-                     <a href="admin_mensagens.php?delete=<?= $fetch_message['id']; ?>" onclick="return confirm('delete this message?');" class="delete-btn">Deletar</a>
+                     <a href="admin_contato.php?delete=<?= $fetch_message['id']; ?>" onclick="return confirm('delete this message?');" class="delete-btn">Deletar</a>
                   </div>
             <?php
                }
