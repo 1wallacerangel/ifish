@@ -44,6 +44,10 @@
     width: 76px;
 }
 
+.header .ifish-bar-admin {
+    width: 143px;
+}
+
 /*Texto dos itens*/
 
 .header .navbar a {
@@ -548,6 +552,7 @@ input[type="search"]::-webkit-search-cancel-button {
 
 .logout-btn i{
     margin-left: 1rem;
+    color: var(--white);
 }
 
 .logout-btn:hover {
