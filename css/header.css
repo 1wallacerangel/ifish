@@ -475,7 +475,7 @@ input[type="search"]::-webkit-search-cancel-button {
     top: 125%;
     right: -110%;
     width: 35rem;
-    height: 380px;
+    height: 240px;
     /*height: 575px;*/
     box-shadow: var(--box-shadow);
     padding: 1.5rem;
@@ -492,11 +492,14 @@ input[type="search"]::-webkit-search-cancel-button {
     padding: 2rem 2rem;
     font-size: 1.8rem;
     font-weight: bold;
-    border-radius: .5rem;
-    color: var(--red);
-    background: #eee;
+    border-radius: 10px;
+    color: var(--black);
     width: 100%;
     margin-bottom: 1rem;
+}
+
+.body.dark .log-register .profile .profile-nome {
+    color: var(--white);
 }
 
 .update-btn {
@@ -504,8 +507,8 @@ input[type="search"]::-webkit-search-cancel-button {
     text-align: center;
     display: inline-block;
     padding: 2rem 1.5rem;
-    font-size: 2rem;
-    border-radius: .5rem;
+    font-size: 16pt;
+    border-radius: 10px;
     color: var(--red);
     cursor: pointer;
     background: #eee;
@@ -518,23 +521,38 @@ input[type="search"]::-webkit-search-cancel-button {
     background: var(--red);
 }
 
+.body.dark .update-btn {
+    color: var(--red);
+    background: #373737;
+}
+
+.body.dark .update-btn:hover {
+    color: var(--white);
+    background: var(--red);
+}
+
 .logout-btn {
     text-align: center;
     display: inline-block;
     padding: 2rem 1.5rem;
-    font-size: 3rem;
-    border-radius: .5rem;
-    color: var(--red);
+    font-size: 20pt;
+    border-radius: 10px;
+    color: var(--white);
     cursor: pointer;
-    background: #eee;
-    width: 50%;
+    background: var(--red);
+    width: 100%;
     text-transform: uppercase;
     font-weight: bold;
+   
+}
+
+.logout-btn i{
+    margin-left: 1rem;
 }
 
 .logout-btn:hover {
     color: var(--white);
-    background: var(--red);
+    background: var(--dark-red);
 }
 
 .header .login-form {
@@ -984,6 +1002,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         width: 46.6%;
     }
 
+    .header .log-register {
+        height: 218px;
+    }
+
 }
 
 @media (max-width:768px) {
@@ -1079,6 +1101,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         font-size: 13pt;
     }
 
+    .header .log-register {
+        height: 202px;
+    }
+
 }
 
 @media (max-width:350px) {
@@ -1120,4 +1146,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     .header .cart-total .continue-btn-vazio {
         font-size: 13pt;
     }
+    .header .log-register {
+        height: 188px;
+    }
+
 }

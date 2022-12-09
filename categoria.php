@@ -96,7 +96,7 @@ if (isset($_POST['add_carrinho'])) {
                      <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
                      <input type="hidden" name="p_name" value="<?= $fetch_products['nome']; ?>">
                      <input type="hidden" name="p_price" value="<?= $fetch_products['preco']; ?>">
-                     <input type="hidden" name="p_image" value="<?= $fetch_products['image']; ?>">
+                     <input type="hidden" value="1" name="quantidade">
                      <input type="submit" value="Adicionar" class="btn" name="add_carrinho">
                   </form>
                </div>

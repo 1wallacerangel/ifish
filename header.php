@@ -201,8 +201,8 @@ if (isset($_POST['update_qty'])) {
                 $select_profile->execute([$user_id]);
                 $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
                 echo '<p class="profile-nome">' . $fetch_profile['nome'] . '</p>
-                    <a href="usuario_atualizar_perfil.php" class="update-btn">update profile</a>
-                    <a href="logout.php" class="logout-btn">sair</a>';
+                    <a href="usuario_atualizar_perfil.php" class="update-btn">Atualizar Perfil</a>
+                    <a href="logout.php" class="logout-btn">sair<i class="fa-solid fa-right-from-bracket"></i></a>';
             } else {
                 echo '
                 <div id="btn"></div>

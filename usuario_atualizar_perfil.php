@@ -102,7 +102,7 @@ if (isset($_POST['update_profile'])) {
          </div>
          <div class="flex-btn">
             <input type="submit" class="btn-at" value="Atualizar Perfil" name="update_profile">
-            <a href="index.php" class="option-btn">Voltar</a>
+            <a onclick="javascript:history.go(-1)" class="option-btn">Voltar</a>
          </div>
       </form>
 

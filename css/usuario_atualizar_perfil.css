@@ -46,16 +46,16 @@
     color: var(--black);
 }
 
-.flex-btn{
+.flex-btn {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     flex: 1;
 }
 
-.flex-btn > *{
-    flex:1;
- }
+.flex-btn>* {
+    flex: 1;
+}
 
 .btn-at {
     margin-top: 1rem;
@@ -169,7 +169,7 @@
     color: var(--white);
 }
 
-.body.dark  .btn-at {
+.body.dark .btn-at {
     background: #373737;
     color: var(--red);
 }
@@ -179,12 +179,31 @@
     color: var(--red);
 }
 
-.body.dark  .btn-at:hover {
+.body.dark .btn-at:hover {
     background: var(--red);
     color: var(--white);
 }
 
-.body.dark  .option-btn:hover {
+.body.dark .option-btn:hover {
     background: var(--red);
     color: var(--white);
+}
+
+@media only screen and (max-width: 405px) {
+
+    .update-profile form .inputBox span {
+        font-size: 9pt;
+    }
+
+    .update-profile form .inputBox .box {
+        font-size: 1.2rem;
+    }
+
+    .btn-at {
+        font-size: 7pt;
+    }
+
+    .option-btn {
+        font-size: 7pt;
+    }
 }
