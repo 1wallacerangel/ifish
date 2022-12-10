@@ -10,21 +10,21 @@ if (!isset($admin_id)) {
    header('location:index.php');
 };
 
-if (isset($_POST['update_order'])) {
+if (isset($_POST['update_pedido'])) {
 
-   $order_id = $_POST['order_id'];
-   $update_payment = $_POST['update_payment'];
-   $update_payment = filter_var($update_payment, FILTER_SANITIZE_STRING);
-   $update_orders = $conn->prepare("UPDATE `pedido` SET status_pagamento = ? WHERE id = ?");
-   $update_orders->execute([$update_payment, $order_id]);
-   $message[] = 'payment has been updated!';
+   $pedido_id = $_POST['pedido_id'];
+   $update_pagamento = $_POST['update_pagamento'];
+   $update_pagamento = filter_var($update_pagamento, FILTER_SANITIZE_STRING);
+   $update_pedidos = $conn->prepare("UPDATE `pedido` SET status_pagamento = ? WHERE id = ?");
+   $update_pedidos->execute([$update_pagamento, $pedido_id]);
+   $message[] = 'O Pagamento Foi Atualizado!';
 };
 
 if (isset($_GET['delete'])) {
 
    $delete_id = $_GET['delete'];
-   $delete_orders = $conn->prepare("DELETE FROM `pedido` WHERE id = ?");
-   $delete_orders->execute([$delete_id]);
+   $delete_pedidos = $conn->prepare("DELETE FROM `pedido` WHERE id = ?");
+   $delete_pedidos->execute([$delete_id]);
    header('location:admin_pedidos.php');
 }
 
@@ -76,15 +76,15 @@ if (isset($_GET['delete'])) {
                   <p> Preço Total : <span>R$<?= $fetch_orders['total_preco']; ?></span> </p>
                   <p> Método de Pagamento : <span><?= $fetch_orders['metodo']; ?></span> </p>
                   <form action="" method="POST">
-                     <input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
-                     <select name="update_payment" class="drop-down">
+                     <input type="hidden" name="pedido_id" value="<?= $fetch_orders['id']; ?>">
+                     <select name="update_pagamento" class="drop-down">
                         <option value="" selected disabled><?= $fetch_orders['status_pagamento']; ?></option>
                         <option value="Pendente">Pendente</option>
                         <option value="Realizado">Realizado</option>
                      </select>
                      <div class="flex-btn">
-                        <input type="submit" name="update_order" class="option-btn" value="Atualizar">
-                        <a href="admin_pedidos.php?delete=<?= $fetch_orders['id']; ?>" class="delete-btn" onclick="return confirm('delete this order?');">Deletar</a>
+                        <input type="submit" name="update_pedido" class="option-btn" value="Atualizar">
+                        <a href="admin_pedidos.php?delete=<?= $fetch_orders['id']; ?>" class="delete-btn" onclick="return confirm('Deletar esse pedido?');">Deletar</a>
                      </div>
                   </form>
                </div>

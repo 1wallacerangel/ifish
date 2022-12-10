@@ -10,17 +10,17 @@ if (!isset($admin_id)) {
    header('location:index.php');
 };
 
-if (isset($_POST['update_product'])) {
+if (isset($_POST['update_produto'])) {
 
    $pid = $_POST['pid'];
-   $name = $_POST['name'];
-   $name = filter_var($name, FILTER_SANITIZE_STRING);
-   $price = $_POST['price'];
-   $price = filter_var($price, FILTER_SANITIZE_STRING);
-   $category = $_POST['category'];
-   $category = filter_var($category, FILTER_SANITIZE_STRING);
-   $details = $_POST['details'];
-   $details = filter_var($details, FILTER_SANITIZE_STRING);
+   $nome = $_POST['nome'];
+   $nome = filter_var($nome, FILTER_SANITIZE_STRING);
+   $preco = $_POST['preco'];
+   $preco = filter_var($preco, FILTER_SANITIZE_STRING);
+   $categoria = $_POST['categoria'];
+   $categoria = filter_var($categoria, FILTER_SANITIZE_STRING);
+   $detalhes = $_POST['detalhes'];
+   $detalhes = filter_var($detalhes, FILTER_SANITIZE_STRING);
 
    $image = $_FILES['image']['name'];
    $image = filter_var($image, FILTER_SANITIZE_STRING);
@@ -30,13 +30,13 @@ if (isset($_POST['update_product'])) {
    $old_image = $_POST['old_image'];
 
    $update_product = $conn->prepare("UPDATE `produto` SET nome = ?, categoria = ?, detalhe = ?, preco = ? WHERE id = ?");
-   $update_product->execute([$name, $category, $details, $price, $pid]);
+   $update_product->execute([$nome, $categoria, $detalhes, $preco, $pid]);
 
-   $message[] = 'product updated successfully!';
+   $message[] = 'Produto Atulizado com Sucesso!';
 
    if (!empty($image)) {
       if ($image_size > 2000000) {
-         $message[] = 'image size is too large!';
+         $message[] = 'Essa Imagem é Muito Grande!';
       } else {
 
          $update_image = $conn->prepare("UPDATE `produto` SET image = ? WHERE id = ?");
@@ -45,7 +45,7 @@ if (isset($_POST['update_product'])) {
          if ($update_image) {
             move_uploaded_file($image_tmp_name, $image_folder);
             unlink('uploaded_img/' . $old_image);
-            $message[] = 'image updated successfully!';
+            $message[] = 'Imagem Atulizada com Sucesso!';
          }
       }
    }
@@ -91,18 +91,18 @@ if (isset($_POST['update_product'])) {
                <input type="hidden" name="old_image" value="<?= $fetch_products['image']; ?>">
                <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
                <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
-               <input type="text" name="name" placeholder="Insira o nome do produto" required class="box" value="<?= $fetch_products['nome']; ?>">
-               <input type="number" name="price" min="0" placeholder="Insira o preço do produto" required class="box" value="<?= $fetch_products['preco']; ?>">
-               <select name="category" class="box" required>
+               <input type="text" name="nome" placeholder="Insira o nome do produto" required class="box" value="<?= $fetch_products['nome']; ?>">
+               <input type="number" name="preco" min="0" placeholder="Insira o preço do produto" required class="box" value="<?= $fetch_products['preco']; ?>">
+               <select name="categoria" class="box" required>
                   <option value="" selected disabled>Selecione a Categoria</option>
                   <option value="peixes">Peixes</option>
                   <option value="crustáceos">Crustáceos</option>
                   <option value="moluscos">Moluscos</option>
                </select>
-               <textarea name="details" required placeholder="Insira os detalhes do produto" class="box" cols="30" rows="10"><?= $fetch_products['detalhe']; ?></textarea>
+               <textarea name="detalhes" required placeholder="Insira os detalhes do produto" class="box" cols="30" rows="10"><?= $fetch_products['detalhe']; ?></textarea>
                <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png">
                <div class="flex-btn">
-                  <input type="submit" class="btn" value="Atualizar Produto" name="update_product">
+                  <input type="submit" class="btn" value="Atualizar Produto" name="update_produto">
                   <a href="admin_produtos.php" class="option-btn">Voltar</a>
                </div>
             </form>

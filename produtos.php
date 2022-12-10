@@ -122,8 +122,6 @@ if (isset($_POST['adicionar_carrinho'])) {
 
 
    <script src="js/script.js"></script>
-   <script src="js/butter.js"></script>
-   <!--<script>butter.init({cancelOnTouch: true});</script>-->
 
 </body>
 

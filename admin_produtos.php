@@ -10,7 +10,7 @@ if (!isset($admin_id)) {
     header('location:index.php');
 };
 
-if (isset($_POST['add_product'])) {
+if (isset($_POST['add_produto'])) {
 
     $nome = $_POST['name'];
     $nome = filter_var($nome, FILTER_SANITIZE_STRING);
@@ -31,7 +31,7 @@ if (isset($_POST['add_product'])) {
     $select_products->execute([$nome]);
 
     if ($select_products->rowCount() > 0) {
-        $message[] = 'product name already exist!';
+        $message[] = 'Produto já Adicionado!';
     } else {
 
         $insert_products = $conn->prepare("INSERT INTO `produto`(nome, categoria, detalhe, preco, image) VALUES(?,?,?,?,?)");
@@ -39,10 +39,10 @@ if (isset($_POST['add_product'])) {
 
         if ($insert_products) {
             if ($image_size > 2000000) {
-                $message[] = 'image size is too large!';
+                $message[] = 'Essa Imagem é Muito Grande!';
             } else {
                 move_uploaded_file($image_tmp_name, $image_folder);
-                $message[] = 'new product added!';
+                $message[] = 'Novo Produto Adicionado!';
             }
         }
     }
@@ -108,7 +108,7 @@ if (isset($_GET['delete'])) {
                 </div>
             </div>
             <textarea name="detalhes" class="box" required placeholder="Insira os detalhes do produto" cols="30" rows="10"></textarea>
-            <input type="submit" class="btn" value="Adicionar Produto" name="add_product">
+            <input type="submit" class="btn" value="Adicionar Produto" name="add_produto">
         </form>
 
     </section>

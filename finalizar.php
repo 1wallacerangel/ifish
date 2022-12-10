@@ -15,20 +15,20 @@ if (!isset($user_id)) {
    header('location:index.php');
 };
 
-if (isset($_POST['order'])) {
+if (isset($_POST['pedido'])) {
 
-   $name = $_POST['name'];
-   $name = filter_var($name, FILTER_SANITIZE_STRING);
-   $number = $_POST['number'];
-   $number = filter_var($number, FILTER_SANITIZE_STRING);
+   $cpf = $_POST['cpf'];
+   $cpf = filter_var($cpf, FILTER_SANITIZE_STRING);
+   $telefone = $_POST['telefone'];
+   $telefone = filter_var($telefone, FILTER_SANITIZE_STRING);
    $email = $_POST['email'];
    $email = filter_var($email, FILTER_SANITIZE_STRING);
-   $method = $_POST['method'];
-   $method = filter_var($method, FILTER_SANITIZE_STRING);
-   $address = $_POST['flat'] . ' | ' . $_POST['street'] . ' | ' . $_POST['city'] . ' | ' . $_POST['pin_code'];
-   $address = filter_var($address, FILTER_SANITIZE_STRING);
+   $metodo = $_POST['metodo'];
+   $metodo = filter_var($metodo, FILTER_SANITIZE_STRING);
+   $endereco = $_POST['rua'] . ' | ' . $_POST['numero'] . ' | ' . $_POST['complemento'] . ' | ' . $_POST['cep'];
+   $endereco = filter_var($endereco, FILTER_SANITIZE_STRING);
    date_default_timezone_set('America/Sao_Paulo');
-   $placed_on = date('d-m-Y H:i', time());
+   $data_pedido = date('d-m-Y H:i', time());
 
    $cart_total = 0;
    $cart_products[] = '';
@@ -46,7 +46,7 @@ if (isset($_POST['order'])) {
    $total_products = implode(' ',$cart_products);
 
    $order_query = $conn->prepare("SELECT * FROM `pedido` WHERE cpf = ? AND telefone = ? AND email = ? AND metodo = ? AND endereco = ? AND total_produto = ? AND total_preco = ?");
-   $order_query->execute([$name, $number, $email, $method, $address, $total_products, $cart_total]);
+   $order_query->execute([$cpf, $telefone, $email, $metodo, $endereco, $total_products, $cart_total]);
 
    if ($cart_total == 0) {
       $message[] = 'seu carrinho está vazio';
@@ -54,7 +54,7 @@ if (isset($_POST['order'])) {
       $message[] = 'pedido feito!';
    } else {
       $insert_order = $conn->prepare("INSERT INTO `pedido`(user_id, cpf, telefone, email, metodo, endereco, total_produto, total_preco, data_pedido) VALUES(?,?,?,?,?,?,?,?,?)");
-      $insert_order->execute([$user_id, $name, $number, $email, $method, $address, $total_products, $cart_total, $placed_on]);
+      $insert_order->execute([$user_id, $cpf, $telefone, $email, $metodo, $endereco, $total_products, $cart_total, $data_pedido]);
       $delete_cart = $conn->prepare("DELETE FROM `carrinho` WHERE user_id = ?");
       $delete_cart->execute([$user_id]);
       $message[] = 'pedido efetuado com sucesso!';
@@ -127,11 +127,11 @@ if (isset($_POST['order'])) {
          <div class="flex">
             <div class="inputBox">
                <span>CPF :</span>
-               <input type="number" name="name" placeholder="Ex: 000.000.000-00" class="box" required>
+               <input type="number" name="cpf" placeholder="Ex: 000.000.000-00" class="box" required>
             </div>
             <div class="inputBox">
                <span>telefone :</span>
-               <input type="number" name="number" placeholder="Ex: (22)999999999" class="box" required>
+               <input type="number" name="telefone" placeholder="Ex: (22)999999999" class="box" required>
             </div>
             <div class="inputBox">
                <span> email :</span>
@@ -139,7 +139,7 @@ if (isset($_POST['order'])) {
             </div>
             <div class="inputBox">
                <span>método de pagamento :</span>
-               <select name="method" class="box" required>
+               <select name="metodo" class="box" required>
                   <option value="Dinheiro">Dinheiro</option>
                   <option value="Cartão de Crédito">Cartão de Crédito/Débido</option>
                   <option value="Pix">Pix</option>
@@ -147,23 +147,23 @@ if (isset($_POST['order'])) {
             </div>
             <div class="inputBox">
                <span>endereço :</span>
-               <input type="text" name="flat" placeholder="Ex: Rua..." class="box" required>
+               <input type="text" name="rua" placeholder="Ex: Rua..." class="box" required>
             </div>
             <div class="inputBox">
                <span>número :</span>
-               <input type="number" name="street" placeholder="Ex: 555" class="box" required>
+               <input type="number" name="numero" placeholder="Ex: 555" class="box" required>
             </div>
             <div class="inputBox">
                <span>complemento :</span>
-               <input type="text" name="city" placeholder="Ex: Apartamento..." class="box" required>
+               <input type="text" name="complemento" placeholder="Ex: Apartamento..." class="box" required>
             </div>
             <div class="inputBox">
                <span>CEP :</span>
-               <input type="number" min="0" name="pin_code" placeholder="Ex: 29999-000" class="box" required>
+               <input type="number" min="0" name="cep" placeholder="Ex: 29999-000" class="box" required>
             </div>
          </div>
 
-         <input type="submit" name="order" class="btn-finalizar <?= ($cart_grand_total > 1) ? '' : 'disabled'; ?>" value="finalizar">
+         <input type="submit" name="pedido" class="btn-finalizar <?= ($cart_grand_total > 1) ? '' : 'disabled'; ?>" value="finalizar">
 
       </form>
 

@@ -155,8 +155,6 @@ if (isset($_POST['adicionar_carrinho'])) {
 
     </section>
 
-
-
     <section class="produtos">
 
         <h1 class="titulo">nossos produtos</h1>
@@ -209,8 +207,6 @@ if (isset($_POST['adicionar_carrinho'])) {
 
 
     <script src="js/script.js"></script>
-    <script src="js/butter.js"></script>
-    <!--<script>butter.init({cancelOnTouch: true});</script>-->
 </body>
 
 </html>

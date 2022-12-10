@@ -6,7 +6,7 @@ error_reporting(0);
 
 include 'conexao.php';
 
-if (isset($_POST['submit_register'])) {
+if (isset($_POST['cadastro'])) {
 
     $nome = $_POST['nome'];
     $nome = filter_var($nome, FILTER_SANITIZE_STRING);
@@ -21,14 +21,14 @@ if (isset($_POST['submit_register'])) {
     $select->execute([$email]);
 
     if ($select->rowCount() > 0) {
-        $message_register[] = 'Email já cadastrado!';
+        $message_register[] = 'Email já Cadastrado!';
     } else {
         if ($senha != $conf_senha) {
-            $message_register[] = 'As senhas não batem!';
+            $message_register[] = 'As Senhas não Batem!';
         } else {
             $insert = $conn->prepare("INSERT INTO `usuario`(nome, email, senha) VALUES(?,?,?)");
             $insert->execute([$nome, $email, $senha]);
-            $message_register[] = 'Conta criada com sucessor!';
+            $message_register[] = 'Conta Criada com Sucesso!';
         }
     }
 }
@@ -41,7 +41,7 @@ if (isset($_POST['submit_register'])) {
 
 session_start();
 
-if (isset($_POST['submit_login'])) {
+if (isset($_POST['entrar'])) {
 
     $email = $_POST['email'];
     $email = filter_var($email, FILTER_SANITIZE_STRING);
@@ -66,10 +66,10 @@ if (isset($_POST['submit_login'])) {
             $_SESSION['user_id'] = $row['id'];
             header('location:index.php');
         } else {
-            $message_login[] = 'Usuário não encontrado!';
+            $message_login[] = 'Usuário não Encontrado!';
         }
     } else {
-        $message_login[] = 'Email ou senha incorretos!';
+        $message_login[] = 'Email ou Senha incorretos!';
     }
 }
 ?>
@@ -155,7 +155,7 @@ if (isset($_POST['update_qty'])) {
                                 <input type="number" min="1" value="<?= $fetch_cart['quantidade']; ?>" class="qty" name="p_qty">
                                 <input type="submit" value="atualizar" name="update_qty" class="option-btn">
                             </div>
-                            <a href="index.php?delete=<?= $fetch_cart['id']; ?>" class="fas fa-trash" onclick="return confirm('Esse Produto Será Removido do Carrinho!');"></a>
+                            <a href="index.php?delete=<?= $fetch_cart['id']; ?>" class="fas fa-trash" onclick="return confirm('Esse produto será removido do carrinho!');"></a>
 
                         </form>
 
@@ -213,26 +213,26 @@ if (isset($_POST['update_qty'])) {
                     <button type="button" class="toggle-btn" onclick="register()" onclick="register2()">
                         <p class="reg-text" id="reg-p">Cadastrar</p>
                     </button>
-                </div>
-                <form action="" id="login" class="login-form" method="POST">';
+                </div>';
 
                 if (isset($message_login)) {
                     foreach ($message_login as $message_login) {
-                        echo '
+                        echo '  
                                 <div class="mensagem-login">
                                 <span>' . $message_login . '</span>
                                 </div>
                             ';
                     }
                 }
-                echo '
+
+                echo'
+                <form action="" id="login" class="login-form" method="POST">
                     <input type="email" name="email" placeholder="Insira seu email" class="box" required>
                     <input type="password" name="senha" placeholder="Insira sua senha" class="box2" id="senha-id" required>
                     <div id="eye" class="eye" onclick="eyeClick()"></div>
                     <p>Esqueceu sua senha? <a href="#">Clique Aqui</a></p>
-                    <input type="submit" name="submit_login" value="Entrar" class="btn">
-                </form>
-                <form action="" method="POST" id="register" class="register-form">';
+                    <input type="submit" name="entrar" value="Entrar" class="btn">
+                </form>';
 
                 if (isset($message_register)) {
                     foreach ($message_register as $message_register) {
@@ -243,12 +243,14 @@ if (isset($_POST['update_qty'])) {
                             ';
                     }
                 }
-                echo '
+
+                echo'
+                <form action="" method="POST" id="register" class="register-form">
                     <input type="text" name="nome" placeholder="Insira seu nome" class="box-r" required>
                     <input type="email" name="email" placeholder="Insira seu email" class="box-r" required>
                     <input type="password" name="senha" placeholder="Insira sua senha" class="box-r" required>
                     <input type="password" name="conf_senha" placeholder="Confirme sua senha" class="box-r" required>
-                    <input type="submit" name="submit_register" value="Criar Conta" class="btn">
+                    <input type="submit" name="cadastro" value="Criar Conta" class="btn">
                     </form>';
             }
             ?>

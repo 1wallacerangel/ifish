@@ -9,11 +9,10 @@
    --box-shadow-dark: 0 0.1rem 0.5rem rgb(20, 20, 20);
 }
 
-.produtos .mensagem {
+.produtos .mensagem-cat {
    position: static;
    max-width: 1200px;
    margin: 0 auto;
-   padding-top: 2rem;
    padding-bottom: 2rem;
    display: flex;
    align-items: center;
@@ -22,18 +21,18 @@
    z-index: 10000;
 }
 
-.produtos .mensagem span {
+.produtos .mensagem-cat span {
    font-size: 2rem;
    color: var(--black);
 }
 
-.produtos .mensagem i {
+.produtos .mensagem-cat i {
    font-size: 2.5rem;
    cursor: pointer;
    color: var(--red);
 }
 
-.produtos .mensagem i:hover {
+.produtos .mensagem-cat i:hover {
    color: var(--black);
 }
 
@@ -211,15 +210,15 @@
    background: var(--red);
 }
 
-.body.dark .produtos .mensagem span {
+.body.dark .produtos .mensagem-cat span {
    color: var(--white);
 }
 
-.body.dark.produtos .mensagem i {
+.body.dark.produtos .mensagem-cat i {
    color: var(--red);
 }
 
-.body.dark .produtos .mensagem i:hover {
+.body.dark .produtos .mensagem-cat i:hover {
    color: var(--white);
 }
 

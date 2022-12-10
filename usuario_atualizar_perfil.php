@@ -15,7 +15,7 @@ if (!isset($user_id)) {
    header('location:index.php');
 };
 
-if (isset($_POST['update_profile'])) {
+if (isset($_POST['atualizar-perfil'])) {
 
    $email = $_POST['email'];
    $email = filter_var($email, FILTER_SANITIZE_STRING);
@@ -23,22 +23,22 @@ if (isset($_POST['update_profile'])) {
    $update_profile = $conn->prepare("UPDATE `usuario` SET email = ? WHERE id = ?");
    $update_profile->execute([$email, $user_id]);
 
-   $old_pass = $_POST['old_pass'];
-   $update_pass = md5($_POST['update_pass']);
-   $update_pass = filter_var($update_pass, FILTER_SANITIZE_STRING);
-   $new_pass = md5($_POST['new_pass']);
-   $new_pass = filter_var($new_pass, FILTER_SANITIZE_STRING);
-   $confirm_pass = md5($_POST['confirm_pass']);
-   $confirm_pass = filter_var($confirm_pass, FILTER_SANITIZE_STRING);
+   $senha_antiga = $_POST['senha_antiga'];
+   $update_senha = md5($_POST['update_senha']);
+   $update_senha = filter_var($update_senha, FILTER_SANITIZE_STRING);
+   $new_senha = md5($_POST['new_senha']);
+   $new_senha = filter_var($new_senha, FILTER_SANITIZE_STRING);
+   $confirm_senha = md5($_POST['confirm_senha']);
+   $confirm_senha = filter_var($confirm_senha, FILTER_SANITIZE_STRING);
 
-   if (!empty($update_pass) and !empty($new_pass) and !empty($confirm_pass)) {
-      if ($update_pass != $old_pass) {
+   if (!empty($update_senha) and !empty($new_senha) and !empty($confirm_senha)) {
+      if ($update_senha != $senha_antiga) {
          $message[] = 'A senha antiga não corresponde!';
-      } elseif ($new_pass != $confirm_pass) {
+      } elseif ($new_senha != $confirm_senha) {
          $message[] = 'As senhas não correspondem!';
       } else {
-         $update_pass_query = $conn->prepare("UPDATE `usuario` SET senha = ? WHERE id = ?");
-         $update_pass_query->execute([$confirm_pass, $user_id]);
+         $update_senha_query = $conn->prepare("UPDATE `usuario` SET senha = ? WHERE id = ?");
+         $update_senha_query->execute([$confirm_senha, $user_id]);
          $message[] = 'Senha atualizada com sucesso!';
       }
    }
@@ -89,19 +89,19 @@ if (isset($_POST['update_profile'])) {
             <div class="inputBox">
                <span>Email :</span>
                <input type="email" name="email" value="<?= $fetch_profile['email']; ?>" placeholder="atualizar email" required class="box">
-               <input type="hidden" name="old_pass" value="<?= $fetch_profile['senha']; ?>">
+               <input type="hidden" name="senha_antiga" value="<?= $fetch_profile['senha']; ?>">
                <span>Senha Antiga :</span>
-               <input type="password" name="update_pass" placeholder="insira a antiga senha" class="box">
+               <input type="password" name="update_senha" placeholder="insira a antiga senha" class="box">
             </div>
             <div class="inputBox">
                <span>Nova Senha :</span>
-               <input type="password" name="new_pass" placeholder="insira a nova senha" class="box">
+               <input type="password" name="new_senha" placeholder="insira a nova senha" class="box">
                <span>Confirmar Senha :</span>
-               <input type="password" name="confirm_pass" placeholder="confirme a nova senha" class="box">
+               <input type="password" name="confirm_senha" placeholder="confirme a nova senha" class="box">
             </div>
          </div>
          <div class="flex-btn">
-            <input type="submit" class="btn-at" value="Atualizar Perfil" name="update_profile">
+            <input type="submit" class="btn-at" value="Atualizar Perfil" name="atualizar-perfil">
             <a onclick="javascript:history.go(-1)" class="option-btn">Voltar</a>
          </div>
       </form>

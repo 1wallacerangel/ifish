@@ -15,27 +15,27 @@ if (!isset($user_id)) {
    header('location:index.php');
 };
 
-if (isset($_POST['add_carrinho'])) {
+if (isset($_POST['adicionar_carrinho'])) {
 
    $pid = $_POST['pid'];
    $pid = filter_var($pid, FILTER_SANITIZE_STRING);
-   $p_name = $_POST['p_name'];
-   $p_name = filter_var($p_name, FILTER_SANITIZE_STRING);
-   $p_price = $_POST['p_price'];
-   $p_price = filter_var($p_price, FILTER_SANITIZE_STRING);
-   $p_image = $_POST['p_image'];
-   $p_image = filter_var($p_image, FILTER_SANITIZE_STRING);
-   $p_qty = $_POST['p_qty'];
-   $p_qty = filter_var($p_qty, FILTER_SANITIZE_STRING);
+   $nome = $_POST['nome'];
+   $nome = filter_var($nome, FILTER_SANITIZE_STRING);
+   $preco = $_POST['preco'];
+   $preco = filter_var($preco, FILTER_SANITIZE_STRING);
+   $image = $_POST['image'];
+   $image = filter_var($image, FILTER_SANITIZE_STRING);
+   $quantidade = $_POST['quantidade'];
+   $quantidade = filter_var($quantidade, FILTER_SANITIZE_STRING);
 
    $check_cart_numbers = $conn->prepare("SELECT * FROM `carrinho` WHERE nome = ? AND user_id = ?");
-   $check_cart_numbers->execute([$p_name, $user_id]);
+   $check_cart_numbers->execute([$nome, $user_id]);
 
    if ($check_cart_numbers->rowCount() > 0) {
       $message[] = 'Já foi adicionado ao carrinho!';
    } else {
-      $insert_cart = $conn->prepare("INSERT INTO `carrinho`(user_id, pid, nome, preco, quantidade, image) VALUES(?,?,?,?,?,?)");
-      $insert_cart->execute([$user_id, $pid, $p_name, $p_price, $p_qty, $p_image]);
+      $insert_cart = $conn->prepare("INSERT INTO `carrinho`(user_id, pid, nome, preco, quantidade,image) VALUES(?,?,?,?,?,?)");
+      $insert_cart->execute([$user_id, $pid, $nome, $preco, $quantidade, $image]);
       $message[] = 'Adicionado ao carrinho!';
    }
 }
@@ -68,7 +68,7 @@ if (isset($_POST['add_carrinho'])) {
       if (isset($message)) {
          foreach ($message as $message) {
             echo '
-            <div class="mensagem">
+            <div class="mensagem-cat">
             <span>' . $message . '</span>
             <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
             </div>
@@ -94,10 +94,11 @@ if (isset($_POST['add_carrinho'])) {
                      <div class="nome"><?= $fetch_products['nome']; ?></div>
                      <div class="detalhes"><?= $fetch_products['detalhe']; ?></div>
                      <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
-                     <input type="hidden" name="p_name" value="<?= $fetch_products['nome']; ?>">
-                     <input type="hidden" name="p_price" value="<?= $fetch_products['preco']; ?>">
+                     <input type="hidden" name="nome" value="<?= $fetch_products['nome']; ?>">
+                     <input type="hidden" name="preco" value="<?= $fetch_products['preco']; ?>">
+                     <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
                      <input type="hidden" value="1" name="quantidade">
-                     <input type="submit" value="Adicionar" class="btn" name="add_carrinho">
+                     <input type="submit" value="Adicionar" class="btn" name="adicionar_carrinho">
                   </form>
                </div>
          <?php
