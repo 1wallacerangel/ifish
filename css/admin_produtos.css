@@ -26,7 +26,27 @@
    background: var(--red);
 }
 
+.empty {
+   padding: 1.5rem;
+   background: var(--white);
+   color: var(--red);
+   border-radius: 10px;
+   font-size: 1.85rem;
+   text-align: center;
+   box-shadow: var(--box-shadow);
+   text-transform: capitalize;
+}
 
+.body.dark .empty {
+   padding: 1.5rem;
+   background: #373737;
+   color: var(--red);
+   border-radius: 10px;
+   font-size: 1.85rem;
+   text-align: center;
+   box-shadow: var(--box-shadow-dark);
+   text-transform: capitalize;
+}
 
 .add-products form{
    max-width: 70rem;
@@ -157,7 +177,7 @@
    display: block;
    width: 100%;
    margin-top: 1rem;
-   padding: 1.5rem ;
+   padding: 1.8rem ;
    font-size: 2rem;
    border-radius: 10px;
    color: var(--red);
@@ -175,7 +195,7 @@
    display: block;
    width: 100%;
    margin-top: 1rem;
-   padding: 1.5rem ;
+   padding: 1.8rem ;
    font-size: 2rem;
    border-radius: 10px;
    color: var(--red);

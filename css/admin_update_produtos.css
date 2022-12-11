@@ -1,18 +1,3 @@
-@font-face {
-    font-family: SulSansRegular;
-    src: local(SulSans), url(font/SulSans-Regular.otf);
-}
-
-@font-face {
-    font-family: SulSansMedium;
-    src: local(SulSans), url(font/SulSans-Medium.otf);
-}
-
-@font-face {
-    font-family: SulSansBlack;
-    src: local(SulSans), url(font/SulSans-Black.otf);
-}
-
 :root {
     --white: #ffffff;
     --white-medium: #f9f9f9;
@@ -24,7 +9,7 @@
     --box-shadow-dark: 0 0.1rem 0.5rem rgb(20, 20, 20);
 }
 
-.titulo-pedido {
+.titulo-update {
     text-align: center;
     margin-bottom: 2rem;
     text-transform: capitalize;
@@ -54,47 +39,37 @@
     text-transform: capitalize;
 }
 
-.placed-orders {
+.update-product {
     padding: 3rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.placed-orders .box-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 33rem);
-    gap: 1.5rem;
-    align-items: flex-start;
-    justify-content: center;
-}
-
-.placed-orders .box-container .box {
+.update-product form {
+    max-width: 50rem;
+    padding: 2rem;
+    margin: 0 auto;
+    text-align: center;
     box-shadow: var(--box-shadow);
     background-color: var(--white);
     border-radius: 10px;
-    padding: 2rem;
 }
 
-.placed-orders .box-container .box p {
+.update-product form img {
+    height: 25rem;
+    object-fit: cover;
     margin-bottom: 1rem;
-    line-height: 1.5;
-    font-size: 2rem;
-    color: var(--black);
 }
 
-.placed-orders .box-container .box p span {
-    color: var(--light-color);
-}
-
-.placed-orders .box-container .box .drop-down {
+.update-product form .box {
     width: 100%;
-    padding: 1.5rem;
-    font-size: 1.8rem;
-    border-radius: 10px;
     background-color: #eee;
-    margin-bottom: .5rem;
+    border-radius: 10px;
+    padding: 1.2rem 1.4rem;
+    font-size: 1.8rem;
+    color: var(--light-color);
+    margin: 1rem 0;
 }
-
 
 .flex-btn {
     display: flex;
@@ -123,7 +98,7 @@
     background: var(--red);
 }
 
-.delete-btn {
+.atualizar-btn {
     display: block;
     width: 100%;
     margin-top: 1rem;
@@ -136,31 +111,23 @@
     text-transform: capitalize;
 }
 
-.delete-btn:hover {
+.atualizar-btn:hover {
     color: var(--white);
     background: var(--red);
 }
 
-.body.dark .titulo-pedido {
+.body.dark .titulo-update {
     color: var(--white);
 }
 
-.body.dark .placed-orders .box-container .box {
+.body.dark .update-product form {
     box-shadow: var(--box-shadow-dark);
     background-color: #252525;
 }
 
-.body.dark .placed-orders .box-container .box p {
-    color: var(--white);
-}
-
-.body.dark .placed-orders .box-container .box p span {
-    color: var(--light-color);
-}
-
-.body.dark .placed-orders .box-container .box .drop-down {
+.body.dark .update-product form .box {
     background-color: #373737;
-    color: var(--white);
+    color: var(--light-color);
 }
 
 .body.dark .option-btn {
@@ -173,12 +140,12 @@
     background: var(--red);
 }
 
-.body.dark .delete-btn {
+.body.dark .atualizar-btn {
     color: var(--red);
     background: #373737;
 }
 
-.body.dark .delete-btn:hover {
+.body.dark .atualizar-btn:hover {
     color: var(--white);
     background: var(--red);
 }

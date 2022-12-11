@@ -62,12 +62,9 @@ if (isset($_POST['update_produto'])) {
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>IFISH - Atualizar Produto</title>
    <link rel="shortcut icon" href="img/ifish-icon.png">
-   <link rel="stylesheet" href="css/index.css">
    <link rel="stylesheet" href="css/admin_index.css">
-   <link rel="stylesheet" href="css/admin_style.css">
-   <link rel="stylesheet" href="css/admin_produtos.css">
-   <link rel="stylesheet" href="css/header.css">
-   <link rel="stylesheet" href="css/footer.css">
+   <link rel="stylesheet" href="css/admin_header.css">
+   <link rel="stylesheet" href="css/admin_update_produtos.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
 </head>
@@ -78,7 +75,7 @@ if (isset($_POST['update_produto'])) {
 
    <section class="update-product">
 
-      <h1 class="title">atualizar produto</h1>
+      <h1 class="titulo-update">atualizar produto</h1>
 
       <?php
       $update_id = $_GET['update'];
@@ -102,7 +99,7 @@ if (isset($_POST['update_produto'])) {
                <textarea name="detalhes" required placeholder="Insira os detalhes do produto" class="box" cols="30" rows="10"><?= $fetch_products['detalhe']; ?></textarea>
                <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png">
                <div class="flex-btn">
-                  <input type="submit" class="btn" value="Atualizar Produto" name="update_produto">
+                  <input type="submit" class="atualizar-btn" value="Atualizar Produto" name="update_produto">
                   <a href="admin_produtos.php" class="option-btn">Voltar</a>
                </div>
             </form>
@@ -115,7 +112,7 @@ if (isset($_POST['update_produto'])) {
 
    </section>
 
-   <script src="js/script.js"></script>
+   <script src="js/script_admin.js"></script>
 
 </body>
 
