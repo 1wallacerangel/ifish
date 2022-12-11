@@ -54,6 +54,19 @@ if (isset($_GET['delete'])) {
 
       <h1 class="titulo-pedido">pedidos</h1>
 
+      <?php
+            if (isset($message)) {
+                foreach ($message as $message) {
+                    echo '
+                        <div class="mensagem">
+                        <span>' . $message . '</span>
+                        <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+                        </div>
+                        ';
+                }
+            }
+        ?>
+
       <div class="box-container">
 
          <?php

@@ -48,136 +48,165 @@
    text-transform: capitalize;
 }
 
-.add-products form{
+.mensagem {
+   position: static;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding-top: 2rem;
+   padding-bottom: 2rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 1.5rem;
+   z-index: 10000;
+}
+
+.mensagem span {
+   font-size: 2rem;
+   color: var(--black);
+}
+
+.mensagem i {
+   font-size: 2.5rem;
+   cursor: pointer;
+   color: var(--red);
+}
+
+.mensagem i:hover {
+   color: var(--black);
+}
+
+.add-products form {
    max-width: 70rem;
-   padding:2rem;
-   margin:0 auto;
+   padding: 2rem;
+   margin: 0 auto;
    text-align: center;
    box-shadow: var(--box-shadow);
    background-color: var(--white);
    border-radius: 10px;
 }
 
-.add-products form .flex{
+.add-products form .flex {
    display: flex;
    justify-content: space-between;
    flex-wrap: wrap;
 }
 
-.add-products form .flex .inputBox{
+.add-products form .flex .inputBox {
    width: 49%;
 }
 
-.add-products form .box{
+.add-products form .box {
    width: 100%;
-   margin:1rem 0;
+   margin: 1rem 0;
    padding: 1.5rem;
    font-size: 1.8rem;
-   color:var(--light-color);
+   color: var(--light-color);
    border-radius: 10px;
    background-color: #eee;
 }
 
-.add-products form textarea{
+.add-products form textarea {
    height: 20rem;
    resize: none;
 }
 
-.show-products{
+.show-products {
    padding-top: 0;
 }
 
-.show-products .box-container{
+.show-products .box-container {
    display: grid;
    grid-template-columns: repeat(auto-fit, 33rem);
-   gap:1.5rem;
+   gap: 1.5rem;
    align-items: flex-start;
-   justify-content:center;
+   justify-content: center;
 }
 
-.show-products .box-container .box{
+.show-products .box-container .box {
    text-align: center;
    box-shadow: var(--box-shadow);
    background-color: var(--white);
    border-radius: .5rem;
-   padding:2rem;
+   padding: 2rem;
    position: relative;
 }
 
-.show-products .box-container .box .price{
+.show-products .box-container .box .price {
    position: absolute;
-   top:1rem; left:1rem;
-   padding:1rem;
+   top: 1rem;
+   left: 1rem;
+   padding: 1rem;
    font-size: 2rem;
-   color:var(--white);
+   color: var(--white);
    background-color: var(--red);
    border-radius: .5rem;
 }
 
-.show-products .box-container .box img{
+.show-products .box-container .box img {
    width: 100%;
    margin-bottom: 1rem;
 }
 
-.show-products .box-container .box .name{
-   margin:.5rem 0;
+.show-products .box-container .box .name {
+   margin: .5rem 0;
    font-size: 2rem;
-   color:var(--black);
+   color: var(--black);
 }
 
-.show-products .box-container .box .cat{
+.show-products .box-container .box .cat {
    font-size: 1.8rem;
-   color:var(--green);
+   color: var(--green);
 }
 
-.show-products .box-container .box .details{
+.show-products .box-container .box .details {
    padding-top: 1rem;
    font-size: 1.5rem;
    line-height: 1.5;
-   color:var(--light-color);
+   color: var(--light-color);
 }
 
-.update-product form{
+.update-product form {
    max-width: 50rem;
-   padding:2rem;
-   margin:0 auto;
+   padding: 2rem;
+   margin: 0 auto;
    text-align: center;
    box-shadow: var(--box-shadow);
    background-color: var(--white);
    border-radius: .5rem;
 }
 
-.update-product form img{
+.update-product form img {
    height: 25rem;
    object-fit: cover;
    margin-bottom: 1rem;
 }
 
-.update-product form .box{
+.update-product form .box {
    width: 100%;
    background-color: var(--white);
    border-radius: .5rem;
    background-color: var(--light-bg);
-   padding:1.2rem 1.4rem;
+   padding: 1.2rem 1.4rem;
    font-size: 1.8rem;
-   color:var(--black);
-   margin:1rem 0;
+   color: var(--black);
+   margin: 1rem 0;
 }
 
-.flex-btn{
+.flex-btn {
    display: flex;
    gap: 1rem;
 }
 
-.flex-btn > * {
-    flex: 1;
+.flex-btn>* {
+   flex: 1;
 }
 
 .option-btn {
    display: block;
    width: 100%;
    margin-top: 1rem;
-   padding: 1.8rem ;
+   padding: 1.8rem;
    font-size: 2rem;
    border-radius: 10px;
    color: var(--red);
@@ -195,7 +224,7 @@
    display: block;
    width: 100%;
    margin-top: 1rem;
-   padding: 1.8rem ;
+   padding: 1.8rem;
    font-size: 2rem;
    border-radius: 10px;
    color: var(--red);
@@ -373,14 +402,14 @@
    color: var(--white);
 }
 
-.body.dark .add-products form{
+.body.dark .add-products form {
    box-shadow: var(--box-shadow-dark);
    background-color: #252525;
 }
 
-.body.dark .add-products form .box{
+.body.dark .add-products form .box {
    color: var(--light-color);
-   background-color:#373737;
+   background-color: #373737;
 }
 
 .body.dark .btn-add {

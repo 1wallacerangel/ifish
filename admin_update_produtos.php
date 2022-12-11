@@ -78,6 +78,19 @@ if (isset($_POST['update_produto'])) {
       <h1 class="titulo-update">atualizar produto</h1>
 
       <?php
+            if (isset($message)) {
+                foreach ($message as $message) {
+                    echo '
+                        <div class="mensagem">
+                        <span>' . $message . '</span>
+                        <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+                        </div>
+                        ';
+                }
+            }
+        ?>
+
+      <?php
       $update_id = $_GET['update'];
       $select_products = $conn->prepare("SELECT * FROM `produto` WHERE id = ?");
       $select_products->execute([$update_id]);

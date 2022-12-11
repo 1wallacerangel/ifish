@@ -88,6 +88,19 @@ if (isset($_GET['delete'])) {
 
         <h1 class="titulo">adicionar novos produtos</h1>
 
+        <?php
+            if (isset($message)) {
+                foreach ($message as $message) {
+                    echo '
+                        <div class="mensagem">
+                        <span>' . $message . '</span>
+                        <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+                        </div>
+                        ';
+                }
+            }
+        ?>
+
         <form action="" method="POST" enctype="multipart/form-data">
             <div class="flex">
                 <div class="inputBox">

@@ -30,13 +30,13 @@ if (isset($_POST['atualizar-perfil'])) {
 
    if (!empty($update_senha) and !empty($new_senha) and !empty($confirm_senha)) {
       if ($update_senha != $senha_antiga) {
-         $message[] = 'old password not matched!';
+         $message[] = 'A senha antiga não corresponde!';
       } elseif ($new_senha != $confirm_senha) {
-         $message[] = 'confirm password not matched!';
+         $message[] = 'As senhas não correspondem!';
       } else {
          $update_senha_query = $conn->prepare("UPDATE `usuario` SET senha = ? WHERE id = ?");
          $update_senha_query->execute([$confirm_senha, $admin_id]);
-         $message[] = 'password updated successfully!';
+         $message[] = 'Senha atualizada com sucesso!';
       }
    }
 }
@@ -72,7 +72,7 @@ if (isset($_POST['atualizar-perfil'])) {
       if (isset($message)) {
          foreach ($message as $message) {
             echo '
-            <div class="mensagem-perfil">
+            <div class="mensagem">
             <span>' . $message . '</span>
             <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
             </div>
