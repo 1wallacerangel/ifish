@@ -37,89 +37,25 @@ icon.addEventListener('click', () => {
    }
 })
 
-
-
-
-
-let loginForm = document.querySelector('.login-form');
 let logRegister = document.querySelector('.log-register');
 
 document.querySelector('#login-btn').onclick = () => {
     logRegister.classList.toggle('active');
-    searchForm.classList.remove('active');
-    shoppingCart.classList.remove('active');
     navbar.classList.remove('active');
-    login()
-    
 }
 
 let navbar = document.querySelector('.navbar');
 
 document.querySelector('#menu-btn').onclick = () => {
     navbar.classList.toggle('active');
-    searchForm.classList.remove('active');
-    shoppingCart.classList.remove('active');
-    loginForm.classList.remove('active');
     logRegister.classList.remove('active');
 }
 
 window.onscroll = () => {
-
-    searchForm.classList.remove('active');
-    shoppingCart.classList.remove('active');
-    loginForm.classList.remove('active');
     navbar.classList.remove('active');
     logRegister.classList.remove('active');
 }
 
-/*Ocultar e Mostrar Senha*/
-
-const eye = document.getElementById("eye")
-const senha = document.getElementById("senha-id")
-
-function eyeClick() {
-
-    if (senha.type === "password") {
-        showPassword()
-    } else {
-        hidePassword()
-    }
-}
-
-function showPassword() {
-    senha.setAttribute("type", "text")
-    eye.classList.toggle('open')
-}
-
-function hidePassword() {
-    senha.setAttribute("type", "password")
-    eye.classList.toggle('open')
-}
-
-/* função login e regi  ster */
-
-var logi = document.getElementById("login");
-var registe = document.getElementById("register");
-var btn = document.getElementById("btn");
-var logregiste = document.querySelector(".log-register");
-var logform = document.querySelector(".login-form");
-var logtext = document.querySelector(".log-text");
-var regtext = document.querySelector(".reg-text");
-
-function register(){
-    logi.style.left="400px";
-    registe.style.left="0px";
-    btn.style.left="140px";
-    logregiste.style.height="595px";
-    logtext.style.color="#ffffff"
-    regtext.style.color="#cc1825"
-}
-
-function login(){
-    logi.style.left="0px";
-    registe.style.left="-385px";
-    btn.style.left="20px";
-    logregiste.style.height="400px";
-    logtext.style.color="#cc1825"
-    regtext.style.color="#ffffff"
+function scrolltop(onclick){
+    window.scrollTo({top: 0,behavior: 'smooth',})
 }

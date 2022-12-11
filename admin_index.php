@@ -1,3 +1,8 @@
+<?php 
+ini_set('display_errors', 0 );
+error_reporting(0);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -6,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IFISH - Admin Painel</title>
+    <title>IFISH - Painel de Controle</title>
     <link rel="shortcut icon" href="img/ifish-icon.png">
     <link rel="stylesheet" href="css/admin-index.css">
     <link rel="stylesheet" href="css/admin-header.css">
@@ -19,7 +24,7 @@
 
     <section class="dashboard">
 
-        <h1 class="title">painel de controle</h1>
+        <h1 class="titulo">painel de controle</h1>
 
         <div class="box-container">
 
@@ -33,22 +38,22 @@
                 };
                 ?>
                 <h3>R$ <?= $total_pendings; ?></h3>
-                <p>Total Pedidos Pendentes</p>
-                <a href="admin_pedidos.php" class="btn">veja os pedidos</a>
+                <p>Total Pendentes</p>
+                <a href="admin_pedidos.php" class="btn-index">Veja os Pedidos</a>
             </div>
 
             <div class="box">
                 <?php
                 $total_completed = 0;
                 $select_completed = $conn->prepare("SELECT * FROM `pedido` WHERE status_pagamento = ?");
-                $select_completed->execute(['completed']);
+                $select_completed->execute(['realizado']);
                 while ($fetch_completed = $select_completed->fetch(PDO::FETCH_ASSOC)) {
                     $total_completed += $fetch_completed['total_preco'];
                 };
                 ?>
                 <h3>R$ <?= $total_completed; ?></h3>
-                <p>Total Pedidos Finalizados</p>
-                <a href="admin_pedidos.php" class="btn">veja os pedidos</a>
+                <p>Total Finalizados</p>
+                <a href="admin_pedidos.php" class="btn-index">Veja os Pedidos</a>
             </div>
 
             <div class="box">
@@ -59,7 +64,7 @@
                 ?>
                 <h3><?= $number_of_orders; ?></h3>
                 <p>Pedidos Realizados</p>
-                <a href="admin_pedidos.php" class="btn">veja os pedidos</a>
+                <a href="admin_pedidos.php" class="btn-index">Veja os Pedidos</a>
             </div>
 
             <div class="box">
@@ -70,7 +75,7 @@
                 ?>
                 <h3><?= $number_of_products; ?></h3>
                 <p>Produtos Adicionados</p>
-                <a href="admin_produtos.php" class="btn">veja os produtos</a>
+                <a href="admin_produtos.php" class="btn-index">Veja os Produtos</a>
             </div>
 
             <div class="box">
@@ -81,7 +86,7 @@
                 ?>
                 <h3><?= $number_of_users; ?></h3>
                 <p>Total Usuários</p>
-                <a href="admin_usuarios.php" class="btn">veja as contas</a>
+                <a href="admin_usuarios.php" class="btn-index">Veja as Contas</a>
             </div>
 
             <div class="box">
@@ -92,7 +97,7 @@
                 ?>
                 <h3><?= $number_of_admins; ?></h3>
                 <p>Total Admins</p>
-                <a href="admin_usuarios.php" class="btn">veja as contas</a>
+                <a href="admin_usuarios.php" class="btn-index">Veja as Contas</a>
             </div>
 
             <div class="box">
@@ -103,7 +108,7 @@
                 ?>
                 <h3><?= $number_of_accounts; ?></h3>
                 <p>Total de Contas</p>
-                <a href="admin_usuarios.php" class="btn">veja as contas</a>
+                <a href="admin_usuarios.php" class="btn-index">Veja as Contas</a>
             </div>
 
             <div class="box">
@@ -114,7 +119,7 @@
                 ?>
                 <h3><?= $number_of_messages; ?></h3>
                 <p>Total de Mensagens</p>
-                <a href="admin_contato.php" class="btn">veja as mensagens</a>
+                <a href="admin_contato.php" class="btn-index">Veja as Mensagens</a>
             </div>
 
         </div>

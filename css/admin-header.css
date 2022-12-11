@@ -27,22 +27,7 @@
     transition: all 0.5s;
 }
 
-.btn {
-    margin-top: 1rem;
-    display: inline-block;
-    padding: 1.8rem 3rem;
-    font-size: 2rem;
-    border-radius: 10px;
-    color: var(--black);
-    cursor: pointer;
-    background: #fff;
-}
-
 /*logo ifish*/
-
-.header .ifish-bar {
-    width: 76px;
-}
 
 .header .ifish-bar-admin {
     width: 143px;
@@ -93,299 +78,37 @@
     display: none;
 }
 
-/*Barra de Pesquisa*/
-
-.header .search-form {
-    position: absolute;
-    top: 125%;
-    right: -110%;
-    width: 50rem;
-    height: 5rem;
-    background: var(--white);
-    box-shadow: var(--box-shadow);
-    border-radius: .5rem;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    transition: 0.6s all;
-}
-
-/*x da seach bar*/
-
-input[type="search"]::-webkit-search-cancel-button {
-    -webkit-appearance: none;
-    height: 25px;
-    width: 25px;
-    margin-left: 0.4rem;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23777'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>");
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-/*animação quando for ativada a barra de pesquisa*/
-
-.header .search-form.active {
-    right: 2rem;
-    transition: 0.4s all;
-}
-
-.header .search-form input {
-    height: 100%;
-    width: 100%;
-    background: none;
-    text-transform: none;
-    font-size: 1.6rem;
-    color: var(--black);
-    padding: 0 1.5rem;
-
-}
-
-.header .search-form button {
-    font-size: 2.2rem;
-    padding-right: 1.5rem;
-    color: var(--black);
-    cursor: pointer;
-    background: none;
-}
-
-.header .search-form button:hover {
-    color: var(--red);
-}
-
-/*Carrinho*/
-
-.header .shopping-cart {
-    position: absolute;
-    top: 125%;
-    right: -110%;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: var(--box-shadow);
-    width: 35rem;
-    background: var(--white);
-    transition: 0.6s all;
-}
-
-.header .shopping-cart.active {
-    right: 2rem;
-    transition: 0.4s all;
-}
-
-.header .shopping-cart .box {
-    display: grid;
-    grid-template-columns: 30% 25% 25%;
-    align-items: center;
-    position: relative;
-    margin: 1rem 0;
-
-}
-
-.header .shopping-cart img {
-    height: 8rem;
-    margin: 0;
-    align-items: center;
-}
-
-.header .shopping-cart .box .fa-trash {
-    font-size: 2rem;
-    position: absolute;
-    top: 50%;
-    right: 2rem;
-    cursor: pointer;
-    color: var(--light-color);
-    transform: translateY(-50%);
-}
-
-.header .shopping-cart .box .fa-trash:hover {
-    color: var(--red);
-}
-
-.header .shopping-cart .box .content h3 {
-    color: var(--black);
-    font-size: 1.7rem;
-    padding-bottom: 1.5rem;
-}
-
-.header .shopping-cart .box .content span {
-    color: var(--light-color);
-    font-size: 1.6rem;
-}
-
-.header .shopping-cart .box .content .quantity {
-    padding-left: 1rem;
-}
-
-.header .shopping-cart .total {
-    font-size: 2.5rem;
-    padding: 1rem 0;
-    text-align: center;
-    color: var(--black);
-}
-
-.header .shopping-cart .btn {
-    background: #eee;
-    color: var(--red);
-    display: block;
-    text-align: center;
-    margin: 1rem;
-    text-transform: capitalize;
-}
-
-.header .shopping-cart .btn:hover {
-    color: var(--white);
-    background: var(--red);
-}
-
-.shopping-car .box-container .cart-box {
-    width: 100%;
-    margin: 1rem 0;
-    border-radius: .5rem;
-    border: var(--border);
-    padding: 1.2rem 1.4rem;
-    font-size: 1.8rem;
-    color: var(--black);
-    background-color: var(--light-bg);
-}
-
-.shopping-car .box-container .sub-total {
-    font-size: 13pt;
-    padding: 0.5rem;
-    color: var(--red);
-    text-align: center;
-    font-weight: bold;
-}
-
-.shopping-car .box-container .img-preco {
-    padding: 0rem;
-}
-
-.shopping-car .box-container .nome {
-    font-size: 13pt;
-    text-align: center;
-    font-weight: bold;
-}
-
-.body.dark .shopping-car .box-container .nome {
-    color: var(--white);
-}
-
-.shopping-car .box-container .flex-btn {
-    justify-content: center;
-    text-align: center;
-}
-
-.shopping-car .box-container .qty {
-    justify-content: center;
-    border-radius: 5px;
-    width: 40px;
-    padding: 0.5rem;
-    background: #eee;
-    color: var(--red);
-}
-
-.body.dark .shopping-car .box-container .qty {
-    background: #373737;
-    color: var(--red);
-}
-
-.shopping-car .box-container .option-btn {
-    text-transform: capitalize;
-    justify-content: center;
-    padding: 0.5rem;
-    color: var(--white);
-    background: var(--red);
-    text-decoration: none;
-    border-radius: 10px;
-    margin-top: 0.5rem;
-    cursor: pointer;
-}
-
-.shopping-car .box-container .option-btn:hover {
-    color: var(--white);
-    background: var(--dark-red);
-}
-
-.cart-total .total {
-    text-align: center;
-    text-transform: capitalize;
-    font-weight: bold;
-}
-
-.cart-total .total-btn {
-    justify-content: space-around;
-    align-content: center;
-}
-
-.cart-total .continue-btn {
-    display: inline-block;
-    align-items: center;
-    text-transform: capitalize;
-    justify-content: center;
-    width: 46.5%;
-    padding: 1rem;
-    color: var(--white);
-    background: var(--red);
-    border-radius: 10px;
-    font-size: 9.5pt;
-    margin-left: 1rem;
-}
-
-.cart-total .continue-btn:hover {
-    color: var(--white);
-    background: var(--dark-red);
-}
-
-.cart-total .continue-btn-vazio {
-    display: block;
-    align-items: center;
-    text-transform: capitalize;
-    text-align: center;
-    justify-content: center;
-    padding: 2rem;
-    margin: 1rem;
-    color: var(--white);
-    background: var(--red);
-    border-radius: 10px;
-    font-size: 15pt;
-}
-
-.cart-total .continue-btn-vazio:hover {
-    color: var(--white);
-    background: var(--dark-red);
-}
-
-.cart-total .delete-btn {
-    display: inline-block;
-    width: 46.5%;
-    align-items: center;
-    text-transform: capitalize;
-    justify-content: center;
-    padding: 1rem;
-    color: var(--white);
-    background: var(--red);
-    border-radius: 10px;
-    font-size: 9.5pt;
-    margin-right: 1rem;
-}
-
-.cart-total .delete-btn:hover {
-    color: var(--white);
-    background: var(--dark-red);
-}
-
-.empty-carrinho {
-    padding: 1.5rem;
-    text-transform: capitalize;
-    font-size: 18pt;
-    text-align: center;
-    font-weight: bold;
-}
-
-.body.body.dark .empty-carrinho {
-    color: var(--white);
-}
-
 /*Login Card*/
+
+/*botão log in register*/
+#btn {
+    position: absolute;
+    margin-left: 28px;
+    top: 0.5;
+    left: 70;
+    width: 133px;
+    height: 50px;
+    border-radius: 30px;
+    transition: all 0.5s;
+    box-shadow: var(--box-shadow);
+    background: #eee;
+}
+
+.header .log-register {
+    position: absolute;
+    top: 125%;
+    right: -110%;
+    width: 35rem;
+    height: 240px;
+    /*height: 575px;*/
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+    border-radius: .5rem;
+    background: #fff;
+    text-align: center;
+    transition: 0.5s all;
+    overflow: hidden;
+}
 
 .log-register .profile .profile-nome {
     text-align: center;
@@ -562,65 +285,12 @@ input[type="search"]::-webkit-search-cancel-button {
     color: #fff;
 }
 
-/*Barra de Pesquisa*/
-
-.body.dark .header .search-form {
-    background: #252525;
-    box-shadow: var(--box-shadow-dark);
-}
-
-/*animação quando for ativada a barra de pesquisa*/
-
-.body.dark .header .search-form input {
-    color: var(--white);
-}
-
-.body.dark .header .search-form button {
-    color: rgb(180, 180, 180);
-}
-
-.body.dark .header .search-form button:hover {
-    color: var(--red);
-}
-
-/*Carrinho*/
-
-.body.dark .header .shopping-cart {
-    box-shadow: var(--box-shadow-dark);
-    background: #252525;
-}
-
-.body.dark .header .shopping-cart .box .fa-trash {
-    color: var(--light-color);
-}
-
-.body.dark .header .shopping-cart .box .fa-trash:hover {
-    color: var(--red);
-}
-
-.body.dark .header .shopping-cart .box .content h3 {
-    color: var(--white);
-}
-
-.body.dark .header .shopping-cart .box .content span {
-    color: rgb(151, 151, 151);
-}
-
-.body.dark .header .shopping-cart .total {
-    color: var(--white);
-}
-
-.body.dark .header .shopping-cart .btn {
-    background: #373737;
-    color: var(--red);
-}
-
-.body.dark .header .shopping-cart .btn:hover {
-    color: var(--white);
-    background: var(--red);
-}
-
 /*Login Card*/
+
+.body.dark .header .log-register {
+    box-shadow: var(--box-shadow-dark);
+    background: #252525;
+}
 
 .body.dark .header .log-register .button-box {
     box-shadow: var(--box-shadow-dark);
@@ -679,24 +349,6 @@ input[type="search"]::-webkit-search-cancel-button {
         padding: 1rem;
     }
 
-    .header .shopping-cart {
-        position: absolute;
-        top: 125%;
-        right: -110%;
-        padding: 1rem;
-
-    }
-
-    .header .cart-total .delete-btn {
-        font-size: 7.5pt;
-        width: 45%;
-    }
-
-    .header .cart-total .continue-btn {
-        font-size: 7.5pt;
-        width: 46.6%;
-    }
-
     .header .log-register {
         height: 218px;
     }
@@ -717,10 +369,6 @@ input[type="search"]::-webkit-search-cancel-button {
 
     #menu-btn {
         display: inline-block;
-    }
-
-    .header .search-form {
-        width: 90%;
     }
 
     .header .navbar {
@@ -753,38 +401,8 @@ input[type="search"]::-webkit-search-cancel-button {
         font-size: 50%;
     }
 
-    .heading {
-        font-size: 2.5rem;
-    }
-
-    .footer .box-container .box .payment-img {
-        margin: 2rem auto;
-    }
-
     .header {
         padding: 1.5rem;
-    }
-
-    .header .cart-total .delete-btn {
-        font-size: 7.5pt;
-        width: 41%;
-    }
-
-    .header .cart-total .continue-btn {
-        font-size: 7.5pt;
-        width: 50.6%;
-    }
-
-    .header .shopping-car .box .nome {
-        font-size: 11pt;
-    }
-
-    .header .shopping-car .box .flex-btn .option-btn {
-        font-size: 8pt;
-    }
-
-    .header .cart-total .continue-btn-vazio {
-        font-size: 13pt;
     }
 
     .header .log-register {
@@ -811,27 +429,10 @@ input[type="search"]::-webkit-search-cancel-button {
         width: 90%;
     }
 
-    .shopping-cart.active {
-        width: 90%;
-    }
-
     .header .ifish-bar {
         width: 25%;
     }
 
-    .header .cart-total .continue-btn {
-        font-size: 7.5pt;
-        width: 52%;
-    }
-
-    .header .cart-total .delete-btn {
-        font-size: 7.5pt;
-        width: 40%;
-    }
-
-    .header .cart-total .continue-btn-vazio {
-        font-size: 13pt;
-    }
     .header .log-register {
         height: 188px;
     }

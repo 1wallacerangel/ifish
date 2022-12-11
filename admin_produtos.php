@@ -73,12 +73,10 @@ if (isset($_GET['delete'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IFISH - Produtos</title>
     <link rel="shortcut icon" href="img/ifish-icon.png">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/admin_index.css">
-    <link rel="stylesheet" href="css/admin_style.css">
+    <link rel="stylesheet" href="css/produtos.css">
     <link rel="stylesheet" href="css/admin_produtos.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/admin-index.css">
+    <link rel="stylesheet" href="css/admin-header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
 </head>
@@ -89,7 +87,7 @@ if (isset($_GET['delete'])) {
 
     <section class="add-products">
 
-        <h1 class="title">adicionar novos produtos</h1>
+        <h1 class="titulo">adicionar novos produtos</h1>
 
         <form action="" method="POST" enctype="multipart/form-data">
             <div class="flex">
@@ -108,14 +106,14 @@ if (isset($_GET['delete'])) {
                 </div>
             </div>
             <textarea name="detalhes" class="box" required placeholder="Insira os detalhes do produto" cols="30" rows="10"></textarea>
-            <input type="submit" class="btn" value="Adicionar Produto" name="add_produto">
+            <input type="submit" class="btn-add" value="Adicionar Produto" name="add_produto">
         </form>
 
     </section>
 
-    <section class="show-products">
+    <section class="produtos">
 
-        <h1 class="title">produtos adicionados</h1>
+        <h1 class="titulo">produtos adicionados</h1>
 
         <div class="box-container">
 
@@ -126,11 +124,11 @@ if (isset($_GET['delete'])) {
                 while ($fetch_products = $show_products->fetch(PDO::FETCH_ASSOC)) {
             ?>
                     <div class="box">
-                        <div class="price">R$<?= $fetch_products['preco']; ?></div>
+                        <div class="preco">R$<?= $fetch_products['preco']; ?></div>
                         <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
-                        <div class="name"><?= $fetch_products['nome']; ?></div>
-                        <div class="cat"><?= $fetch_products['categoria']; ?></div>
-                        <div class="details"><?= $fetch_products['detalhe']; ?></div>
+                        <div class="nome"><?= $fetch_products['nome']; ?></div>
+                        <div class="categoria"><?= $fetch_products['categoria']; ?></div>
+                        <div class="detalhes"><?= $fetch_products['detalhe']; ?></div>
                         <div class="flex-btn">
                             <a href="admin_update_produtos.php?update=<?= $fetch_products['id']; ?>" class="option-btn">atualizar</a>
                             <a href="admin_produtos.php?delete=<?= $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('Deletar esse produto  ?');">deletar</a>

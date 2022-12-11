@@ -1,5 +1,29 @@
-.add-products {
-   margin-top: 100px;
+:root {
+   --white: #ffffff;
+   --white-medium: #f9f9f9;
+   --light-color: #666;
+   --black: #000000;
+   --red: #cc1825;
+   --dark-red: #9a1e25;
+   --box-shadow: 0 0.1rem 0.5rem #ccc;
+   --box-shadow-dark: 0 0.1rem 0.5rem rgb(20, 20, 20);
+}
+
+.btn-add {
+   width: 100%;
+   margin-top: 1rem;
+   display: inline-block;
+   padding: 1.8rem 3rem;
+   font-size: 2rem;
+   border-radius: 10px;
+   color: var(--red);
+   cursor: pointer;
+   background: #eee;
+}
+
+.btn-add:hover {
+   color: var(--white);
+   background: var(--red);
 }
 
 .add-products form{
@@ -9,7 +33,7 @@
    text-align: center;
    box-shadow: var(--box-shadow);
    background-color: var(--white);
-   border-radius: .5rem;
+   border-radius: 10px;
 }
 
 .add-products form .flex{
@@ -25,11 +49,11 @@
 .add-products form .box{
    width: 100%;
    margin:1rem 0;
-   padding:1.2rem 1.4rem;
+   padding: 1.5rem;
    font-size: 1.8rem;
-   color:var(--black);
-   border-radius: .5rem;
-   background-color: var(--light-bg);
+   color:var(--light-color);
+   border-radius: 10px;
+   background-color: #eee;
 }
 
 .add-products form textarea{
@@ -116,4 +140,49 @@
    font-size: 1.8rem;
    color:var(--black);
    margin:1rem 0;
+}
+
+.flex-btn{
+   display: flex;
+   gap: 1rem;
+}
+
+.flex-btn > * {
+    flex: 1;
+}
+
+.option-btn {
+   display: block;
+   width: 100%;
+   margin-top: 1rem;
+   padding: 1.5rem ;
+   font-size: 2rem;
+   border-radius: 10px;
+   color: var(--red);
+   cursor: pointer;
+   background: #eee;
+   text-transform: capitalize;
+}
+
+.option-btn:hover {
+   color: var(--white);
+   background: var(--red);
+}
+
+.delete-btn {
+   display: block;
+   width: 100%;
+   margin-top: 1rem;
+   padding: 1.5rem ;
+   font-size: 2rem;
+   border-radius: 10px;
+   color: var(--red);
+   cursor: pointer;
+   background: #eee;
+   text-transform: capitalize;
+}
+
+.delete-btn:hover {
+   color: var(--white);
+   background: var(--red);
 }
