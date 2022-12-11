@@ -105,10 +105,10 @@ if (isset($_POST['adicionar_carrinho'])) {
                     <input type="radio" name="radio" id="radio-4">
 
                     <div class="imagens one">
-                        <img src="img/slides/1.png" alt="imagens">
+                        <img src="img/slides/1.jpg" alt="imagens">
                     </div>
                     <div class="imagens">
-                        <img src="img/slides/2.png" alt="imagens">
+                        <img src="img/slides/2.jpg" alt="imagens">
                     </div>
                     <div class="imagens">
                         <img src="img/slides/3.jpg" alt="imagens">
