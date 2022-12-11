@@ -11,7 +11,7 @@
 
 /*Barra de navegação*/
 
-.header {
+.header { 
     margin: 0 auto;
     position: sticky;
     background: var(--white);

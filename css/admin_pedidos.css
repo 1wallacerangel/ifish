@@ -1,0 +1,162 @@
+@font-face {
+    font-family: SulSansRegular;
+    src: local(SulSans), url(font/SulSans-Regular.otf);
+}
+
+@font-face {
+    font-family: SulSansMedium;
+    src: local(SulSans), url(font/SulSans-Medium.otf);
+}
+
+@font-face {
+    font-family: SulSansBlack;
+    src: local(SulSans), url(font/SulSans-Black.otf);
+}
+
+:root {
+    --white: #ffffff;
+    --white-medium: #f9f9f9;
+    --light-color: #666;
+    --black: #000000;
+    --red: #cc1825;
+    --dark-red: #9a1e25;
+    --box-shadow: 0 0.1rem 0.5rem #ccc;
+    --box-shadow-dark: 0 0.1rem 0.5rem rgb(20, 20, 20);
+}
+
+.titulo-pedido {
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+    color: var(--black);
+    font-size: 3.5rem;
+}
+
+.placed-orders {
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.placed-orders .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 33rem);
+    gap: 1.5rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.placed-orders .box-container .box {
+    box-shadow: var(--box-shadow);
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.placed-orders .box-container .box p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.placed-orders .box-container .box p span {
+    color: var(--light-color);
+}
+
+.placed-orders .box-container .box .drop-down {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.8rem;
+    border-radius: 10px;
+    background-color: #eee;
+    margin-bottom: .5rem;
+}
+
+
+.flex-btn {
+    display: flex;
+    gap: 1rem;
+}
+
+.flex-btn>* {
+    flex: 1;
+}
+
+.option-btn {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1.5rem;
+    font-size: 2rem;
+    border-radius: 10px;
+    color: var(--red);
+    cursor: pointer;
+    background: #eee;
+    text-transform: capitalize;
+}
+
+.option-btn:hover {
+    color: var(--white);
+    background: var(--red);
+}
+
+.delete-btn {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1.5rem;
+    font-size: 2rem;
+    border-radius: 10px;
+    color: var(--red);
+    cursor: pointer;
+    background: #eee;
+    text-transform: capitalize;
+}
+
+.delete-btn:hover {
+    color: var(--white);
+    background: var(--red);
+}
+
+.body.dark .titulo-pedido {
+    color: var(--white);
+}
+
+.body.dark .placed-orders .box-container .box {
+    box-shadow: var(--box-shadow-dark);
+    background-color: #252525;
+}
+
+.body.dark .placed-orders .box-container .box p {
+    color: var(--white);
+}
+
+.body.dark .placed-orders .box-container .box p span {
+    color: var(--light-color);
+}
+
+.body.dark .placed-orders .box-container .box .drop-down {
+    background-color: #373737;
+    color: var(--white);
+}
+
+.body.dark .option-btn {
+    color: var(--red);
+    background: #373737;
+}
+
+.body.dark .option-btn:hover {
+    color: var(--white);
+    background: var(--red);
+}
+
+.body.dark .delete-btn {
+    color: var(--red);
+    background: #373737;
+}
+
+.body.dark .delete-btn:hover {
+    color: var(--white);
+    background: var(--red);
+}

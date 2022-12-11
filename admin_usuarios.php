@@ -29,11 +29,9 @@ if (isset($_GET['delete'])) {
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>IFISH - Usuários</title>
    <link rel="shortcut icon" href="img/ifish-icon.png">
-   <link rel="stylesheet" href="css/index.css">
    <link rel="stylesheet" href="css/admin_index.css">
-   <link rel="stylesheet" href="css/admin_style.css">
-   <link rel="stylesheet" href="css/admin_produtos.css">
-   <link rel="stylesheet" href="css/admin-header.css">
+   <link rel="stylesheet" href="css/admin_header.css">
+   <link rel="stylesheet" href="css/admin_usuarios.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
 </head>
@@ -44,7 +42,7 @@ if (isset($_GET['delete'])) {
 
    <section class="user-accounts">
 
-      <h1 class="title">Contas de Usuários</h1>
+      <h1 class="titulo-conta">Contas de Usuários</h1>
 
       <div class="box-container">
 

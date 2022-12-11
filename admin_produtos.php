@@ -73,10 +73,9 @@ if (isset($_GET['delete'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IFISH - Produtos</title>
     <link rel="shortcut icon" href="img/ifish-icon.png">
-    <link rel="stylesheet" href="css/produtos.css">
+    <link rel="stylesheet" href="css/admin_index.css">
+    <link rel="stylesheet" href="css/admin_header.css">
     <link rel="stylesheet" href="css/admin_produtos.css">
-    <link rel="stylesheet" href="css/admin-index.css">
-    <link rel="stylesheet" href="css/admin-header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
 </head>
@@ -122,7 +121,8 @@ if (isset($_GET['delete'])) {
             $show_products->execute();
             if ($show_products->rowCount() > 0) {
                 while ($fetch_products = $show_products->fetch(PDO::FETCH_ASSOC)) {
-            ?>
+            ?>    
+                <div class="card-produtos">
                     <div class="box">
                         <div class="preco">R$<?= $fetch_products['preco']; ?></div>
                         <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
@@ -134,6 +134,7 @@ if (isset($_GET['delete'])) {
                             <a href="admin_produtos.php?delete=<?= $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('Deletar esse produto  ?');">deletar</a>
                         </div>
                     </div>
+                </div>
             <?php
                 }
             } else {

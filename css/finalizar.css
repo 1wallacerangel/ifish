@@ -185,6 +185,7 @@
 }
 
 .body.dark .checkout-orders form .flex .inputBox .box {
+    color: var(--light-color);
     background-color: #373737;
 }
 
