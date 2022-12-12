@@ -1007,6 +1007,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         height: 218px;
     }
 
+    #btn {
+        left: 0px
+    }
+
 }
 
 @media (max-width:768px) {
@@ -1106,6 +1110,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         height: 202px;
     }
 
+    #btn {
+        left: -15px
+    }
 }
 
 @media (max-width:350px) {
@@ -1151,4 +1158,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         height: 188px;
     }
 
+    #btn {
+        left: -6px;
+    }
 }

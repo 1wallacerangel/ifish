@@ -72,7 +72,7 @@ error_reporting(0);
 
          <div class="box">
             <img src="img/#" alt="">
-            <h3>luscas marques</h3>
+            <h3>lucas marques</h3>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
             Et voluptates sit earum, neque non cupiditate amet deserunt aperiam quas ex.</p>
             
