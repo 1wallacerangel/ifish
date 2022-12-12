@@ -33,6 +33,14 @@
    cursor: pointer;
 }
 
+body {
+   overflow-x: hidden;
+   width: 100%;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
 /*Barra de Rolagem Lateral*/
 
 .body::-webkit-scrollbar {
@@ -312,7 +320,7 @@ li a:active {
    padding-bottom: 0;
    padding: 3rem 2rem;
    max-width: 1200px;
-    margin: 0 auto;
+   margin: 0 auto;
 }
 
 .home-category .box-container {
@@ -682,12 +690,12 @@ li a:active {
    .inicial-text .text-h1 {
       line-height: 7rem;
    }
-}  
+}
 
 @media only screen and (max-width: 543px) {
    .inicial-main {
       padding-left: 10%;
-      padding-right:10%;
+      padding-right: 10%;
    }
 
 }
@@ -695,15 +703,15 @@ li a:active {
 @media only screen and (max-width: 375px) {
    .inicial-main {
       padding-left: 10%;
-      padding-right:10%;
-      
+      padding-right: 10%;
+
    }
 }
 
 @media only screen and (max-width: 326px) {
    .inicial-main {
       padding-left: 10%;
-      padding-right:10%;
+      padding-right: 10%;
    }
 
 }

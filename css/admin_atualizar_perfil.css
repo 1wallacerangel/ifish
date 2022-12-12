@@ -9,6 +9,13 @@
     --box-shadow-dark: 0 0.1rem 0.5rem rgb(20, 20, 20);
 }
 
+body {
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
 
 .titulo-perfil {
     text-align: center;
@@ -29,22 +36,22 @@
     justify-content: center;
     gap: 1.5rem;
     z-index: 10000;
- }
- 
- .mensagem span {
+}
+
+.mensagem span {
     font-size: 2rem;
     color: var(--black);
- }
- 
- .mensagem i {
+}
+
+.mensagem i {
     font-size: 2.5rem;
     cursor: pointer;
     color: var(--red);
- }
- 
- .mensagem i:hover {
+}
+
+.mensagem i:hover {
     color: var(--black);
- }
+}
 
 
 .update-profile {
@@ -174,13 +181,13 @@
     background: var(--red);
 }
 
-@media (max-width:312px){
+@media (max-width:312px) {
 
     .update-profile form .inputBox span {
         font-size: 1.6rem;
     }
-    
+
     .update-profile form .inputBox .box {
         font-size: 1.6rem;
     }
- }
+}

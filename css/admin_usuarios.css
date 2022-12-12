@@ -24,6 +24,13 @@
     --box-shadow-dark: 0 0.1rem 0.5rem rgb(20, 20, 20);
 }
 
+body {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 .titulo-conta {
     text-align: center;
     margin-bottom: 2rem;
@@ -82,11 +89,6 @@
     color: var(--white);
     background: var(--red);
 }
-
-
-
-
-
 
 .body.dark .titulo-conta {
     color: var(--white);
