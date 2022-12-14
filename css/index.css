@@ -374,14 +374,14 @@ li a:active {
    padding: 1.8rem 3rem;
    font-size: 2rem;
    border-radius: 10px;
-   color: var(--red);
+   color: var(--white);
    cursor: pointer;
-   background: #eee;
+   background: var(--red);
 }
 
 .home-category .box-container .box .btn:hover {
    color: var(--white);
-   background: var(--red);
+   background: var(--dark-red);
 }
 
 .home-category {
@@ -663,14 +663,14 @@ li a:active {
 }
 
 .body.dark .home-category .box-container .box .btn {
-   color: var(--red);
-   background: #373737;
+   color: var(--white);
+   background: var(--red);
    ;
 }
 
 .body.dark .home-category .box-container .box .btn:hover {
    color: var(--white);
-   background: var(--red);
+   background: var(--dark-red);
    ;
 }
 

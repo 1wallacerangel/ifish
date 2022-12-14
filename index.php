@@ -136,20 +136,17 @@ if (isset($_POST['adicionar_carrinho'])) {
 
             <div class="box">
                 <h3>peixes</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat.</p>
-                <a href="categoria.php?categoria=peixes" class="btn">peixes</a>
+                <a href="categoria.php?categoria=peixes" class="btn">Ver Mais</a>
             </div>
 
             <div class="box">
                 <h3>crustáceos</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat.</p>
-                <a href="categoria.php?categoria=crustáceos" class="btn">crustáceos</a>
+                <a href="categoria.php?categoria=crustáceos" class="btn">Ver Mais</a>
             </div>
 
             <div class="box">
                 <h3>moluscos</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat.</p>
-                <a href="categoria.php?categoria=moluscos" class="btn">moluscos</a>
+                <a href="categoria.php?categoria=moluscos" class="btn">Ver Mais</a>
             </div>
 
         </div>
