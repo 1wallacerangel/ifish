@@ -103,7 +103,7 @@ if (isset($_POST['update_produto'])) {
                <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
                <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
                <input type="text" name="nome" placeholder="Insira o nome do produto" required class="box" value="<?= $fetch_products['nome']; ?>">
-               <input type="number" name="preco" min="0" placeholder="Insira o preço do produto" required class="box" value="<?= $fetch_products['preco']; ?>">
+               <input type="number" step="0.01" pattern="^\d*(\.\d{0,2})?$" name="preco" min="0" placeholder="Insira o preço do produto" required class="box" value="<?= $fetch_products['preco']; ?>">
                <select name="categoria" class="box" required>
                   <option value="" selected disabled>Selecione a Categoria</option>
                   <option value="peixes">Peixes</option>

@@ -114,7 +114,7 @@ if (isset($_GET['delete'])) {
                     </select>
                 </div>
                 <div class="inputBox">
-                    <input type="number" min="0" name="preco" class="box" required placeholder="Insira o preço do produto">
+                    <input type="number" step="0.01" pattern="^\d*(\.\d{0,2})?$" min="0" name="preco" class="box" required placeholder="Insira o preço do produto">
                     <input type="file" name="image" required class="box" accept="image/jpg, image/jpeg, image/png">
                 </div>
             </div>

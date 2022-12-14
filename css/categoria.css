@@ -125,6 +125,7 @@ body {
 .produtos .box-container .box img {
    width: 100%;
    margin-bottom: 1rem;
+   border-radius: 10px;
 }
 
 .produtos .box-container .box .nome {

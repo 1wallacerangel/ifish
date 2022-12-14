@@ -180,6 +180,7 @@ input[type="search"]::-webkit-search-cancel-button {
     height: 8rem;
     margin: 0;
     align-items: center;
+    border-radius: 10px;
 }
 
 .header .shopping-cart .box .fa-trash {
@@ -244,7 +245,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .shopping-car .box-container .sub-total {
-    font-size: 13pt;
+    font-size: 12pt;
     padding: 0.5rem;
     color: var(--red);
     text-align: center;
@@ -256,7 +257,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .shopping-car .box-container .nome {
-    font-size: 13pt;
+    font-size: 12pt;
     text-align: center;
     font-weight: bold;
 }
@@ -1090,7 +1091,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     }
 
     .header .shopping-car .box .nome {
-        font-size: 11pt;
+        font-size: 10pt;
     }
 
     .header .shopping-car .box .flex-btn .option-btn {
